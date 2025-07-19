@@ -1,5 +1,8 @@
 <?php
 /**
+ * Template Name: HIVE Module
+ * Template Post Type: page
+ * 
  * HIVE Module Page
  * Loads the same HIVE content as wp-admin but on frontend
  */

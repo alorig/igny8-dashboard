@@ -1,5 +1,8 @@
 <?php
 /**
+ * Template Name: Keywords Module
+ * Template Post Type: page
+ * 
  * Keywords Module Page
  * Loads the same Keywords content as wp-admin but on frontend
  */

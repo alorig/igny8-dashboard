@@ -1,5 +1,8 @@
 <?php
 /**
+ * Template Name: INTELLI Module
+ * Template Post Type: page
+ * 
  * INTELLI Module Page
  * Loads the same INTELLI content as wp-admin but on frontend
  */

@@ -1,5 +1,8 @@
 <?php
 /**
+ * Template Name: LOOPS Module
+ * Template Post Type: page
+ * 
  * LOOPS Module Page
  * Loads the same LOOPS content as wp-admin but on frontend
  */

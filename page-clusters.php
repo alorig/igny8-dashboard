@@ -1,5 +1,8 @@
 <?php
 /**
+ * Template Name: Clusters Module
+ * Template Post Type: page
+ * 
  * Clusters Module Page
  * Loads the same Clusters content as wp-admin but on frontend
  */
