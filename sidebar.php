@@ -23,7 +23,7 @@
             </ul>
         </li>
         <li class="logout-item">
-            <a href="<?php echo wp_logout_url(home_url('/sign-in/')); ?>" class="logout-button" onclick="return confirm('Are you sure you want to logout?')">
+            <a href="<?php echo wp_nonce_url(home_url('/?action=logout'), 'igny8_logout'); ?>" class="logout-button" onclick="return confirm('Are you sure you want to logout?')">
                 <span class="dashicons dashicons-exit"></span>Logout
             </a>
         </li>

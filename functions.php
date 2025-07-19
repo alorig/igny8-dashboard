@@ -246,9 +246,21 @@ add_filter('logout_redirect', 'igny8_logout_redirect', 10, 3);
 // Ensure proper logout functionality
 function igny8_handle_logout() {
     if (isset($_GET['action']) && $_GET['action'] === 'logout') {
-        wp_logout();
-        wp_redirect(home_url('/sign-in/?loggedout=true'));
-        exit();
+        // Verify nonce for security
+        if (!wp_verify_nonce($_GET['_wpnonce'], 'igny8_logout')) {
+            wp_die('Security check failed');
+        }
+        
+        // Check if user is logged in
+        if (is_user_logged_in()) {
+            wp_logout();
+            wp_redirect(home_url('/sign-in/?loggedout=true'));
+            exit();
+        } else {
+            // User not logged in, redirect to sign-in
+            wp_redirect(home_url('/sign-in/'));
+            exit();
+        }
     }
 }
 add_action('init', 'igny8_handle_logout');

@@ -119,6 +119,7 @@ body {
     flex: 1;
     display: flex;
     flex-direction: column;
+    min-height: 0;
 }
 
 .sidebar li {
@@ -247,6 +248,7 @@ body.page-id-9 .settings-menu .settings-toggle:after {
     margin-top: auto;
     border-top: 1px solid rgba(255,255,255,0.1);
     position: relative;
+    flex-shrink: 0;
 }
 
 .logout-item form {
