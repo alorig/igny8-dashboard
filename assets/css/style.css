@@ -118,38 +118,16 @@ body {
     object-fit: contain;
 }
 
-/* Override all list styling in sidebar */
-.sidebar ul,
-.sidebar ul ul,
-.sidebar ul ul ul {
-    list-style: none !important;
-    list-style-type: none !important;
-    list-style-image: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.sidebar li,
-.sidebar ul li,
-.sidebar ul ul li,
-.sidebar ul ul ul li {
-    list-style: none !important;
-    list-style-type: none !important;
-    list-style-image: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
+.sidebar li {
+    margin: 0;
     border-bottom: 1px solid rgba(255,255,255,0.1);
     position: relative;
-}
-
-.sidebar li:before,
-.sidebar li:after,
-.sidebar ul li:before,
-.sidebar ul li:after,
-.sidebar ul ul li:before,
-.sidebar ul ul li:after {
-    display: none !important;
-    content: none !important;
 }
 
 .sidebar a {
