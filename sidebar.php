@@ -12,11 +12,7 @@
         <li class="settings-menu">
             <a href="#" class="settings-toggle">Settings</a>
             <ul class="submenu">
-                <li><a href="#" class="theme-option" data-theme="blue">Appearance - Blue</a></li>
-                <li><a href="#" class="theme-option" data-theme="green">Appearance - Green</a></li>
-                <li><a href="#" class="theme-option" data-theme="purple">Appearance - Purple</a></li>
-                <li><a href="#" class="theme-option" data-theme="orange">Appearance - Orange</a></li>
-                <li><a href="#" class="theme-option" data-theme="red">Appearance - Red</a></li>
+                <li><a href="<?php echo home_url('/appearance/'); ?>">Appearance</a></li>
             </ul>
         </li>
     </ul>

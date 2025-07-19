@@ -3,16 +3,15 @@
  * Igny8 Dashboard Theme Functions
  */
 
-// Enqueue theme styles and scripts for frontend
+// Enqueue theme styles for frontend
 function igny8_dashboard_enqueue_styles() {
     wp_enqueue_style('igny8-dashboard-style', get_template_directory_uri() . '/assets/css/style.css');
-    wp_enqueue_script('igny8-theme-switcher', get_template_directory_uri() . '/assets/js/theme-switcher.js', array(), '1.0', true);
 }
 add_action('wp_enqueue_scripts', 'igny8_dashboard_enqueue_styles');
 
 // Force login for dashboard pages
 function igny8_require_login() {
-    if (!is_user_logged_in() && (is_front_page() || is_page(array('intelli', 'loops', 'hive', 'clusters', 'keywords')))) {
+    if (!is_user_logged_in() && (is_front_page() || is_page(array('intelli', 'loops', 'hive', 'clusters', 'keywords', 'appearance')))) {
         wp_redirect(wp_login_url());
         exit;
     }
@@ -41,6 +40,10 @@ function igny8_create_pages() {
         'keywords' => array(
             'title' => 'Keywords Module',
             'template' => 'page-keywords.php'
+        ),
+        'appearance' => array(
+            'title' => 'Appearance Settings',
+            'template' => 'page-appearance.php'
         )
     );
     
