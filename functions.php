@@ -252,7 +252,8 @@ function igny8_admin_redirect() {
     // Only check if trying to access wp-admin
     if (strpos($_SERVER['REQUEST_URI'], 'wp-admin') !== false && 
         strpos($_SERVER['REQUEST_URI'], 'admin-ajax.php') === false &&
-        strpos($_SERVER['REQUEST_URI'], 'admin-post.php') === false) {
+        strpos($_SERVER['REQUEST_URI'], 'admin-post.php') === false &&
+        strpos($_SERVER['REQUEST_URI'], 'wp-login.php') === false) {
         
         // If logged in but not admin, redirect to frontend dashboard homepage
         if (is_user_logged_in() && !current_user_can('manage_options')) {
@@ -286,22 +287,11 @@ add_action('after_setup_theme', 'igny8_remove_admin_bar');
 function igny8_block_wp_login() {
     // Only redirect if not already on the sign-in page
     if (!is_page('sign-in')) {
-        // Check for all WordPress login-related URLs
-        $login_urls = array(
-            'wp-login.php',
-            'wp-admin',
-            'wp-login',
-            'login'
-        );
-        
-        foreach ($login_urls as $login_url) {
-            if (strpos($_SERVER['REQUEST_URI'], $login_url) !== false) {
-                // Don't redirect AJAX requests
-                if (strpos($_SERVER['REQUEST_URI'], 'admin-ajax.php') === false) {
-                    wp_redirect(home_url('/sign-in/'));
-                    exit;
-                }
-            }
+        // Only block direct access to wp-login.php, not form submissions
+        if (strpos($_SERVER['REQUEST_URI'], 'wp-login.php') !== false && 
+            !isset($_POST['log']) && !isset($_POST['pwd'])) {
+            wp_redirect(home_url('/sign-in/'));
+            exit;
         }
     }
 }
@@ -312,7 +302,8 @@ function igny8_block_wp_admin() {
     // Only check if trying to access wp-admin
     if (strpos($_SERVER['REQUEST_URI'], 'wp-admin') !== false && 
         strpos($_SERVER['REQUEST_URI'], 'admin-ajax.php') === false &&
-        strpos($_SERVER['REQUEST_URI'], 'admin-post.php') === false) {
+        strpos($_SERVER['REQUEST_URI'], 'admin-post.php') === false &&
+        strpos($_SERVER['REQUEST_URI'], 'wp-login.php') === false) {
         
         // If not logged in, redirect to sign-in
         if (!is_user_logged_in()) {
