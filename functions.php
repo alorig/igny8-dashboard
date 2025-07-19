@@ -87,7 +87,7 @@ function igny8_require_login() {
                    (is_page() && in_array(get_post_field('post_name'), $protected_pages));
     
     if (!is_user_logged_in() && $is_protected) {
-        wp_redirect(wp_login_url(get_permalink()));
+        wp_redirect(home_url('/sign-in/'));
         exit;
     }
 }
@@ -156,6 +156,10 @@ function igny8_create_pages() {
         'settings' => array(
             'title' => 'Settings',
             'template' => 'page-settings.php'
+        ),
+        'sign-in' => array(
+            'title' => 'Sign In',
+            'template' => 'page-sign-in.php'
         )
     );
     
