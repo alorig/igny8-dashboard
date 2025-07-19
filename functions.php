@@ -165,6 +165,10 @@ function igny8_create_pages() {
         'sign-in' => array(
             'title' => 'Sign In',
             'template' => 'page-sign-in.php'
+        ),
+        'forgot-password' => array(
+            'title' => 'Forgot Password',
+            'template' => 'page-forgot-password.php'
         )
     );
     
@@ -349,4 +353,30 @@ function igny8_block_wp_admin() {
     }
 }
 add_action('init', 'igny8_block_wp_admin', 1);
+
+// Handle login errors and redirect to custom sign-in page
+function igny8_login_failed_redirect() {
+    $login_page = home_url('/sign-in/');
+    $error_code = '';
+    
+    if (isset($_GET['error'])) {
+        $error_code = $_GET['error'];
+    }
+    
+    wp_redirect($login_page . '?login=failed&error=' . $error_code);
+    exit();
+}
+add_action('wp_login_failed', 'igny8_login_failed_redirect');
+
+// Handle empty username/password redirects
+function igny8_authenticate_redirect($user, $username, $password) {
+    if (empty($username) || empty($password)) {
+        $login_page = home_url('/sign-in/');
+        $error = empty($username) ? 'empty_username' : 'empty_password';
+        wp_redirect($login_page . '?login=failed&error=' . $error);
+        exit();
+    }
+    return $user;
+}
+add_filter('authenticate', 'igny8_authenticate_redirect', 30, 3);
 ?> 

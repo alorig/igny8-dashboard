@@ -413,7 +413,7 @@ if (is_user_logged_in()) {
                     <p class="login-subtitle">Sign in to your Igny8 dashboard</p>
                 </div>
 
-                <form class="login-form" action="<?php echo wp_login_url(); ?>" method="post">
+                <form class="login-form" action="<?php echo home_url('/wp-login.php'); ?>" method="post">
                     <?php
                     // Show error messages if any
                     if (isset($_GET['login']) && $_GET['login'] == 'failed') {
@@ -422,6 +422,21 @@ if (is_user_logged_in()) {
                     
                     if (isset($_GET['loggedout']) && $_GET['loggedout'] == 'true') {
                         echo '<div class="success-message">You have been successfully logged out.</div>';
+                    }
+                    
+                    // Show WordPress login errors
+                    if (isset($_GET['error'])) {
+                        $error_message = 'Login failed. Please check your credentials.';
+                        if ($_GET['error'] == 'empty_username') {
+                            $error_message = 'Username is required.';
+                        } elseif ($_GET['error'] == 'empty_password') {
+                            $error_message = 'Password is required.';
+                        } elseif ($_GET['error'] == 'invalid_username') {
+                            $error_message = 'Invalid username or email.';
+                        } elseif ($_GET['error'] == 'incorrect_password') {
+                            $error_message = 'Incorrect password.';
+                        }
+                        echo '<div class="error-message">' . esc_html($error_message) . '</div>';
                     }
                     ?>
 
@@ -438,7 +453,7 @@ if (is_user_logged_in()) {
                     <button type="submit" class="login-btn">Sign In</button>
 
                     <div class="form-footer">
-                        <a href="<?php echo wp_lostpassword_url(); ?>">Forgot your password?</a>
+                        <a href="<?php echo home_url('/forgot-password/'); ?>">Forgot your password?</a>
                     </div>
                 </form>
 
