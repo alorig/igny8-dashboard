@@ -56,32 +56,6 @@ get_sidebar();
                 <button id="reset-theme" class="btn btn-secondary">Reset to Default</button>
             </div>
         </div>
-        
-        <div class="theme-info">
-            <h2>About Color Schemes</h2>
-            <div class="info-grid">
-                <div class="info-card">
-                    <h3>Blue Theme</h3>
-                    <p>Professional and trustworthy. Perfect for corporate environments and business applications.</p>
-                </div>
-                <div class="info-card">
-                    <h3>Green Theme</h3>
-                    <p>Fresh and natural. Great for environmental, health, or growth-focused applications.</p>
-                </div>
-                <div class="info-card">
-                    <h3>Purple Theme</h3>
-                    <p>Creative and modern. Ideal for design, innovation, or luxury applications.</p>
-                </div>
-                <div class="info-card">
-                    <h3>Orange Theme</h3>
-                    <p>Energetic and warm. Perfect for dynamic, action-oriented applications.</p>
-                </div>
-                <div class="info-card">
-                    <h3>Red Theme</h3>
-                    <p>Bold and powerful. Great for high-impact, attention-grabbing applications.</p>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 
@@ -133,11 +107,21 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function setTheme(theme) {
+        // Remove existing theme classes
         document.documentElement.removeAttribute('data-theme');
+        
+        // Set new theme
         if (theme !== 'blue') {
             document.documentElement.setAttribute('data-theme', theme);
         }
+        
+        // Save to localStorage
         localStorage.setItem('igny8-theme', theme);
+        
+        // Update the entire page to reflect changes
+        setTimeout(() => {
+            location.reload();
+        }, 500);
     }
     
     function showMessage(text, type) {
@@ -153,12 +137,13 @@ document.addEventListener('DOMContentLoaded', function() {
             color: white;
             z-index: 1000;
             animation: slideIn 0.3s ease-out;
+            max-width: 300px;
         `;
         
         if (type === 'success') {
-            message.style.background = 'var(--success-color)';
+            message.style.background = '#27ae60';
         } else if (type === 'info') {
-            message.style.background = 'var(--primary-color)';
+            message.style.background = '#3498db';
         }
         
         document.body.appendChild(message);
