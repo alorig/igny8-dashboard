@@ -22,5 +22,10 @@
                 <li><a href="<?php echo home_url('/appearance/'); ?>"><span class="dashicons dashicons-admin-appearance"></span>Appearance</a></li>
             </ul>
         </li>
+        <li class="logout-item">
+            <a href="<?php echo wp_logout_url(home_url('/sign-in/')); ?>" onclick="return confirm('Are you sure you want to logout?')">
+                <span class="dashicons dashicons-exit"></span>Logout
+            </a>
+        </li>
     </ul>
 </div> 

@@ -236,6 +236,13 @@ function igny8_body_classes($classes) {
 }
 add_filter('body_class', 'igny8_body_classes');
 
+// Handle logout redirects to custom sign-in page
+function igny8_logout_redirect($redirect_to, $requested_redirect_to, $user) {
+    // Always redirect to custom sign-in page after logout
+    return home_url('/sign-in/?loggedout=true');
+}
+add_filter('logout_redirect', 'igny8_logout_redirect', 10, 3);
+
 // Handle login redirects - Always redirect to frontend dashboard
 function igny8_login_redirect($redirect_to, $request, $user) {
     // If login was successful and user exists
