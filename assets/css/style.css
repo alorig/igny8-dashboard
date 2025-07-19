@@ -140,6 +140,12 @@ body {
     content: none !important;
 }
 
+/* Override the general ul li:before rule for sidebar specifically */
+.sidebar ul li:before {
+    display: none !important;
+    content: none !important;
+}
+
 .sidebar a {
     display: flex;
     align-items: center;
