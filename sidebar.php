@@ -9,7 +9,7 @@
         }
         ?>
     </div>
-    <ul>
+    <ul class="sidebar-menu">
         <li><a href="<?php echo home_url('/'); ?>"><span class="dashicons dashicons-dashboard"></span>Dashboard</a></li>
         <li><a href="<?php echo home_url('/intelli/'); ?>"><span class="dashicons dashicons-analytics"></span>INTELLI</a></li>
         <li><a href="<?php echo home_url('/loops/'); ?>"><span class="dashicons dashicons-update"></span>LOOPS</a></li>
@@ -22,10 +22,10 @@
                 <li><a href="<?php echo home_url('/appearance/'); ?>"><span class="dashicons dashicons-admin-appearance"></span>Appearance</a></li>
             </ul>
         </li>
-        <li class="logout-item">
-            <a href="<?php echo wp_nonce_url(home_url('/?action=logout'), 'igny8_logout'); ?>" class="logout-button" onclick="return confirm('Are you sure you want to logout?')">
-                <span class="dashicons dashicons-exit"></span>Logout
-            </a>
-        </li>
     </ul>
+    <div class="sidebar-footer">
+        <a href="<?php echo wp_nonce_url(home_url('/?action=logout'), 'igny8_logout'); ?>" class="logout-button" onclick="return confirm('Are you sure you want to logout?')">
+            <span class="dashicons dashicons-exit"></span>Logout
+        </a>
+    </div>
 </div> 

@@ -112,7 +112,7 @@ body {
     object-fit: contain;
 }
 
-.sidebar ul {
+.sidebar-menu {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -145,7 +145,7 @@ body {
     content: none !important;
 }
 
-.sidebar a {
+.sidebar-menu a {
     display: flex;
     align-items: center;
     color: #ecf0f1;
@@ -155,13 +155,13 @@ body {
     font-weight: 500;
 }
 
-.sidebar a:hover, .sidebar a.active {
+.sidebar-menu a:hover, .sidebar-menu a.active {
     background: var(--sidebar-hover);
     color: var(--primary-light);
 }
 
 /* Dashicons in sidebar */
-.sidebar .dashicons {
+.sidebar-menu .dashicons {
     margin-right: 15px;
     font-size: 18px;
     width: 18px;
@@ -243,17 +243,41 @@ body.page-id-9 .settings-menu .settings-toggle:after {
     height: 16px;
 }
 
-/* Logout Button */
-.logout-item {
-    margin-top: auto;
+/* Sidebar Footer */
+.sidebar-footer {
     border-top: 1px solid rgba(255,255,255,0.1);
-    position: relative;
+    padding: 0;
+    margin-top: auto;
     flex-shrink: 0;
 }
 
-.logout-item form {
-    margin: 0;
-    padding: 0;
+/* Logout Button */
+.logout-button {
+    width: 100%;
+    background: none;
+    border: none;
+    color: white;
+    padding: 15px 20px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.logout-button:hover {
+    background: rgba(255,255,255,0.1);
+    color: white;
+    text-decoration: none;
+}
+
+.logout-button .dashicons {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
 }
 
 .logout-button {
