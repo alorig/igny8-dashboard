@@ -79,6 +79,11 @@ function igny8_require_login() {
         return;
     }
     
+    // Don't redirect if already on sign-in page to prevent loops
+    if (is_page('sign-in')) {
+        return;
+    }
+    
     // Define protected pages
     $protected_pages = array('intelli', 'loops', 'hive', 'clusters', 'keywords', 'appearance', 'settings');
     
@@ -230,4 +235,98 @@ function igny8_body_classes($classes) {
     return $classes;
 }
 add_filter('body_class', 'igny8_body_classes');
+
+// Handle login redirects - Always redirect to frontend dashboard
+function igny8_login_redirect($redirect_to, $request, $user) {
+    // If login was successful and user exists
+    if (isset($user->roles) && is_array($user->roles)) {
+        // Always redirect to frontend dashboard homepage, never to wp-admin
+        return home_url('/');
+    }
+    return $redirect_to;
+}
+add_filter('login_redirect', 'igny8_login_redirect', 10, 3);
+
+// Force non-admin users away from wp-admin to frontend dashboard
+function igny8_admin_redirect() {
+    // Only check if trying to access wp-admin
+    if (strpos($_SERVER['REQUEST_URI'], 'wp-admin') !== false && 
+        strpos($_SERVER['REQUEST_URI'], 'admin-ajax.php') === false &&
+        strpos($_SERVER['REQUEST_URI'], 'admin-post.php') === false) {
+        
+        // If logged in but not admin, redirect to frontend dashboard homepage
+        if (is_user_logged_in() && !current_user_can('manage_options')) {
+            wp_redirect(home_url('/'));
+            exit;
+        }
+    }
+}
+add_action('init', 'igny8_admin_redirect', 1);
+
+// Override WordPress default admin redirect based on user role
+function igny8_override_admin_redirect($redirect_to, $request, $user) {
+    // If user is admin, allow wp-admin access
+    if (isset($user->roles) && in_array('administrator', $user->roles)) {
+        return admin_url();
+    }
+    // Non-admin users go to frontend dashboard homepage
+    return home_url('/');
+}
+add_filter('login_redirect', 'igny8_override_admin_redirect', 999, 3);
+
+// Remove admin bar for non-admin users only
+function igny8_remove_admin_bar() {
+    if (!current_user_can('manage_options')) {
+        show_admin_bar(false);
+    }
+}
+add_action('after_setup_theme', 'igny8_remove_admin_bar');
+
+// Block access to wp-login.php and redirect to custom sign-in page
+function igny8_block_wp_login() {
+    // Only redirect if not already on the sign-in page
+    if (!is_page('sign-in')) {
+        // Check for all WordPress login-related URLs
+        $login_urls = array(
+            'wp-login.php',
+            'wp-admin',
+            'wp-login',
+            'login'
+        );
+        
+        foreach ($login_urls as $login_url) {
+            if (strpos($_SERVER['REQUEST_URI'], $login_url) !== false) {
+                // Don't redirect AJAX requests
+                if (strpos($_SERVER['REQUEST_URI'], 'admin-ajax.php') === false) {
+                    wp_redirect(home_url('/sign-in/'));
+                    exit;
+                }
+            }
+        }
+    }
+}
+add_action('init', 'igny8_block_wp_login', 1);
+
+// Block wp-admin access for non-admins and redirect to frontend dashboard
+function igny8_block_wp_admin() {
+    // Only check if trying to access wp-admin
+    if (strpos($_SERVER['REQUEST_URI'], 'wp-admin') !== false && 
+        strpos($_SERVER['REQUEST_URI'], 'admin-ajax.php') === false &&
+        strpos($_SERVER['REQUEST_URI'], 'admin-post.php') === false) {
+        
+        // If not logged in, redirect to sign-in
+        if (!is_user_logged_in()) {
+            wp_redirect(home_url('/sign-in/'));
+            exit;
+        }
+        
+        // If logged in but not admin, redirect to frontend dashboard homepage
+        if (!current_user_can('manage_options')) {
+            wp_redirect(home_url('/'));
+            exit;
+        }
+        // Admin users can access wp-admin normally
+    }
+}
+add_action('init', 'igny8_block_wp_admin', 1);
 ?> 

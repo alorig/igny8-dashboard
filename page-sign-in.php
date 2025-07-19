@@ -5,7 +5,8 @@ Template Name: Sign In
 
 // Redirect if user is already logged in
 if (is_user_logged_in()) {
-    wp_redirect(home_url());
+    // Redirect to dashboard homepage
+    wp_redirect(home_url('/'));
     exit;
 }
 ?>
