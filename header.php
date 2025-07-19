@@ -12,6 +12,15 @@
             if (savedTheme !== 'blue') {
                 document.documentElement.setAttribute('data-theme', savedTheme);
             }
+            
+            // Show Settings submenu on settings pages
+            const currentPath = window.location.pathname;
+            if (currentPath.includes('/settings/') || currentPath.includes('/appearance/')) {
+                const settingsMenu = document.querySelector('.settings-menu');
+                if (settingsMenu) {
+                    settingsMenu.classList.add('active');
+                }
+            }
         });
     </script>
 </head>

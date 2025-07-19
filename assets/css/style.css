@@ -95,9 +95,8 @@ body {
 }
 
 .sidebar-header {
-    padding: 20px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    background: rgba(0,0,0,0.1);
+    background: #fff;
+    padding: 5px;
     text-align: center;
     display: flex;
     align-items: center;
@@ -148,7 +147,7 @@ body {
 
 /* Dashicons in sidebar */
 .sidebar .dashicons {
-    margin-right: 12px;
+    margin-right: 15px;
     font-size: 18px;
     width: 18px;
     height: 18px;
@@ -187,18 +186,24 @@ body {
 
 /* Show submenu on settings pages */
 body.page-template-page-settings .settings-menu .submenu,
-body.page-template-page-appearance .settings-menu .submenu {
-    display: block;
+body.page-template-page-appearance .settings-menu .submenu,
+body.page-id-8 .settings-menu .submenu,
+body.page-id-9 .settings-menu .submenu {
+    display: block !important;
 }
 
 body.page-template-page-settings .settings-menu .settings-toggle,
-body.page-template-page-appearance .settings-menu .settings-toggle {
+body.page-template-page-appearance .settings-menu .settings-toggle,
+body.page-id-8 .settings-menu .settings-toggle,
+body.page-id-9 .settings-menu .settings-toggle {
     background: var(--sidebar-hover);
     color: var(--primary-light);
 }
 
 body.page-template-page-settings .settings-menu .settings-toggle:after,
-body.page-template-page-appearance .settings-menu .settings-toggle:after {
+body.page-template-page-appearance .settings-menu .settings-toggle:after,
+body.page-id-8 .settings-menu .settings-toggle:after,
+body.page-id-9 .settings-menu .settings-toggle:after {
     transform: rotate(180deg);
 }
 
