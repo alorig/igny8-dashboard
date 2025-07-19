@@ -140,8 +140,9 @@ body {
     content: none !important;
 }
 
-/* Override the general ul li:before rule for sidebar specifically */
-.sidebar ul li:before {
+/* Override for sidebar - must come after the general rule */
+.sidebar ul li:before,
+.sidebar li:before {
     display: none !important;
     content: none !important;
 }
@@ -679,6 +680,13 @@ ul li:before {
     font-weight: bold;
     position: absolute;
     left: 0;
+}
+
+/* Override for sidebar - must come after the general rule */
+.sidebar ul li:before,
+.sidebar li:before {
+    display: none !important;
+    content: none !important;
 }
 
 ul li:last-child {
