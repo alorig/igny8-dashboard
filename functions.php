@@ -243,6 +243,16 @@ function igny8_logout_redirect($redirect_to, $requested_redirect_to, $user) {
 }
 add_filter('logout_redirect', 'igny8_logout_redirect', 10, 3);
 
+// Ensure proper logout functionality
+function igny8_handle_logout() {
+    if (isset($_GET['action']) && $_GET['action'] === 'logout') {
+        wp_logout();
+        wp_redirect(home_url('/sign-in/?loggedout=true'));
+        exit();
+    }
+}
+add_action('init', 'igny8_handle_logout');
+
 // Handle login redirects - Always redirect to frontend dashboard
 function igny8_login_redirect($redirect_to, $request, $user) {
     // If login was successful and user exists

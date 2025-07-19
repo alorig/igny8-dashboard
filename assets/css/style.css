@@ -249,19 +249,37 @@ body.page-id-9 .settings-menu .settings-toggle:after {
     position: relative;
 }
 
-.logout-item a {
-    color: #e74c3c !important;
-    background: rgba(231, 76, 60, 0.1);
-    border-left: 3px solid #e74c3c;
+.logout-item form {
+    margin: 0;
+    padding: 0;
 }
 
-.logout-item a:hover {
-    background: rgba(231, 76, 60, 0.2) !important;
-    color: #c0392b !important;
+.logout-button {
+    width: 100%;
+    background: none;
+    border: none;
+    color: white;
+    padding: 15px 20px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    text-decoration: none;
 }
 
-.logout-item .dashicons {
-    color: #e74c3c;
+.logout-button:hover {
+    background: rgba(255,255,255,0.1);
+    color: white;
+    text-decoration: none;
+}
+
+.logout-button .dashicons {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
 }
 
 /* Main Content */
