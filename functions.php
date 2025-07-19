@@ -3,9 +3,10 @@
  * Igny8 Dashboard Theme Functions
  */
 
-// Enqueue theme styles for frontend
+// Enqueue theme styles and scripts for frontend
 function igny8_dashboard_enqueue_styles() {
     wp_enqueue_style('igny8-dashboard-style', get_template_directory_uri() . '/assets/css/style.css');
+    wp_enqueue_script('igny8-theme-switcher', get_template_directory_uri() . '/assets/js/theme-switcher.js', array(), '1.0', true);
 }
 add_action('wp_enqueue_scripts', 'igny8_dashboard_enqueue_styles');
 
