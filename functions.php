@@ -169,6 +169,10 @@ function igny8_create_pages() {
         'forgot-password' => array(
             'title' => 'Forgot Password',
             'template' => 'page-forgot-password.php'
+        ),
+        'reset-password' => array(
+            'title' => 'Reset Password',
+            'template' => 'page-reset-password.php'
         )
     );
     
