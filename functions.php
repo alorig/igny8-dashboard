@@ -391,17 +391,33 @@ add_action('wp_enqueue_scripts', 'igy8_enqueue_sidebar_js');
 
 function igny8_create_module_pages() {
     $modules = [
-        [
-            'title' => 'Content Writer',
-            'slug' => 'content-writer',
-            'template' => '',
-        ],
-        [
-            'title' => 'Content Scheduling',
-            'slug' => 'content-writer/content-scheduling',
-            'template' => '',
-        ],
-        // Add more modules here as needed
+        // Content Writer
+        [ 'title' => 'Content Writer', 'slug' => 'content-writer', 'template' => '' ],
+        [ 'title' => 'Content Scheduling', 'slug' => 'content-writer/content-scheduling', 'template' => '' ],
+        [ 'title' => 'Prompt Library', 'slug' => 'content-writer/prompt-library', 'template' => '' ],
+        [ 'title' => 'Rewrite Scheduling', 'slug' => 'content-writer/rewrite-scheduling', 'template' => '' ],
+        [ 'title' => 'Reporting', 'slug' => 'content-writer/reporting', 'template' => '' ],
+        // Keywords & Clusters
+        [ 'title' => 'Keywords & Clusters', 'slug' => 'keywords-clusters', 'template' => '' ],
+        [ 'title' => 'Niches', 'slug' => 'keywords-clusters/niches', 'template' => '' ],
+        [ 'title' => 'Keywords', 'slug' => 'keywords-clusters/keywords', 'template' => '' ],
+        [ 'title' => 'Clusters', 'slug' => 'keywords-clusters/clusters', 'template' => '' ],
+        [ 'title' => 'Internal Linking', 'slug' => 'keywords-clusters/internal-linking', 'template' => '' ],
+        [ 'title' => 'Reports', 'slug' => 'keywords-clusters/reports', 'template' => '' ],
+        // Authority & Links
+        [ 'title' => 'Authority & Links', 'slug' => 'authority-links', 'template' => '' ],
+        [ 'title' => 'Backlink Campaigns', 'slug' => 'authority-links/backlink-campaigns', 'template' => '' ],
+        [ 'title' => 'Social Campaigns', 'slug' => 'authority-links/social-campaigns', 'template' => '' ],
+        [ 'title' => 'Authority Sites', 'slug' => 'authority-links/authority-sites', 'template' => '' ],
+        [ 'title' => 'Authority Reports', 'slug' => 'authority-links/authority-reports', 'template' => '' ],
+        // Settings
+        [ 'title' => 'Settings', 'slug' => 'settings', 'template' => '' ],
+        [ 'title' => 'Connected Sites', 'slug' => 'settings/connected-sites', 'template' => '' ],
+        [ 'title' => 'Integrations', 'slug' => 'settings/integrations', 'template' => '' ],
+        [ 'title' => 'Subscription', 'slug' => 'settings/subscription', 'template' => '' ],
+        [ 'title' => 'Account Settings', 'slug' => 'settings/account-settings', 'template' => '' ],
+        [ 'title' => 'Appearance', 'slug' => 'settings/appearance', 'template' => '' ],
+        [ 'title' => 'Access Roles', 'slug' => 'settings/access-roles', 'template' => '' ],
     ];
     foreach ($modules as $mod) {
         $page = get_page_by_path($mod['slug']);
