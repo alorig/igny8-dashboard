@@ -389,48 +389,52 @@ function igy8_enqueue_sidebar_js() {
 }
 add_action('wp_enqueue_scripts', 'igy8_enqueue_sidebar_js');
 
+function igny8_create_page($title, $slug, $template = '') {
+    $page = get_page_by_path($slug);
+    if (!$page) {
+        wp_insert_post([
+            'post_title'   => $title,
+            'post_name'    => basename($slug),
+            'post_status'  => 'publish',
+            'post_type'    => 'page',
+            'post_parent'  => ($parent = get_page_by_path(dirname($slug))) ? $parent->ID : 0,
+            'page_template'=> $template,
+        ]);
+    }
+}
+
 function igny8_create_module_pages() {
     $modules = [
         // Content Writer
-        [ 'title' => 'Content Writer', 'slug' => 'content-writer', 'template' => '' ],
-        [ 'title' => 'Content Scheduling', 'slug' => 'content-writer/content-scheduling', 'template' => '' ],
-        [ 'title' => 'Prompt Library', 'slug' => 'content-writer/prompt-library', 'template' => '' ],
-        [ 'title' => 'Rewrite Scheduling', 'slug' => 'content-writer/rewrite-scheduling', 'template' => '' ],
-        [ 'title' => 'Reporting', 'slug' => 'content-writer/reporting', 'template' => '' ],
+        [ 'Content Writer', 'content-writer' ],
+        [ 'Content Scheduling', 'content-writer/content-scheduling' ],
+        [ 'Prompt Library', 'content-writer/prompt-library' ],
+        [ 'Rewrite Scheduling', 'content-writer/rewrite-scheduling' ],
+        [ 'Reporting', 'content-writer/reporting' ],
         // Keywords & Clusters
-        [ 'title' => 'Keywords & Clusters', 'slug' => 'keywords-clusters', 'template' => '' ],
-        [ 'title' => 'Niches', 'slug' => 'keywords-clusters/niches', 'template' => '' ],
-        [ 'title' => 'Keywords', 'slug' => 'keywords-clusters/keywords', 'template' => '' ],
-        [ 'title' => 'Clusters', 'slug' => 'keywords-clusters/clusters', 'template' => '' ],
-        [ 'title' => 'Internal Linking', 'slug' => 'keywords-clusters/internal-linking', 'template' => '' ],
-        [ 'title' => 'Reports', 'slug' => 'keywords-clusters/reports', 'template' => '' ],
+        [ 'Keywords & Clusters', 'keywords-clusters' ],
+        [ 'Niches', 'keywords-clusters/niches' ],
+        [ 'Keywords', 'keywords-clusters/keywords' ],
+        [ 'Clusters', 'keywords-clusters/clusters' ],
+        [ 'Internal Linking', 'keywords-clusters/internal-linking' ],
+        [ 'Reports', 'keywords-clusters/reports' ],
         // Authority & Links
-        [ 'title' => 'Authority & Links', 'slug' => 'authority-links', 'template' => '' ],
-        [ 'title' => 'Backlink Campaigns', 'slug' => 'authority-links/backlink-campaigns', 'template' => '' ],
-        [ 'title' => 'Social Campaigns', 'slug' => 'authority-links/social-campaigns', 'template' => '' ],
-        [ 'title' => 'Authority Sites', 'slug' => 'authority-links/authority-sites', 'template' => '' ],
-        [ 'title' => 'Authority Reports', 'slug' => 'authority-links/authority-reports', 'template' => '' ],
+        [ 'Authority & Links', 'authority-links' ],
+        [ 'Backlink Campaigns', 'authority-links/backlink-campaigns' ],
+        [ 'Social Campaigns', 'authority-links/social-campaigns' ],
+        [ 'Authority Sites', 'authority-links/authority-sites' ],
+        [ 'Authority Reports', 'authority-links/authority-reports' ],
         // Settings
-        [ 'title' => 'Settings', 'slug' => 'settings', 'template' => '' ],
-        [ 'title' => 'Connected Sites', 'slug' => 'settings/connected-sites', 'template' => '' ],
-        [ 'title' => 'Integrations', 'slug' => 'settings/integrations', 'template' => '' ],
-        [ 'title' => 'Subscription', 'slug' => 'settings/subscription', 'template' => '' ],
-        [ 'title' => 'Account Settings', 'slug' => 'settings/account-settings', 'template' => '' ],
-        [ 'title' => 'Appearance', 'slug' => 'settings/appearance', 'template' => '' ],
-        [ 'title' => 'Access Roles', 'slug' => 'settings/access-roles', 'template' => '' ],
+        [ 'Settings', 'settings' ],
+        [ 'Connected Sites', 'settings/connected-sites' ],
+        [ 'Integrations', 'settings/integrations' ],
+        [ 'Subscription', 'settings/subscription' ],
+        [ 'Account Settings', 'settings/account-settings' ],
+        [ 'Appearance', 'settings/appearance' ],
+        [ 'Access Roles', 'settings/access-roles' ],
     ];
     foreach ($modules as $mod) {
-        $page = get_page_by_path($mod['slug']);
-        if (!$page) {
-            wp_insert_post([
-                'post_title'   => $mod['title'],
-                'post_name'    => basename($mod['slug']),
-                'post_status'  => 'publish',
-                'post_type'    => 'page',
-                'post_parent'  => ($parent = get_page_by_path(dirname($mod['slug']))) ? $parent->ID : 0,
-                'page_template'=> $mod['template'],
-            ]);
-        }
+        igny8_create_page($mod[0], $mod[1]);
     }
 }
 add_action('after_switch_theme', 'igny8_create_module_pages');
