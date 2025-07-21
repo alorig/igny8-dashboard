@@ -14,6 +14,7 @@
         <li><a href="<?php echo home_url('/intelli/'); ?>"><span class="dashicons dashicons-analytics"></span>INTELLI</a></li>
         <li><a href="<?php echo home_url('/loops/'); ?>"><span class="dashicons dashicons-update"></span>LOOPS</a></li>
         <li><a href="<?php echo home_url('/hive/'); ?>"><span class="dashicons dashicons-networking"></span>HIVE</a></li>
+        <li><a href="<?php echo home_url('/niches/'); ?>"><span class="dashicons dashicons-filter"></span>Niches</a></li>
         <li><a href="<?php echo home_url('/clusters/'); ?>"><span class="dashicons dashicons-category"></span>Clusters</a></li>
         <li><a href="<?php echo home_url('/keywords/'); ?>"><span class="dashicons dashicons-tag"></span>Keywords</a></li>
         <li class="settings-menu">
