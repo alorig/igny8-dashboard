@@ -388,4 +388,34 @@ function igy8_enqueue_sidebar_js() {
     wp_enqueue_script('sidebar-js', get_template_directory_uri() . '/assets/js/sidebar.js', array(), null, true);
 }
 add_action('wp_enqueue_scripts', 'igy8_enqueue_sidebar_js');
+
+function igny8_create_module_pages() {
+    $modules = [
+        [
+            'title' => 'Content Writer',
+            'slug' => 'content-writer',
+            'template' => '',
+        ],
+        [
+            'title' => 'Content Scheduling',
+            'slug' => 'content-writer/content-scheduling',
+            'template' => '',
+        ],
+        // Add more modules here as needed
+    ];
+    foreach ($modules as $mod) {
+        $page = get_page_by_path($mod['slug']);
+        if (!$page) {
+            wp_insert_post([
+                'post_title'   => $mod['title'],
+                'post_name'    => basename($mod['slug']),
+                'post_status'  => 'publish',
+                'post_type'    => 'page',
+                'post_parent'  => ($parent = get_page_by_path(dirname($mod['slug']))) ? $parent->ID : 0,
+                'page_template'=> $mod['template'],
+            ]);
+        }
+    }
+}
+add_action('after_switch_theme', 'igny8_create_module_pages');
 ?> 
