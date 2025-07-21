@@ -988,3 +988,269 @@ ul li:last-child {
 .settings-menu .submenu[style*="display: block"] {
   display: block !important;
 } 
+
+/* === Niche Management Page Styles === */
+
+.niche-selector.sticky {
+  position: sticky;
+  top: 0;
+  background: var(--bg-white);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem 2rem 1rem 2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.niche-selector__active {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.niche-selector__label {
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-right: 0.5rem;
+}
+
+.niche-selector__dropdown {
+  padding: 0.5rem 1.5rem 0.5rem 0.75rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  font-size: 1rem;
+  background: var(--bg-light);
+  color: var(--text-primary);
+}
+
+.niche-selector__badge {
+  background: var(--primary-light);
+  color: #fff;
+  border-radius: 1rem;
+  padding: 0.25rem 1rem;
+  font-size: 0.95em;
+  font-weight: 500;
+  margin-left: 1rem;
+}
+
+.niche-actions.sticky-top-right {
+  position: sticky;
+  top: 1.5rem;
+  float: right;
+  display: flex;
+  gap: 1rem;
+  z-index: 20;
+  margin-right: 2rem;
+}
+
+.niche-actions__add,
+.niche-actions__import,
+.niche-actions__export {
+  padding: 0.5rem 1.5rem;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.niche-actions__add {
+  background: var(--primary-color);
+  color: #fff;
+}
+.niche-actions__add:hover {
+  background: var(--primary-dark);
+}
+
+.niche-actions__import {
+  background: var(--secondary-color);
+  color: #fff;
+}
+.niche-actions__import:hover {
+  background: var(--sidebar-hover);
+}
+
+.niche-actions__export {
+  background: var(--bg-light);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+.niche-actions__export:hover {
+  background: var(--primary-light);
+  color: #fff;
+}
+
+.niche-filters.sticky {
+  position: sticky;
+  top: 4.5rem;
+  background: var(--bg-white);
+  z-index: 9;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+}
+
+.niche-filters__form {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+}
+
+.niche-filters__dropdown,
+.niche-filters__slider {
+  margin-left: 0.5rem;
+  padding: 0.4rem 1rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  font-size: 1em;
+  background: var(--bg-light);
+  color: var(--text-primary);
+}
+
+.niche-filters__slider {
+  width: 120px;
+}
+
+.niche-metrics {
+  display: flex;
+  gap: 2rem;
+  margin: 2.5rem 2rem 1.5rem 2rem;
+  justify-content: flex-start;
+}
+
+.niche-metrics__card {
+  background: var(--bg-white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem 2rem;
+  min-width: 160px;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.niche-metrics__value {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.niche-metrics__label {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.niche-breakdown-panels {
+  display: flex;
+  gap: 2rem;
+  margin: 2rem 2rem 0 2rem;
+  align-items: flex-start;
+}
+
+.niche-opportunity-panel,
+.niche-cluster-status-panel {
+  background: var(--bg-white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+  flex: 1 1 0;
+  min-width: 320px;
+  border: 1px solid var(--border-color);
+}
+
+.niche-panel__title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 1.2rem;
+}
+
+.niche-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chip {
+  background: var(--primary-light);
+  color: #fff;
+  border-radius: 1rem;
+  padding: 0.3rem 1rem;
+  font-size: 0.95em;
+  font-weight: 500;
+}
+
+.niche-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.niche-progress__bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.niche-progress__label {
+  min-width: 90px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.niche-progress__track {
+  flex: 1;
+  background: var(--bg-light);
+  border-radius: 1rem;
+  height: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  margin-right: 0.5rem;
+}
+
+.niche-progress__fill {
+  height: 100%;
+  border-radius: 1rem;
+  background: var(--primary-color);
+  transition: width 0.3s;
+}
+
+.niche-progress__bar.niche-progress__finalized .niche-progress__fill {
+  background: var(--primary-color);
+}
+.niche-progress__bar.niche-progress__in-progress .niche-progress__fill {
+  background: var(--warning-color);
+}
+.niche-progress__bar.niche-progress__new .niche-progress__fill {
+  background: var(--secondary-color);
+}
+
+.niche-progress__percent {
+  min-width: 40px;
+  text-align: right;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+@media (max-width: 1100px) {
+  .niche-metrics,
+  .niche-breakdown-panels {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .niche-actions.sticky-top-right {
+    float: none;
+    justify-content: flex-end;
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+} 
