@@ -314,6 +314,7 @@ body.page-id-9 .settings-menu .settings-toggle:after {
     padding: 40px;
     background: var(--bg-light);
     min-height: 100vh;
+    width: 100%;
 }
 
 /* Typography */
@@ -878,6 +879,7 @@ ul li:last-child {
     .main-content {
         margin-left: 0;
         padding: 20px;
+        width: 100%;
     }
     
     .module-grid,
