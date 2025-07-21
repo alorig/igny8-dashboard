@@ -1796,3 +1796,234 @@ ul li:last-child {
     height: 50px;
   }
 } 
+
+/* === Clusters Management Page Styles === */
+
+.clusters-filters-panel {
+  background: var(--bg-white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem 2rem 1rem 2rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.clusters-filters__form {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+.clusters-filters__dropdown.tom-select,
+.clusters-filters__slider,
+.clusters-filters__search {
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  background: var(--bg-light);
+  color: var(--text-primary);
+  font-size: 0.98em;
+  padding: 0.45em 1em;
+  min-width: 120px;
+  max-width: 220px;
+}
+.clusters-filters__slider {
+  width: 140px;
+}
+.clusters-filters__search {
+  min-width: 180px;
+}
+.filters-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  min-width: 220px;
+}
+.filter-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.clusters-metrics-row {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+.clusters-metrics__card {
+  background: var(--bg-white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 1.2rem 2rem;
+  min-width: 140px;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 4px solid var(--primary-color);
+}
+.clusters-metrics__card:nth-child(2) { border-top: 4px solid var(--accent-color); }
+.clusters-metrics__card:nth-child(3) { border-top: 4px solid var(--success-color); }
+.clusters-metrics__card:nth-child(4) { border-top: 4px solid var(--info-color); }
+.clusters-metrics__value {
+  color: var(--primary-color);
+  font-size: 1.5em;
+  font-weight: 700;
+}
+.clusters-metrics__label {
+  font-size: 1em;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.clusters-actions-row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+.clusters-actions__add {
+  background: var(--primary-color);
+  color: #fff;
+}
+.clusters-actions__add:hover {
+  background: var(--primary-dark);
+}
+.clusters-actions__import {
+  background: var(--sidebar-hover);
+  color: #fff;
+}
+.clusters-actions__import:hover {
+  background: var(--primary-color);
+}
+.clusters-actions__export {
+  background: var(--bg-white);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+.clusters-actions__export:hover {
+  background: var(--primary-light);
+  color: #fff;
+}
+
+.clusters-bulk-actions-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.clusters-table-wrap {
+  background: var(--bg-white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem 2rem 2rem 2rem;
+  border: 1px solid var(--border-color);
+}
+.clusters-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-bottom: 1.2rem;
+  font-size: 0.98em;
+}
+.clusters-table th, .clusters-table td {
+  padding: 0.7em 0.8em;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+.clusters-table th {
+  background: var(--bg-light);
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 1em;
+}
+.clusters-table td.right, .clusters-table th.right {
+  text-align: right;
+}
+.clusters-table__actions {
+  display: flex;
+  gap: 0.5em;
+}
+.btn-square {
+  border-radius: 6px;
+  padding: 0.4em 0.7em;
+  font-size: 0.95em;
+  background: var(--bg-light);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  transition: var(--transition);
+}
+.btn-square.btn-edit {
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+}
+.btn-square.btn-edit:hover {
+  background: var(--primary-dark);
+}
+.btn-square.btn-archive {
+  background: var(--bg-white);
+  color: var(--warning-color);
+  border: 1px solid var(--warning-color);
+}
+.btn-square.btn-archive:hover {
+  background: var(--warning-color);
+  color: #fff;
+}
+
+/* Status & Type Badges for Clusters */
+.badge {
+  display: inline-block;
+  padding: 0.3em 0.9em;
+  border-radius: 1em;
+  font-size: 0.92em;
+  font-weight: 600;
+  margin-right: 0.2em;
+  vertical-align: middle;
+  background: var(--bg-light);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+.badge-blue {
+  background: #e8f4fb;
+  color: #175782;
+  border: 1px solid #3498db;
+}
+.badge-green {
+  background: #eafaf1;
+  color: #1e8449;
+  border: 1px solid #34db77;
+}
+.badge-orange {
+  background: #fff6ea;
+  color: #db7734;
+  border: 1px solid #db7734;
+}
+.badge-gray {
+  background: #f5f5f5;
+  color: #7f8c8d;
+  border: 1px solid #bdc3c7;
+}
+.badge-purple {
+  background: #f3e8fb;
+  color: #7c3aed;
+  border: 1px solid #7c3aed;
+}
+.badge-teal {
+  background: #e6f9f7;
+  color: #14b8a6;
+  border: 1px solid #14b8a6;
+}
+
+@media (max-width: 1100px) {
+  .clusters-metrics-row, .clusters-actions-row, .clusters-bulk-actions-row {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+  .clusters-table-wrap {
+    padding: 1rem;
+  }
+} 

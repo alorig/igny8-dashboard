@@ -1,10 +1,5 @@
 <!-- CLUSTERS MANAGEMENT PAGE for Igny8 Admin Dashboard -->
 
-<!-- 1️⃣ Page Title -->
-<header class="clusters-header">
-  <h1 class="page-title">Clusters Management</h1>
-</header>
-
 <!-- 2️⃣ Filters Panel (Sticky Top, 2 Columns) -->
 <section class="clusters-filters-panel">
   <form class="clusters-filters__form">
