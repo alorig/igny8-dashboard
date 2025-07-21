@@ -5,7 +5,7 @@
   <!-- Dropdown or Card View for selecting the active niche -->
   <div class="niche-selector__active">
     <label for="active-niche" class="niche-selector__label">Active Niche</label>
-    <select id="active-niche" class="niche-selector__dropdown">
+    <select id="active-niche" class="niche-selector__dropdown tom-select">
       <option selected>Automotive Interior</option>
       <option>Home Automation</option>
       <option>Fitness Equipment</option>
@@ -26,14 +26,14 @@
 <aside class="niche-filters sticky">
   <form class="niche-filters__form">
     <label>Industry
-      <select class="niche-filters__dropdown">
+      <select class="niche-filters__dropdown tom-select">
         <option>Automotive</option>
         <option>Home</option>
         <option>Fitness</option>
       </select>
     </label>
     <label>Status
-      <select class="niche-filters__dropdown">
+      <select class="niche-filters__dropdown tom-select">
         <option>Active</option>
         <option>Archived</option>
       </select>
@@ -42,19 +42,19 @@
       <input type="range" min="0" max="50000" class="niche-filters__slider" />
     </label>
     <label>Intent
-      <select class="niche-filters__dropdown">
+      <select class="niche-filters__dropdown tom-select">
         <option>Informational</option>
         <option>Transactional</option>
       </select>
     </label>
     <label>Persona
-      <select class="niche-filters__dropdown">
+      <select class="niche-filters__dropdown tom-select">
         <option>Marketer</option>
         <option>Engineer</option>
       </select>
     </label>
     <label>Buyer Stage
-      <select class="niche-filters__dropdown">
+      <select class="niche-filters__dropdown tom-select">
         <option>Awareness</option>
         <option>Consideration</option>
         <option>Decision</option>

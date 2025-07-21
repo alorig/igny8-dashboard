@@ -438,4 +438,9 @@ function igny8_create_module_pages() {
     }
 }
 add_action('after_switch_theme', 'igny8_create_module_pages');
+
+function igny8_enqueue_tomselect_init() {
+    wp_enqueue_script('tom-select-init', get_template_directory_uri() . '/assets/js/tom-select-init.js', array(), null, true);
+}
+add_action('wp_enqueue_scripts', 'igny8_enqueue_tomselect_init');
 ?> 
