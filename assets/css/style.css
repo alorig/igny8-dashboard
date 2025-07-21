@@ -6,27 +6,29 @@ Version: 1.0
 Author: Alorig Systems
 */
 
-/* CSS Custom Properties for Theme Colors */
+/* === Professional SaaS Color Palette === */
 :root {
-    --primary-color: #3498db;
-    --primary-light: #5dade2;
-    --primary-dark: #2980b9;
-    --secondary-color: #2c3e50;
-    --success-color: #27ae60;
-    --warning-color: #f39c12;
-    --danger-color: #e74c3c;
-    --text-primary: #2c3e50;
-    --text-secondary: #7f8c8d;
-    --bg-light: #f8f9fa;
-    --bg-white: #ffffff;
-    --sidebar-bg: #2c3e50;
-    --sidebar-hover: #34495e;
-    --sidebar-header: #2c3e50;
-    --border-color: #e9ecef;
-    --shadow: 0 2px 10px rgba(0,0,0,0.1);
-    --shadow-hover: 0 4px 20px rgba(0,0,0,0.15);
-    --border-radius: 8px;
-    --transition: all 0.3s ease;
+  --primary-color: #3498db;
+  --primary-light: #34dcbc;
+  --primary-dark: #3445db;
+  --secondary-color: #3445db;
+  --success-color: #34db77;
+  --warning-color: #db7734;
+  --danger-color: #db3444;
+  --info-color: #34dcbc;
+  --accent-color: #db3498;
+  --text-primary: #232b36;
+  --text-secondary: #7f8c8d;
+  --bg-light: #f5f5f5;
+  --bg-white: #fff;
+  --sidebar-bg: #232b36;
+  --sidebar-hover: #3445db;
+  --sidebar-header: #232b36;
+  --border-color: #e9ecef;
+  --shadow: 0 2px 10px rgba(44,62,80,0.08);
+  --shadow-hover: 0 4px 20px rgba(44,62,80,0.12);
+  --border-radius: 8px;
+  --transition: all 0.2s cubic-bezier(.4,0,.2,1);
 }
 
 /* Theme Color Schemes */
@@ -209,8 +211,8 @@ body {
 
 /* Sidebar section headings: use green for high contrast */
 .sidebar-menu .menu-section {
-  color: #34db77;
-  border-left: 3px solid #34db77;
+  color: var(--success-color);
+  border-left: 3px solid var(--success-color);
   background: none;
   font-size: 1.08em;
   font-weight: 700;
@@ -1113,48 +1115,47 @@ ul li:last-child {
 
 /* Use palette colors for chips, progress bars, and accents */
 .chip {
-  background: #db3498;
+  background: var(--primary-color);
   color: #fff;
 }
-.chip:nth-child(2) { background: #dbcb34; color: #232b36; }
-.chip:nth-child(3) { background: #34dbcb; }
-.chip:nth-child(4) { background: #cb34db; }
-.chip:nth-child(5) { background: #db7734; }
-.chip:nth-child(6) { background: #45db34; color: #232b36; }
+.chip.info { background: var(--info-color); color: #232b36; }
+.chip.success { background: var(--success-color); color: #fff; }
+.chip.warning { background: var(--warning-color); color: #fff; }
+.chip.accent { background: var(--accent-color); color: #fff; }
 
 .niche-progress__bar.niche-progress__finalized .niche-progress__fill {
-  background: #34db77;
+  background: var(--success-color);
 }
 .niche-progress__bar.niche-progress__in-progress .niche-progress__fill {
-  background: #dbcb34;
+  background: var(--warning-color);
 }
 .niche-progress__bar.niche-progress__new .niche-progress__fill {
-  background: #db3498;
+  background: var(--secondary-color);
 }
 
 .niche-actions__add {
-  background: #34db77;
+  background: var(--primary-color);
   color: #fff;
 }
 .niche-actions__add:hover {
-  background: #3498db;
+  background: var(--primary-dark);
 }
 
 .niche-actions__import {
-  background: #db3498;
+  background: var(--secondary-color);
   color: #fff;
 }
 .niche-actions__import:hover {
-  background: #cb34db;
+  background: var(--primary-color);
 }
 
 .niche-actions__export {
-  background: #dbcb34;
-  color: #232b36;
-  border: 1px solid #dbcb34;
+  background: var(--bg-white);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
 }
 .niche-actions__export:hover {
-  background: #db7734;
+  background: var(--primary-light);
   color: #fff;
 }
 
@@ -1214,11 +1215,13 @@ ul li:last-child {
 
 /* Use palette colors for chips, progress bars, and accents */
 .niche-metrics__card {
-  border-top: 4px solid #34db77;
+  border-top: 4px solid var(--primary-color);
+  background: var(--bg-white);
+  color: var(--primary-color);
 }
-.niche-metrics__card:nth-child(2) { border-top: 4px solid #db3498; }
-.niche-metrics__card:nth-child(3) { border-top: 4px solid #dbcb34; }
-.niche-metrics__card:nth-child(4) { border-top: 4px solid #db7734; }
+.niche-metrics__card:nth-child(2) { border-top: 4px solid var(--secondary-color); }
+.niche-metrics__card:nth-child(3) { border-top: 4px solid var(--success-color); }
+.niche-metrics__card:nth-child(4) { border-top: 4px solid var(--warning-color); }
 
 .niche-metrics__value {
   font-size: 2.2rem;
@@ -1309,7 +1312,7 @@ ul li:last-child {
 }
 
 .niche-progress__bar.niche-progress__finalized .niche-progress__fill {
-  background: var(--primary-color);
+  background: var(--success-color);
 }
 .niche-progress__bar.niche-progress__in-progress .niche-progress__fill {
   background: var(--warning-color);
@@ -1347,7 +1350,7 @@ ul li:last-child {
   min-width: 120px;
 }
 .ts-control {
-  background: var(--bg-light);
+  background: var(--bg-white);
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
   padding: 8px 12px;
@@ -1376,6 +1379,19 @@ ul li:last-child {
 }
 .ts-dropdown .option.selected,
 .ts-dropdown .option.active {
-  background: var(--primary-light);
+  background: var(--primary-color);
   color: #fff;
+} 
+
+/* Remove rainbow-like segments, keep backgrounds soft and neutral */
+.niche-opportunity-panel,
+.niche-cluster-status-panel {
+  background: var(--bg-white);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+}
+
+.niche-metrics,
+.niche-breakdown-panels {
+  background: transparent;
 } 
