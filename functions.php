@@ -383,4 +383,9 @@ function igny8_authenticate_redirect($user, $username, $password) {
     return $user;
 }
 add_filter('authenticate', 'igny8_authenticate_redirect', 30, 3);
+
+function igy8_enqueue_sidebar_js() {
+    wp_enqueue_script('sidebar-js', get_template_directory_uri() . '/assets/js/sidebar.js', array(), null, true);
+}
+add_action('wp_enqueue_scripts', 'igy8_enqueue_sidebar_js');
 ?> 
