@@ -6,15 +6,13 @@ Version: 1.0
 Author: Alorig Systems
 */
 
-/* === Professional SaaS Color Palette === */
+/* === Refined SaaS Color Palette === */
 :root {
   --primary-color: #3498db;
-  --primary-light: #34dcbc;
   --primary-dark: #3445db;
   --secondary-color: #3445db;
   --success-color: #34db77;
   --warning-color: #db7734;
-  --danger-color: #db3444;
   --info-color: #34dcbc;
   --accent-color: #db3498;
   --text-primary: #232b36;
@@ -22,7 +20,7 @@ Author: Alorig Systems
   --bg-light: #f5f5f5;
   --bg-white: #fff;
   --sidebar-bg: #232b36;
-  --sidebar-hover: #3445db;
+  --sidebar-hover: #2c3e50;
   --sidebar-header: #232b36;
   --border-color: #e9ecef;
   --shadow: 0 2px 10px rgba(44,62,80,0.08);
@@ -211,16 +209,15 @@ body {
 
 /* Sidebar section headings: use green for high contrast */
 .sidebar-menu .menu-section {
-  color: var(--success-color);
-  border-left: 3px solid var(--success-color);
+  color: #bfc9d1;
+  border-left: 3px solid var(--primary-color);
   background: none;
-  font-size: 1.08em;
+  font-size: 15px;
   font-weight: 700;
-  margin-top: 1.2em;
-  margin-bottom: 0.3em;
+  letter-spacing: 0.04em;
+  margin: 5px 0 0.3em 0;
   padding: 8px 20px 4px 20px;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
 }
 
 .sidebar-menu li:not(.menu-section) {
@@ -1115,13 +1112,19 @@ ul li:last-child {
 
 /* Use palette colors for chips, progress bars, and accents */
 .chip {
-  background: var(--primary-color);
-  color: #fff;
+  background: #eaf3fa;
+  color: var(--primary-color);
+  font-weight: 500;
+  border-radius: 1rem;
+  padding: 0.3rem 1rem;
+  font-size: 0.95em;
+  margin: 0 0.2em 0.2em 0;
+  border: 1px solid #dbeafe;
 }
-.chip.info { background: var(--info-color); color: #232b36; }
-.chip.success { background: var(--success-color); color: #fff; }
-.chip.warning { background: var(--warning-color); color: #fff; }
-.chip.accent { background: var(--accent-color); color: #fff; }
+.chip.info { background: #eafaf7; color: var(--info-color); border: 1px solid #b2f0e6; }
+.chip.success { background: #eafaf1; color: var(--success-color); border: 1px solid #b2f0c9; }
+.chip.warning { background: #fff6ea; color: var(--warning-color); border: 1px solid #ffe0b2; }
+.chip.accent { background: #fbeaf7; color: var(--accent-color); border: 1px solid #f5b2e0; }
 
 .niche-progress__bar.niche-progress__finalized .niche-progress__fill {
   background: var(--success-color);
@@ -1142,7 +1145,7 @@ ul li:last-child {
 }
 
 .niche-actions__import {
-  background: var(--secondary-color);
+  background: var(--sidebar-hover);
   color: #fff;
 }
 .niche-actions__import:hover {
@@ -1218,17 +1221,14 @@ ul li:last-child {
   border-top: 4px solid var(--primary-color);
   background: var(--bg-white);
   color: var(--primary-color);
+  box-shadow: var(--shadow);
+}
+.niche-metrics__value {
+  color: var(--primary-color);
 }
 .niche-metrics__card:nth-child(2) { border-top: 4px solid var(--secondary-color); }
 .niche-metrics__card:nth-child(3) { border-top: 4px solid var(--success-color); }
 .niche-metrics__card:nth-child(4) { border-top: 4px solid var(--warning-color); }
-
-.niche-metrics__value {
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: var(--primary-color);
-  margin-bottom: 0.5rem;
-}
 
 .niche-metrics__label {
   font-size: 1rem;
@@ -1352,17 +1352,15 @@ ul li:last-child {
 .ts-control {
   background: var(--bg-white);
   border: 1px solid var(--border-color);
-  border-radius: var(--border-radius);
-  padding: 8px 12px;
-  font-size: 1rem;
   color: var(--text-primary);
-  cursor: pointer;
+  border-radius: var(--border-radius);
+  font-size: 1em;
   min-height: 38px;
-  transition: border 0.2s;
+  box-shadow: none;
 }
 .ts-control:focus {
   border-color: var(--primary-color);
-  outline: none;
+  box-shadow: 0 0 0 2px #eaf3fa;
 }
 .ts-dropdown {
   background: var(--bg-white);
