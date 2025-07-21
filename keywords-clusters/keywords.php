@@ -9,14 +9,14 @@
 <nav class="keywords-filters sticky">
   <form class="keywords-filters__form">
     <label>Industry
-      <select class="keywords-filters__dropdown tom-select">
+      <select class="keywords-filters__dropdown tom-select small-select">
         <option>Automotive</option>
         <option>Home</option>
         <option>Fitness</option>
       </select>
     </label>
     <label>Status
-      <select class="keywords-filters__dropdown tom-select">
+      <select class="keywords-filters__dropdown tom-select small-select">
         <option>New</option>
         <option>Clustered</option>
         <option>In-Use</option>
@@ -28,7 +28,7 @@
       <input type="range" min="0" max="50000" class="keywords-filters__slider" />
     </label>
     <label>Intent
-      <select class="keywords-filters__dropdown tom-select">
+      <select class="keywords-filters__dropdown tom-select small-select">
         <option>Informational</option>
         <option>Transactional</option>
         <option>Navigational</option>
@@ -36,13 +36,13 @@
       </select>
     </label>
     <label>Persona
-      <select class="keywords-filters__dropdown tom-select">
+      <select class="keywords-filters__dropdown tom-select small-select">
         <option>Marketer</option>
         <option>Engineer</option>
       </select>
     </label>
     <label>Buyer Stage
-      <select class="keywords-filters__dropdown tom-select">
+      <select class="keywords-filters__dropdown tom-select small-select">
         <option>Awareness</option>
         <option>Consideration</option>
         <option>Decision</option>
@@ -50,7 +50,7 @@
       </select>
     </label>
     <label>Country
-      <select class="keywords-filters__dropdown tom-select">
+      <select class="keywords-filters__dropdown tom-select small-select">
         <option>US</option>
         <option>UK</option>
         <option>EU</option>
@@ -98,7 +98,7 @@
 
 <!-- 4️⃣ Main Table Structure (Keywords Data Table) -->
 <main class="keywords-table-wrap">
-  <table class="keywords-table">
+  <table class="keywords-table modern-table">
     <thead>
       <tr>
         <th><input type="checkbox" class="keywords-table__select-all" /></th>
@@ -116,7 +116,7 @@
       </tr>
     </thead>
     <tbody>
-      <!-- Example Row -->
+      <!-- Example Row 1 -->
       <tr>
         <td><input type="checkbox" /></td>
         <td>best car seat covers</td>
@@ -130,13 +130,43 @@
         <td>Automotive Interior</td>
         <td>US</td>
         <td class="keywords-table__actions">
-          <button class="icon-btn" title="Edit"><span class="dashicons dashicons-edit"></span></button>
-          <button class="icon-btn" title="View"><span class="dashicons dashicons-visibility"></span></button>
-          <button class="icon-btn" title="Archive"><span class="dashicons dashicons-archive"></span></button>
-          <button class="icon-btn" title="Delete"><span class="dashicons dashicons-trash"></span></button>
+          <button class="icon-btn" title="Edit"><span class="dashicons dashicons-edit light-pencil"></span></button>
         </td>
       </tr>
-      <!-- More rows dynamically generated -->
+      <!-- Example Row 2 -->
+      <tr>
+        <td><input type="checkbox" /></td>
+        <td>leather steering wheel cover</td>
+        <td>1,800</td>
+        <td>$0.95</td>
+        <td>0.38</td>
+        <td>28</td>
+        <td><span class="chip info">Commercial</span></td>
+        <td><span class="chip">Engineer</span></td>
+        <td><span class="chip status-clustered">Clustered</span></td>
+        <td>Luxury Interiors</td>
+        <td>UK</td>
+        <td class="keywords-table__actions">
+          <button class="icon-btn" title="Edit"><span class="dashicons dashicons-edit light-pencil"></span></button>
+        </td>
+      </tr>
+      <!-- Example Row 3 -->
+      <tr>
+        <td><input type="checkbox" /></td>
+        <td>universal car mats</td>
+        <td>3,100</td>
+        <td>$0.80</td>
+        <td>0.29</td>
+        <td>22</td>
+        <td><span class="chip info">Navigational</span></td>
+        <td><span class="chip">Marketer</span></td>
+        <td><span class="chip status-orphaned">Orphaned</span></td>
+        <td>-</td>
+        <td>EU</td>
+        <td class="keywords-table__actions">
+          <button class="icon-btn" title="Edit"><span class="dashicons dashicons-edit light-pencil"></span></button>
+        </td>
+      </tr>
     </tbody>
   </table>
   <!-- Pagination Controls -->
@@ -155,5 +185,5 @@
 - Niche context persists visually.
 - All dropdowns use Tom Select.
 - Table rows are selectable for bulk actions.
-- Actions are icon buttons for Edit, View, Archive, Delete.
+- Actions are icon buttons for Edit only (light pencil).
 --> 
