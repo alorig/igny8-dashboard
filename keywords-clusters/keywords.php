@@ -1,10 +1,5 @@
 <!-- KEYWORDS MANAGEMENT PAGE for Igny8 Admin Dashboard -->
 
-<!-- 1️⃣ Page Title -->
-<header class="keywords-header">
-  <h1 class="page-title">Keywords Management</h1>
-</header>
-
 <!-- 2️⃣ Filters Section (Top Panel, 2 Columns) -->
 <section class="keywords-filters-panel">
   <form class="keywords-filters__form">
