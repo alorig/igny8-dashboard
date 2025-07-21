@@ -1,1 +1,3 @@
-<?php include get_template_directory() . '/page-module.php'; 
+<div class="igny8-content-scheduling">
+<h1>This is the Content Scheduling module content.</h1>
+</div>
