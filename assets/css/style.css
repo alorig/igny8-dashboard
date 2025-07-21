@@ -197,7 +197,7 @@ body {
 }
 
 .sidebar-menu {
-  margin-top: 1.5em;
+  margin-top: 5px;
 }
 
 .sidebar-menu .dashicons {
@@ -208,10 +208,10 @@ body {
 }
 
 .sidebar-menu .menu-section {
-  border-radius: 0;
-  background: none;
+  margin-top: 5px;
+  color: #ffd700; /* Gold/yellow for high contrast on dark bg */
   border-left: 3px solid var(--primary-color);
-  color: var(--primary-light);
+  background: none;
   font-size: 1.08em;
   font-weight: 700;
   margin-top: 1.2em;
@@ -1308,4 +1308,45 @@ ul li:last-child {
     margin-right: 0;
     margin-bottom: 1rem;
   }
+} 
+
+/* Tom Select base styles for dropdowns */
+.ts-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  min-width: 120px;
+}
+.ts-control {
+  background: var(--bg-light);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 8px 12px;
+  font-size: 1rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  min-height: 38px;
+  transition: border 0.2s;
+}
+.ts-control:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+.ts-dropdown {
+  background: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+  margin-top: 2px;
+  z-index: 100;
+}
+.ts-dropdown .option {
+  padding: 8px 12px;
+  cursor: pointer;
+  color: var(--text-primary);
+}
+.ts-dropdown .option.selected,
+.ts-dropdown .option.active {
+  background: var(--primary-light);
+  color: #fff;
 } 
