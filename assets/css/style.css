@@ -207,10 +207,10 @@ body {
   vertical-align: middle;
 }
 
+/* Sidebar section headings: use green for high contrast */
 .sidebar-menu .menu-section {
-  margin-top: 5px;
-  color: #ffd700; /* Gold/yellow for high contrast on dark bg */
-  border-left: 3px solid var(--primary-color);
+  color: #34db77;
+  border-left: 3px solid #34db77;
   background: none;
   font-size: 1.08em;
   font-weight: 700;
@@ -1111,29 +1111,50 @@ ul li:last-child {
   transition: background 0.2s;
 }
 
+/* Use palette colors for chips, progress bars, and accents */
+.chip {
+  background: #db3498;
+  color: #fff;
+}
+.chip:nth-child(2) { background: #dbcb34; color: #232b36; }
+.chip:nth-child(3) { background: #34dbcb; }
+.chip:nth-child(4) { background: #cb34db; }
+.chip:nth-child(5) { background: #db7734; }
+.chip:nth-child(6) { background: #45db34; color: #232b36; }
+
+.niche-progress__bar.niche-progress__finalized .niche-progress__fill {
+  background: #34db77;
+}
+.niche-progress__bar.niche-progress__in-progress .niche-progress__fill {
+  background: #dbcb34;
+}
+.niche-progress__bar.niche-progress__new .niche-progress__fill {
+  background: #db3498;
+}
+
 .niche-actions__add {
-  background: var(--primary-color);
+  background: #34db77;
   color: #fff;
 }
 .niche-actions__add:hover {
-  background: var(--primary-dark);
+  background: #3498db;
 }
 
 .niche-actions__import {
-  background: var(--secondary-color);
+  background: #db3498;
   color: #fff;
 }
 .niche-actions__import:hover {
-  background: var(--sidebar-hover);
+  background: #cb34db;
 }
 
 .niche-actions__export {
-  background: var(--bg-light);
-  color: var(--primary-color);
-  border: 1px solid var(--primary-color);
+  background: #dbcb34;
+  color: #232b36;
+  border: 1px solid #dbcb34;
 }
 .niche-actions__export:hover {
-  background: var(--primary-light);
+  background: #db7734;
   color: #fff;
 }
 
@@ -1190,6 +1211,14 @@ ul li:last-child {
   flex-direction: column;
   align-items: center;
 }
+
+/* Use palette colors for chips, progress bars, and accents */
+.niche-metrics__card {
+  border-top: 4px solid #34db77;
+}
+.niche-metrics__card:nth-child(2) { border-top: 4px solid #db3498; }
+.niche-metrics__card:nth-child(3) { border-top: 4px solid #dbcb34; }
+.niche-metrics__card:nth-child(4) { border-top: 4px solid #db7734; }
 
 .niche-metrics__value {
   font-size: 2.2rem;
