@@ -2,7 +2,6 @@
 
 <!-- 1️⃣ Sticky Active Niche Selector -->
 <nav class="niche-selector sticky">
-  <!-- Dropdown or Card View for selecting the active niche -->
   <div class="niche-selector__active">
     <label for="active-niche" class="niche-selector__label">Active Niche</label>
     <select id="active-niche" class="niche-selector__dropdown tom-select">
@@ -12,28 +11,27 @@
     </select>
     <span class="niche-selector__badge">Clusters: 340 | Keywords: 12,450</span>
   </div>
-  <!-- UX: Active Niche selection persists across app pages. -->
 </nav>
 
 <!-- 4️⃣ Sticky Top-Right Actions (visible on scroll) -->
 <div class="niche-actions sticky-top-right">
   <button class="btn btn-primary niche-actions__add">Add New Niche</button>
-  <button class="btn btn-secondary niche-actions__import">Import Keywords</button>
-  <button class="btn btn-tertiary niche-actions__export">Export Reports</button>
+  <button class="btn btn-black niche-actions__import">Import Keywords</button>
+  <button class="btn btn-outline niche-actions__export">Export Reports</button>
 </div>
 
 <!-- 5️⃣ Sticky Filters Panel (Top Bar) -->
 <aside class="niche-filters sticky">
   <form class="niche-filters__form">
     <label>Industry
-      <select class="niche-filters__dropdown tom-select">
+      <select class="niche-filters__dropdown tom-select small-select">
         <option>Automotive</option>
         <option>Home</option>
         <option>Fitness</option>
       </select>
     </label>
     <label>Status
-      <select class="niche-filters__dropdown tom-select">
+      <select class="niche-filters__dropdown tom-select small-select">
         <option>Active</option>
         <option>Archived</option>
       </select>
@@ -42,19 +40,19 @@
       <input type="range" min="0" max="50000" class="niche-filters__slider" />
     </label>
     <label>Intent
-      <select class="niche-filters__dropdown tom-select">
+      <select class="niche-filters__dropdown tom-select small-select">
         <option>Informational</option>
         <option>Transactional</option>
       </select>
     </label>
     <label>Persona
-      <select class="niche-filters__dropdown tom-select">
+      <select class="niche-filters__dropdown tom-select small-select">
         <option>Marketer</option>
         <option>Engineer</option>
       </select>
     </label>
     <label>Buyer Stage
-      <select class="niche-filters__dropdown tom-select">
+      <select class="niche-filters__dropdown tom-select small-select">
         <option>Awareness</option>
         <option>Consideration</option>
         <option>Decision</option>
@@ -62,7 +60,6 @@
       </select>
     </label>
   </form>
-  <!-- UX: Filters remain visible while scrolling. -->
 </aside>
 
 <!-- 2️⃣ Niche Overview Metrics (Top Row Cards) -->
@@ -90,16 +87,14 @@
   <!-- Left Panel: Top Opportunity Segments -->
   <section class="niche-opportunity-panel">
     <h2 class="niche-panel__title">Top Opportunity Segments</h2>
-    <!-- Chips or Bar Graph Placeholder -->
     <div class="niche-chips">
-      <span class="chip">Persona: Marketer</span>
-      <span class="chip">Intent: Informational</span>
-      <span class="chip">Geo: US</span>
-      <span class="chip">Persona: Engineer</span>
-      <span class="chip">Intent: Transactional</span>
-      <span class="chip">Geo: EU</span>
+      <span class="chip badge-blue">Persona: Marketer</span>
+      <span class="chip badge-green">Intent: Informational</span>
+      <span class="chip badge-accent">Geo: US</span>
+      <span class="chip badge-gray">Persona: Engineer</span>
+      <span class="chip badge-warning">Intent: Transactional</span>
+      <span class="chip badge-info">Geo: EU</span>
     </div>
-    <!-- Or use a bar graph here in future -->
   </section>
 
   <!-- Right Panel: Cluster Status Progress Bars -->
@@ -123,6 +118,4 @@
       </div>
     </div>
   </section>
-</main>
-
-<!-- UX: Active Niche is visually indicated and persists across app pages. --> 
+</main> 
