@@ -145,29 +145,84 @@ body {
     content: none !important;
 }
 
+/* Modern Sidebar Styles */
+
 .sidebar-menu a {
-    display: flex;
-    align-items: center;
-    color: #ecf0f1;
-    text-decoration: none;
-    padding: 16px 24px;
-    transition: var(--transition);
-    font-weight: 500;
+  padding: 5px 20px;
+  font-size: 1.05em;
+  color: #ecf0f1;
+  border-radius: 6px;
+  transition: background 0.18s, color 0.18s, font-size 0.18s;
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
 }
 
-.sidebar-menu a:hover, .sidebar-menu a.active {
-    background: var(--sidebar-hover);
-    color: var(--primary-light);
+.sidebar-menu a:hover,
+.sidebar-menu a.active {
+  background: var(--primary-color);
+  color: #fff;
+  font-size: 1.12em;
 }
 
-/* Dashicons in sidebar */
+.menu-section {
+  color: var(--primary-light);
+  font-size: 1.08em;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin: 1.2em 0 0.3em 0;
+  padding: 8px 20px 4px 20px;
+  text-transform: uppercase;
+  background: transparent;
+  border-left: 3px solid var(--primary-color);
+}
+
+.sidebar-menu li:not(.menu-section) a {
+  font-size: 0.98em;
+  font-weight: 500;
+  margin-left: 8px;
+  opacity: 0.92;
+}
+
+.sidebar-menu li:not(.menu-section) a:hover {
+  opacity: 1;
+  background: var(--sidebar-hover);
+  color: var(--primary-light);
+}
+
+.sidebar {
+  background: var(--sidebar-bg);
+  color: #fff;
+  box-shadow: 2px 0 12px rgba(44,62,80,0.08);
+}
+
+.sidebar-menu {
+  margin-top: 1.5em;
+}
+
 .sidebar-menu .dashicons {
-    margin-right: 15px;
-    font-size: 18px;
-    width: 18px;
-    height: 18px;
-    display: inline-block;
-    vertical-align: middle;
+  font-size: 1.2em;
+  margin-right: 0.7em;
+  color: var(--primary-light);
+  vertical-align: middle;
+}
+
+.sidebar-menu .menu-section {
+  border-radius: 0;
+  background: none;
+  border-left: 3px solid var(--primary-color);
+  color: var(--primary-light);
+  font-size: 1.08em;
+  font-weight: 700;
+  margin-top: 1.2em;
+  margin-bottom: 0.3em;
+  padding: 8px 20px 4px 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.sidebar-menu li:not(.menu-section) {
+  margin-bottom: 0.2em;
 }
 
 /* Settings Menu */
