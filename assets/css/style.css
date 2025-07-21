@@ -1393,3 +1393,24 @@ ul li:last-child {
 .niche-breakdown-panels {
   background: transparent;
 } 
+
+/* Top Opportunity Segments Pills */
+.chip {
+  background: #e8f4fb;
+  color: #175782;
+  font-weight: 500;
+  border-radius: 1rem;
+  padding: 0.3rem 1rem;
+  font-size: 0.95em;
+  margin: 0 0.2em 0.2em 0;
+  border: none;
+  box-shadow: none;
+}
+
+/* Remove underline from sidebar menu items and icons */
+.sidebar-menu a {
+  text-decoration: none !important;
+}
+.sidebar-menu .dashicons {
+  text-decoration: none !important;
+} 
