@@ -1,14 +1,4 @@
 <div class="sidebar" id="sidebar">
-    <div class="sidebar-header">
-        <?php 
-        $custom_logo = get_theme_mod('igny8_custom_logo');
-        if ($custom_logo) {
-            echo '<img src="' . esc_url($custom_logo) . '" alt="Igny8 Admin" class="sidebar-logo">';
-        } else {
-            echo '<h2>Igny8 Admin</h2>';
-        }
-        ?>
-    </div>
     <ul class="sidebar-menu">
         <li><a href="<?php echo home_url('/'); ?>"<?php if ($_SERVER['REQUEST_URI'] == '/') echo ' class="active"'; ?>><span class="dashicons dashicons-dashboard"></span>Dashboard</a></li>
         <li class="menu-section">Content Writer</li>
@@ -28,10 +18,9 @@
         <li><a href="<?php echo home_url('/authority-links/authority-sites/'); ?>"<?php if (strpos($_SERVER['REQUEST_URI'], '/authority-links/authority-sites') !== false) echo ' class="active"'; ?>><span class="dashicons dashicons-admin-multisite"></span>Authority Sites</a></li>
         <li><a href="<?php echo home_url('/authority-links/authority-reports/'); ?>"<?php if (strpos($_SERVER['REQUEST_URI'], '/authority-links/authority-reports') !== false) echo ' class="active"'; ?>><span class="dashicons dashicons-chart-area"></span>Authority Reports</a></li>
     </ul>
-    <div class="sidebar-footer">
-        <button id="sidebar-toggle" class="sidebar-toggle" title="Collapse Sidebar"><span class="dashicons dashicons-arrow-left-alt2"></span></button>
-        <a href="<?php echo wp_nonce_url(home_url('/?action=logout'), 'igny8_logout'); ?>" class="logout-button" onclick="return confirm('Are you sure you want to logout?')">
-            <span class="dashicons dashicons-exit"></span>Logout
-        </a>
+    <div class="sidebar-footer" style="justify-content: flex-end; align-items: flex-end; display: flex; height: 48px; padding: 0 12px;">
+        <button id="sidebar-toggle" class="sidebar-toggle" title="Collapse Sidebar" style="margin-left:auto; display: flex; align-items: center; justify-content: center; background: none; border: none; cursor: pointer; font-size: 22px; color: #4DABF7;">
+            <span class="dashicons dashicons-arrow-left-alt2"></span>
+        </button>
     </div>
 </div> 
