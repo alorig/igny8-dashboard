@@ -57,7 +57,7 @@
         </div>
       </div>
       <!-- 2. QUICK STATS METRICS -->
-      <div class="metrics-row">
+      <div class="metrics-row mb-10" style="display: flex; gap: 24px;">
         <div class="card card-info">
           <div class="text-small text-bold mb-10">Total Prompts</div>
           <div class="h4">42</div>
