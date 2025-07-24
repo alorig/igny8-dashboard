@@ -3139,3 +3139,28 @@ ul li:last-child {
     gap: 18px;
   }
 }
+
+/* --- IMPROVED TABLE LINK COLOR --- */
+.keywords-table a,
+.clusters-table a,
+.niches-table a,
+.reports-table a,
+.keywords-table.modern-table a,
+.clusters-table.modern-table a {
+  color: #1976d2;
+  text-decoration: underline;
+  font-weight: 600;
+  transition: color 0.18s;
+}
+.keywords-table a:hover,
+.clusters-table a:hover,
+.niches-table a:hover,
+.reports-table a:hover,
+.keywords-table.modern-table a:hover,
+.clusters-table.modern-table a:hover {
+  color: #db3498;
+}
+
+/* --- METRIC CARD COLOR VARIANTS: Replace lime with pink --- */
+.metric-pink    { border-top: 4px solid #db3498 !important; }
+/* Remove .metric-lime if not used elsewhere */
