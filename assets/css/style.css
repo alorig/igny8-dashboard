@@ -2834,7 +2834,9 @@ ul li:last-child {
     margin-bottom: 30px;
 }
 
-.igny8-filter-bar .search-wrapper {
-    max-width: 220px;
-    flex: 1 1 20px;
+
+    .igny8-filter-bar .search-wrapper {
+    
+    flex-wrap: wrap;
+    flex-direction: row;
 }
