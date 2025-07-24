@@ -2237,3 +2237,36 @@ ul li:last-child {
     width: 100% !important;
   }
 } 
+
+/* === Tom Select in Filter Bar: Compact, Floating Label Style === */
+.igny8-filter-bar .ts-wrapper {
+  min-width: 120px;
+  max-width: 150px;
+  width: 100%;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+.igny8-filter-bar .ts-label {
+  position: absolute;
+  top: 6px;
+  left: 12px;
+  font-size: 0.85em;
+  color: var(--text-secondary);
+  pointer-events: none;
+  z-index: 2;
+  background: var(--bg-white);
+  padding: 0 4px;
+  transition: color 0.2s;
+}
+.igny8-filter-bar .ts-control {
+  padding-top: 22px !important;
+  min-height: 44px !important;
+}
+.igny8-filter-bar .ts-wrapper:focus-within .ts-label,
+.igny8-filter-bar .ts-wrapper .ts-control:not(:empty) + .ts-label {
+  color: var(--primary-color);
+}
+.igny8-filter-bar label {
+  display: none !important;
+} 

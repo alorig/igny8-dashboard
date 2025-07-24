@@ -22,36 +22,48 @@
 
 <!-- 3️⃣ Horizontal Filter Bar (Top) -->
 <div class="igny8-filter-bar">
-  <label for="industry">Industry</label>
-  <select id="industry" class="dropdown tom-select">
-    <option>Automotive</option>
-    <option>Home</option>
-    <option>Fitness</option>
-  </select>
-  <label for="status">Status</label>
-  <select id="status" class="dropdown tom-select">
-    <option>Active</option>
-    <option>Archived</option>
-  </select>
-  <label for="volume">Volume</label>
-  <input id="volume" type="range" min="0" max="50000">
-  <label for="intent">Intent</label>
-  <select id="intent" class="dropdown tom-select">
-    <option>Informational</option>
-    <option>Transactional</option>
-  </select>
-  <label for="persona">Persona</label>
-  <select id="persona" class="dropdown tom-select">
-    <option>Marketer</option>
-    <option>Engineer</option>
-  </select>
-  <label for="buyer-stage">Buyer Stage</label>
-  <select id="buyer-stage" class="dropdown tom-select">
-    <option>Awareness</option>
-    <option>Consideration</option>
-    <option>Decision</option>
-    <option>Action</option>
-  </select>
+  <div class="ts-wrapper">
+    <span class="ts-label">Industry</span>
+    <select id="industry" class="dropdown tom-select">
+      <option>Automotive</option>
+      <option>Home</option>
+      <option>Fitness</option>
+    </select>
+  </div>
+  <div class="ts-wrapper">
+    <span class="ts-label">Status</span>
+    <select id="status" class="dropdown tom-select">
+      <option>Active</option>
+      <option>Archived</option>
+    </select>
+  </div>
+  <div class="ts-wrapper">
+    <span class="ts-label">Volume</span>
+    <input id="volume" type="range" min="0" max="50000">
+  </div>
+  <div class="ts-wrapper">
+    <span class="ts-label">Intent</span>
+    <select id="intent" class="dropdown tom-select">
+      <option>Informational</option>
+      <option>Transactional</option>
+    </select>
+  </div>
+  <div class="ts-wrapper">
+    <span class="ts-label">Persona</span>
+    <select id="persona" class="dropdown tom-select">
+      <option>Marketer</option>
+      <option>Engineer</option>
+    </select>
+  </div>
+  <div class="ts-wrapper">
+    <span class="ts-label">Buyer Stage</span>
+    <select id="buyer-stage" class="dropdown tom-select">
+      <option>Awareness</option>
+      <option>Consideration</option>
+      <option>Decision</option>
+      <option>Action</option>
+    </select>
+  </div>
 </div>
 
 <!-- 4️⃣ Niche Overview Metrics (Top Row Cards) -->
