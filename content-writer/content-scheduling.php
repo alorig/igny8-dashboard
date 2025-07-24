@@ -2,7 +2,7 @@
 // Content Scheduling Page (Igny8 Admin Theme)
 // Static markup only, uses theme classes from style.css
 ?>
-    <div class='<div class="page-main-container">
+    <div class="page-main-container">
       <!-- 1. FILTER BAR -->
       <div class="card card-gray mb-10">
         <div class="keywords-filters-panel">
