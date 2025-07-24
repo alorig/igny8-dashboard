@@ -3,14 +3,6 @@ get_header();
 get_sidebar();
 ?>
 <div class="main-content">
-  <div class="igny8-top-bar">
-    <div class="igny8-top-bar-title"><?php the_title(); ?></div>
-    <div class="igny8-account-menu">
-      <span class="account-text">Account</span>
-      <button class="account-icon" title="Account"><span class="dashicons dashicons-admin-users"></span></button>
-      <button class="account-icon" title="Settings"><span class="dashicons dashicons-admin-settings"></span></button>
-    </div>
-  </div>
   <div class="igny8-section">
     <div class='igny8-page-content'>
 <?php
