@@ -1,73 +1,51 @@
 <!-- KEYWORDS MANAGEMENT PAGE for Igny8 Admin Dashboard -->
 
-<!-- 1️⃣ Filters Section (Top Panel, 2 Columns) + Analytics Visuals (Right) -->
+<!-- 1️⃣ Horizontal Filter Bar + Analytics Visuals (Right) -->
 <section class="keywords-filters-analytics-row">
-  <div class="keywords-filters-panel">
-    <form class="keywords-filters__form">
-      <div class="filters-col">
-        <div class="filter-row">
-          <label for="industry">Industry</label>
-          <select id="industry" class="keywords-filters__dropdown tom-select small-select">
-            <option>Automotive</option>
-            <option>Home</option>
-            <option>Fitness</option>
-          </select>
-        </div>
-        <div class="filter-row">
-          <label for="status">Status</label>
-          <select id="status" class="keywords-filters__dropdown tom-select small-select">
-            <option>New</option>
-            <option>Clustered</option>
-            <option>In-Use</option>
-            <option>Orphaned</option>
-            <option>Archived</option>
-          </select>
-        </div>
-        <div class="filter-row">
-          <label for="persona">Persona</label>
-          <select id="persona" class="keywords-filters__dropdown tom-select small-select">
-            <option>Marketer</option>
-            <option>Engineer</option>
-          </select>
-        </div>
-        <div class="filter-row">
-          <label for="buyer-stage">Buyer Stage</label>
-          <select id="buyer-stage" class="keywords-filters__dropdown tom-select small-select">
-            <option>Awareness</option>
-            <option>Consideration</option>
-            <option>Decision</option>
-            <option>Action</option>
-          </select>
-        </div>
-      </div>
-      <div class="filters-col">
-        <div class="filter-row">
-          <label for="volume">Volume</label>
-          <input id="volume" type="range" min="0" max="50000" class="keywords-filters__slider" />
-        </div>
-        <div class="filter-row">
-          <label for="intent">Intent</label>
-          <select id="intent" class="keywords-filters__dropdown tom-select small-select">
-            <option>Informational</option>
-            <option>Transactional</option>
-            <option>Navigational</option>
-            <option>Commercial</option>
-          </select>
-        </div>
-        <div class="filter-row">
-          <label for="country">Country</label>
-          <select id="country" class="keywords-filters__dropdown tom-select small-select">
-            <option>US</option>
-            <option>UK</option>
-            <option>EU</option>
-          </select>
-        </div>
-        <div class="filter-row">
-          <label for="search">Search</label>
-          <input id="search" type="search" class="keywords-filters__search" placeholder="Search keywords..." />
-        </div>
-      </div>
-    </form>
+  <div class="igny8-filter-bar">
+    <label for="industry">Industry</label>
+    <select id="industry" class="dropdown tom-select">
+      <option>Automotive</option>
+      <option>Home</option>
+      <option>Fitness</option>
+    </select>
+    <label for="status">Status</label>
+    <select id="status" class="dropdown tom-select">
+      <option>New</option>
+      <option>Clustered</option>
+      <option>In-Use</option>
+      <option>Orphaned</option>
+      <option>Archived</option>
+    </select>
+    <label for="persona">Persona</label>
+    <select id="persona" class="dropdown tom-select">
+      <option>Marketer</option>
+      <option>Engineer</option>
+    </select>
+    <label for="buyer-stage">Buyer Stage</label>
+    <select id="buyer-stage" class="dropdown tom-select">
+      <option>Awareness</option>
+      <option>Consideration</option>
+      <option>Decision</option>
+      <option>Action</option>
+    </select>
+    <label for="volume">Volume</label>
+    <input id="volume" type="range" min="0" max="50000">
+    <label for="intent">Intent</label>
+    <select id="intent" class="dropdown tom-select">
+      <option>Informational</option>
+      <option>Transactional</option>
+      <option>Navigational</option>
+      <option>Commercial</option>
+    </select>
+    <label for="country">Country</label>
+    <select id="country" class="dropdown tom-select">
+      <option>US</option>
+      <option>UK</option>
+      <option>EU</option>
+    </select>
+    <label for="search">Search</label>
+    <input id="search" type="search" placeholder="Search keywords...">
   </div>
   <aside class="keywords-analytics-panel">
     <!-- Analytics Visuals: Bar/Line Graph and Donut/Pie Chart -->

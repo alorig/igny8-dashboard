@@ -2027,3 +2027,127 @@ ul li:last-child {
     padding: 1rem;
   }
 } 
+
+/* === Igny8 Top Bar === */
+.igny8-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--border-color);
+  padding: 0 32px 0 0;
+  margin-bottom: 24px;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+.igny8-top-bar-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  padding-left: 8px;
+}
+.igny8-account-menu {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.account-text {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+.account-icon {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: background 0.15s;
+  display: flex;
+  align-items: center;
+}
+.account-icon:hover {
+  background: var(--bg-light);
+}
+
+/* === Igny8 Horizontal Filter Bar === */
+.igny8-filter-bar {
+  display: flex;
+  align-items: flex-end;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  background: var(--bg-white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 1rem 2rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--border-color);
+}
+.igny8-filter-bar select.dropdown,
+.igny8-filter-bar select.tom-select {
+  min-width: 120px;
+  max-width: 220px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  background: var(--bg-light);
+  color: var(--text-primary);
+  font-size: 0.98em;
+  padding: 0.45em 1em;
+}
+.igny8-filter-bar input[type="search"],
+.igny8-filter-bar input[type="text"],
+.igny8-filter-bar input[type="range"] {
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  background: var(--bg-light);
+  color: var(--text-primary);
+  font-size: 0.98em;
+  padding: 0.45em 1em;
+}
+.igny8-filter-bar input[type="range"] {
+  width: 140px;
+}
+.igny8-filter-bar label {
+  font-size: 0.95em;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-right: 0.5em;
+}
+.igny8-filter-bar .btn {
+  margin-left: 0.5em;
+}
+@media (max-width: 900px) {
+  .igny8-top-bar {
+    padding-right: 12px;
+  }
+  .igny8-filter-bar {
+    padding: 1rem;
+    gap: 1rem;
+  }
+}
+@media (max-width: 600px) {
+  .igny8-top-bar {
+    flex-direction: column;
+    height: auto;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 0 8px;
+  }
+  .igny8-top-bar-title {
+    font-size: 1.05rem;
+    padding-left: 0;
+  }
+  .igny8-account-menu {
+    gap: 10px;
+  }
+  .igny8-filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.7rem;
+    padding: 0.7rem;
+  }
+} 

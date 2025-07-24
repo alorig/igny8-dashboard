@@ -27,18 +27,6 @@
         <li><a href="<?php echo home_url('/authority-links/social-campaigns/'); ?>"<?php if (strpos($_SERVER['REQUEST_URI'], '/authority-links/social-campaigns') !== false) echo ' class="active"'; ?>><span class="dashicons dashicons-share"></span>Social Campaigns</a></li>
         <li><a href="<?php echo home_url('/authority-links/authority-sites/'); ?>"<?php if (strpos($_SERVER['REQUEST_URI'], '/authority-links/authority-sites') !== false) echo ' class="active"'; ?>><span class="dashicons dashicons-admin-multisite"></span>Authority Sites</a></li>
         <li><a href="<?php echo home_url('/authority-links/authority-reports/'); ?>"<?php if (strpos($_SERVER['REQUEST_URI'], '/authority-links/authority-reports') !== false) echo ' class="active"'; ?>><span class="dashicons dashicons-chart-area"></span>Authority Reports</a></li>
-        <li class="menu-section">Settings</li>
-        <li class="settings-menu">
-            <a href="#" class="settings-toggle"><span class="dashicons dashicons-admin-settings"></span>Settings</a>
-            <ul class="submenu">
-                <li><a href="<?php echo home_url('/settings/connected-sites/'); ?>"<?php if (strpos($_SERVER['REQUEST_URI'], '/settings/connected-sites') !== false) echo ' class="active"'; ?>><span class="dashicons dashicons-admin-site"></span>Connected Sites</a></li>
-                <li><a href="<?php echo home_url('/settings/integrations/'); ?>"<?php if (strpos($_SERVER['REQUEST_URI'], '/settings/integrations') !== false) echo ' class="active"'; ?>><span class="dashicons dashicons-randomize"></span>Integrations</a></li>
-                <li><a href="<?php echo home_url('/settings/subscription/'); ?>"<?php if (strpos($_SERVER['REQUEST_URI'], '/settings/subscription') !== false) echo ' class="active"'; ?>><span class="dashicons dashicons-tickets-alt"></span>Subscription</a></li>
-                <li><a href="<?php echo home_url('/settings/account-settings/'); ?>"<?php if (strpos($_SERVER['REQUEST_URI'], '/settings/account-settings') !== false) echo ' class="active"'; ?>><span class="dashicons dashicons-admin-users"></span>Account Settings</a></li>
-                <li><a href="<?php echo home_url('/settings/appearance/'); ?>"<?php if (strpos($_SERVER['REQUEST_URI'], '/settings/appearance') !== false) echo ' class="active"'; ?>><span class="dashicons dashicons-admin-appearance"></span>Appearance</a></li>
-                <li><a href="<?php echo home_url('/settings/access-roles/'); ?>"<?php if (strpos($_SERVER['REQUEST_URI'], '/settings/access-roles') !== false) echo ' class="active"'; ?>><span class="dashicons dashicons-unlock"></span>Access Roles</a></li>
-            </ul>
-        </li>
     </ul>
     <div class="sidebar-footer">
         <button id="sidebar-toggle" class="sidebar-toggle" title="Collapse Sidebar"><span class="dashicons dashicons-arrow-left-alt2"></span></button>

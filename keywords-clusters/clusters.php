@@ -1,80 +1,56 @@
 <!-- CLUSTERS MANAGEMENT PAGE for Igny8 Admin Dashboard -->
 
-<!-- 2️⃣ Filters Panel (Sticky Top, 2 Columns) -->
-<section class="clusters-filters-panel">
-  <form class="clusters-filters__form">
-    <div class="filters-col">
-      <div class="filter-row">
-        <label for="industry">Industry</label>
-        <select id="industry" class="clusters-filters__dropdown tom-select small-select">
-          <option>Automotive</option>
-          <option>Home</option>
-          <option>Fitness</option>
-        </select>
-      </div>
-      <div class="filter-row">
-        <label for="status">Status</label>
-        <select id="status" class="clusters-filters__dropdown tom-select small-select">
-          <option>New</option>
-          <option>In Progress</option>
-          <option>Finalized</option>
-          <option>Archived</option>
-        </select>
-      </div>
-      <div class="filter-row">
-        <label for="cluster-type">Cluster Type</label>
-        <select id="cluster-type" class="clusters-filters__dropdown tom-select small-select">
-          <option>Page</option>
-          <option>Blog-Only</option>
-          <option>Category</option>
-          <option>Other</option>
-        </select>
-      </div>
-      <div class="filter-row">
-        <label for="persona">Persona</label>
-        <select id="persona" class="clusters-filters__dropdown tom-select small-select">
-          <option>Marketer</option>
-          <option>Engineer</option>
-        </select>
-      </div>
-    </div>
-    <div class="filters-col">
-      <div class="filter-row">
-        <label for="volume">Volume</label>
-        <input id="volume" type="range" min="0" max="100000" class="clusters-filters__slider" />
-      </div>
-      <div class="filter-row">
-        <label for="intent">Intent</label>
-        <select id="intent" class="clusters-filters__dropdown tom-select small-select">
-          <option>Informational</option>
-          <option>Transactional</option>
-          <option>Navigational</option>
-          <option>Commercial</option>
-        </select>
-      </div>
-      <div class="filter-row">
-        <label for="buyer-stage">Buyer Stage</label>
-        <select id="buyer-stage" class="clusters-filters__dropdown tom-select small-select">
-          <option>Awareness</option>
-          <option>Consideration</option>
-          <option>Decision</option>
-          <option>Action</option>
-        </select>
-      </div>
-      <div class="filter-row">
-        <label for="country">Country</label>
-        <select id="country" class="clusters-filters__dropdown tom-select small-select">
-          <option>US</option>
-          <option>UK</option>
-          <option>EU</option>
-        </select>
-      </div>
-      <div class="filter-row">
-        <label for="search">Search</label>
-        <input id="search" type="search" class="clusters-filters__search" placeholder="Search clusters..." />
-      </div>
-    </div>
-  </form>
+<!-- 1️⃣ Horizontal Filter Bar (Top) -->
+<section class="igny8-filter-bar">
+  <label for="industry">Industry</label>
+  <select id="industry" class="dropdown tom-select">
+    <option>Automotive</option>
+    <option>Home</option>
+    <option>Fitness</option>
+  </select>
+  <label for="status">Status</label>
+  <select id="status" class="dropdown tom-select">
+    <option>New</option>
+    <option>In Progress</option>
+    <option>Finalized</option>
+    <option>Archived</option>
+  </select>
+  <label for="cluster-type">Cluster Type</label>
+  <select id="cluster-type" class="dropdown tom-select">
+    <option>Page</option>
+    <option>Blog-Only</option>
+    <option>Category</option>
+    <option>Other</option>
+  </select>
+  <label for="persona">Persona</label>
+  <select id="persona" class="dropdown tom-select">
+    <option>Marketer</option>
+    <option>Engineer</option>
+  </select>
+  <label for="volume">Volume</label>
+  <input id="volume" type="range" min="0" max="100000">
+  <label for="intent">Intent</label>
+  <select id="intent" class="dropdown tom-select">
+    <option>Informational</option>
+    <option>Transactional</option>
+    <option>Navigational</option>
+    <option>Commercial</option>
+  </select>
+  <label for="buyer-stage">Buyer Stage</label>
+  <select id="buyer-stage" class="dropdown tom-select">
+    <option>Awareness</option>
+    <option>Consideration</option>
+    <option>Decision</option>
+    <option>Action</option>
+  </select>
+  <label for="country">Country</label>
+  <select id="country" class="dropdown tom-select">
+    <option>US</option>
+    <option>UK</option>
+    <option>EU</option>
+  </select>
+  <label for="search">Search</label>
+  <input id="search" type="search" placeholder="Search clusters...">
 </section>
 
 <!-- 3️⃣ Metrics Summary (Inline Cards) -->
