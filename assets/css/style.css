@@ -3116,3 +3116,26 @@ ul li:last-child {
   color: #34dcbc;
   border: 1px solid #34dcbc;
 }
+
+/* --- BADGES: Reduce size by 10% inside metric cards --- */
+.metric-card .badge {
+  font-size: 0.83em; /* 10% smaller than 0.92em */
+  padding: 0.27em 0.8em;
+  border-radius: 0.9em;
+}
+
+/* --- METRICS ROW: Consistent grid for all modules --- */
+.metrics-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 32px;
+  align-items: stretch;
+}
+
+@media (max-width: 1100px) {
+  .metrics-row {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
