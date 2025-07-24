@@ -2,9 +2,7 @@
 // Content Scheduling Page (Igny8 Admin Theme)
 // Static markup only, uses theme classes from style.css
 ?>
-<div class="main-content">
-  <div class="igny8-section">
-    <div class='igny8-page-content'>
+    <div class='<div class="page-main-container">
       <!-- 1. FILTER BAR -->
       <div class="card card-gray mb-10">
         <div class="keywords-filters-panel">
@@ -146,5 +144,4 @@
         <button class="btn btn-outline">Export to CSV</button>
       </div>
     </div>
-  </div>
-</div>
+  
