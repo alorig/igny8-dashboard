@@ -2839,4 +2839,13 @@ ul li:last-child {
     
     flex-wrap: wrap;
     flex-direction: row;
+	min-width: 245px !important;
+	    margin-top: 7px;
+	
 }
+#search {
+    
+    font-size: 17px;
+}
+	.igny8-filter-bar #search-btn {
+	height: 42px;}
