@@ -294,25 +294,6 @@
         <button class="btn btn-tertiary">Next &raquo;</button>
       </div>
     </div>
-    <aside class="keywords-analytics-panel">
-      <!-- Analytics Visuals: Bar/Line Graph and Donut/Pie Chart -->
-      <div class="analytics-visuals">
-        <!-- Bar/Line Graph Placeholder -->
-        <div class="analytics-graph-card">
-          <div class="analytics-graph-placeholder">
-            <span class="analytics-graph-title">Keyword Volume Trend</span>
-            <div class="analytics-bar-graph"></div>
-          </div>
-        </div>
-        <!-- Donut/Pie Chart Placeholder -->
-        <div class="analytics-donut-card">
-          <div class="analytics-donut-placeholder">
-            <span class="analytics-donut-title">Status Breakdown</span>
-            <div class="analytics-donut-chart"></div>
-          </div>
-        </div>
-      </div>
-    </aside>
   </div>
 </div>
 <script>
