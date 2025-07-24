@@ -1,6 +1,7 @@
 <!-- KEYWORDS MANAGEMENT PAGE for Igny8 Admin Dashboard -->
 
 <!-- 1️⃣ Horizontal Filter Bar + Analytics Visuals (Right) -->
+<!-- 1️⃣ Horizontal Filter Bar + Analytics Visuals (Right) -->
 <section class="keywords-filters-analytics-row">
   <div class="igny8-filter-bar">
     <label for="industry">Industry</label>
@@ -47,6 +48,8 @@
     <label for="search">Search</label>
     <input id="search" type="search" placeholder="Search keywords...">
   </div>
+  <!-- ...rest of your analytics panel code... -->
+
   <aside class="keywords-analytics-panel">
     <!-- Analytics Visuals: Bar/Line Graph and Donut/Pie Chart -->
     <div class="analytics-visuals">
