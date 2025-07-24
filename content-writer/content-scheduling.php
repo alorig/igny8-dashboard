@@ -71,8 +71,8 @@
         </div>
       </div>
       <!-- 3. CONTENT QUEUE TABLE -->
-      <div class="card card-primary mb-10">
-        <table class="table table-striped-light" style="width:100%;">
+      <div class="keywords-table-wrap">
+        <table class="keywords-table modern-table" style="width:100%;">
           <thead>
             <tr>
               <th class="text-small text-bold">Status</th>
