@@ -1,8 +1,8 @@
 <!-- KEYWORDS MANAGEMENT PAGE for Igny8 Admin Dashboard -->
 
 <div class="page-main-container">
-  <section class="keywords-filters-analytics-row">
-    <div class="igny8-filter-bar">
+  <section class="keywords-filters-analytics-row" style="width: 100%;">
+    <div class="igny8-filter-bar" style="width: 100%;">
       <div class="ts-wrapper">
         <select id="industry" class="dropdown tom-select">
           <option value="" disabled selected hidden>Industry</option>
@@ -84,24 +84,45 @@
     </aside>
   </section>
 
-  <section class="keywords-metrics-row">
-    <div class="keywords-metrics__card">
-      <div class="keywords-metrics__value">12,450</div>
-      <div class="keywords-metrics__label">Total Keywords</div>
+  <!-- 3-column layout: metrics + 2 graphical elements -->
+  <div style="display: flex; gap: 32px; margin-bottom: 32px; width: 100%;">
+    <div style="flex: 1 1 0; display: flex; flex-direction: column; gap: 16px;">
+      <section class="keywords-metrics-row" style="display: flex; flex-direction: column; gap: 16px;">
+        <div class="keywords-metrics__card">
+          <div class="keywords-metrics__value">12,450</div>
+          <div class="keywords-metrics__label">Total Keywords</div>
+        </div>
+        <div class="keywords-metrics__card">
+          <div class="keywords-metrics__value">1,200</div>
+          <div class="keywords-metrics__label">Orphaned</div>
+        </div>
+        <div class="keywords-metrics__card">
+          <div class="keywords-metrics__value">87%</div>
+          <div class="keywords-metrics__label">Clustered</div>
+        </div>
+        <div class="keywords-metrics__card">
+          <div class="keywords-metrics__value">450</div>
+          <div class="keywords-metrics__label">Avg Volume</div>
+        </div>
+      </section>
     </div>
-    <div class="keywords-metrics__card">
-      <div class="keywords-metrics__value">1,200</div>
-      <div class="keywords-metrics__label">Orphaned</div>
+    <div style="flex: 1 1 0;">
+      <div class="analytics-graph-card">
+        <div class="analytics-graph-placeholder">
+          <span class="analytics-graph-title">Keyword Volume Trend</span>
+          <div class="analytics-bar-graph"></div>
+        </div>
+      </div>
     </div>
-    <div class="keywords-metrics__card">
-      <div class="keywords-metrics__value">87%</div>
-      <div class="keywords-metrics__label">Clustered</div>
+    <div style="flex: 1 1 0;">
+      <div class="analytics-donut-card">
+        <div class="analytics-donut-placeholder">
+          <span class="analytics-donut-title">Status Breakdown</span>
+          <div class="analytics-donut-chart"></div>
+        </div>
+      </div>
     </div>
-    <div class="keywords-metrics__card">
-      <div class="keywords-metrics__value">450</div>
-      <div class="keywords-metrics__label">Avg Volume</div>
-    </div>
-  </section>
+  </div>
 
   <div class="keywords-actions-row">
     <div>
@@ -113,8 +134,8 @@
     </div>
   </div>
 
-  <div class="keywords-main-content">
-    <div class="keywords-table-wrap">
+  <div class="keywords-main-content" style="width: 100%;">
+    <div class="keywords-table-wrap" style="width: 100%;">
       <table class="keywords-table modern-table">
         <thead>
           <tr>
@@ -179,6 +200,74 @@
             <td><span class="badge badge-red">Orphaned</span></td>
             <td>-</td>
             <td>EU</td>
+            <td class="keywords-table__actions">
+              <button class="btn btn-square btn-edit">Edit</button>
+              <button class="btn btn-square btn-archive">Archive</button>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td>car floor mats</td>
+            <td class="right">1,200</td>
+            <td class="right">$0.70</td>
+            <td class="right">0.22</td>
+            <td class="right">18</td>
+            <td><span class="badge badge-green">Commercial</span></td>
+            <td><span class="badge badge-gray">Marketer</span></td>
+            <td><span class="badge badge-green">Clustered</span></td>
+            <td>Universal Car Mats</td>
+            <td>US</td>
+            <td class="keywords-table__actions">
+              <button class="btn btn-square btn-edit">Edit</button>
+              <button class="btn btn-square btn-archive">Archive</button>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td>custom seat covers</td>
+            <td class="right">2,800</td>
+            <td class="right">$1.10</td>
+            <td class="right">0.41</td>
+            <td class="right">27</td>
+            <td><span class="badge badge-blue">Informational</span></td>
+            <td><span class="badge badge-gray">Engineer</span></td>
+            <td><span class="badge badge-blue">New</span></td>
+            <td>Automotive Interior</td>
+            <td>UK</td>
+            <td class="keywords-table__actions">
+              <button class="btn btn-square btn-edit">Edit</button>
+              <button class="btn btn-square btn-archive">Archive</button>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td>leather car mats</td>
+            <td class="right">2,100</td>
+            <td class="right">$0.90</td>
+            <td class="right">0.33</td>
+            <td class="right">25</td>
+            <td><span class="badge badge-green">Commercial</span></td>
+            <td><span class="badge badge-gray">Marketer</span></td>
+            <td><span class="badge badge-green">Clustered</span></td>
+            <td>Luxury Interiors</td>
+            <td>EU</td>
+            <td class="keywords-table__actions">
+              <button class="btn btn-square btn-edit">Edit</button>
+              <button class="btn btn-square btn-archive">Archive</button>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td>universal trunk liner</td>
+            <td class="right">1,600</td>
+            <td class="right">$0.60</td>
+            <td class="right">0.19</td>
+            <td class="right">15</td>
+            <td><span class="badge badge-blue">Informational</span></td>
+            <td><span class="badge badge-gray">Engineer</span></td>
+            <td><span class="badge badge-red">Orphaned</span></td>
+            <td>-</td>
+            <td>US</td>
             <td class="keywords-table__actions">
               <button class="btn btn-square btn-edit">Edit</button>
               <button class="btn btn-square btn-archive">Archive</button>
