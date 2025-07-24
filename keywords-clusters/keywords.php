@@ -49,8 +49,8 @@
   </section>
 
   <!-- 3-column layout: metrics (2x2), graph, donut, all equal height -->
-  <div class="keywords-analytics-row" style="display: flex; gap: 32px; margin-bottom: 32px; width: 100%; align-items: stretch;">
-    <div class="column-box-height" style="flex: 1 1 0; display: flex; flex-direction: column; gap: 16px; height: 420px;">
+  <div class="flex gap-32 mb-32 w-100 align-stretch">
+    <div class="column-box-height flex-col gap-18 h-420">
       <div class="keywords-metrics__card flex-col align-center justify-center h-100 w-100">
         <div class="keywords-metrics__value">12,450</div>
         <div class="keywords-metrics__label">Total Keywords</div>
@@ -68,7 +68,7 @@
         <div class="keywords-metrics__label">Avg Volume</div>
       </div>
     </div>
-    <div class="column-box-height" style="flex: 1 1 0; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 420px;">
+    <div class="column-box-height flex-col justify-center align-center h-420">
       <div class="analytics-graph-card w-100 h-100 flex-col justify-center align-center">
         <span class="analytics-graph-title mb-18">Keyword Volume Trend</span>
         <div class="w-90 flex-col gap-18">
@@ -110,7 +110,7 @@
         </div>
       </div>
     </div>
-    <div class="column-box-height" style="flex: 1 1 0; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 420px;">
+    <div class="column-box-height flex-col justify-center align-center h-420">
       <div class="analytics-donut-card w-100 h-100 flex-col justify-center align-center">
         <span class="analytics-donut-title mb-18">Status Breakdown</span>
         <div class="analytics-donut-chart w-320 h-320 max-w-80p max-h-80p min-w-180 min-h-180 bg-conic rounded-50"></div>

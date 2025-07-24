@@ -35,9 +35,9 @@
         <option>Engineer</option>
       </select>
     </div>
-    <div class="ts-wrapper max-w-180">
-      <label for="volume" class="text-small text-muted mb-10">Volume</label>
-      <input id="volume" type="range" min="0" max="50000">
+    <div class="ts-wrapper" style="max-width: 180px;">
+      <label for="volume" style="font-size: 0.95em; color: #888; margin-bottom: 2px;">Volume</label>
+      <input id="volume" type="range" min="0" max="100000">
     </div>
     <div class="ts-wrapper">
       <select id="intent" class="dropdown tom-select">
@@ -71,90 +71,90 @@
     </div>
   </section>
 
-  <section class="cluster-analytics-overview flex gap-32 mb-32 w-100 align-stretch flex-wrap">
+  <section class="cluster-analytics-overview" style="display: flex; gap: 32px; margin-bottom: 32px; width: 100%; align-items: stretch; flex-wrap: wrap;">
     <!-- Column 1: Cluster Composition -->
-    <div class="analytics-card flex-1 min-w-260 bg-white rounded-16 shadow p-28 flex-col justify-start">
-      <h4 class="fs-11 font-700 color-blue mb-18">Cluster Composition</h4>
-      <div class="mb-14 flex justify-between items-center">
+    <div class="analytics-card" style="flex: 1 1 300px; background: #fff; border-radius: 16px; box-shadow: 0 2px 12px rgba(34,34,34,0.06); padding: 28px 28px 22px 28px; display: flex; flex-direction: column; justify-content: flex-start; min-width: 260px;">
+      <h4 style="font-size: 1.1rem; font-weight: 700; color: #3498db; margin-bottom: 18px;">Cluster Composition</h4>
+      <div style="margin-bottom: 14px; display: flex; justify-content: space-between; align-items: center;">
         <span>Total Clusters</span>
-        <span class="fs-200 font-700 color-blue">134</span>
+        <span style="font-size: 2rem; font-weight: 700; color: #3498db;">134</span>
       </div>
-      <div class="mb-14 flex justify-between items-center">
+      <div style="margin-bottom: 14px; display: flex; justify-content: space-between; align-items: center;">
         <span>Avg Keywords / Cluster</span>
-        <span class="fs-150 font-600 color-green">18</span>
+        <span style="font-size: 1.5rem; font-weight: 600; color: #27ae60;">18</span>
       </div>
-      <div class="mb-14 flex justify-between items-center">
+      <div style="margin-bottom: 14px; display: flex; justify-content: space-between; align-items: center;">
         <span>Orphaned Clusters</span>
-        <span class="fs-150 font-600 color-orange">42</span>
+        <span style="font-size: 1.5rem; font-weight: 600; color: #e67e22;">42</span>
       </div>
-      <div class="flex justify-between items-center">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
         <span>Multi-Page Clusters</span>
-        <span class="fs-150 font-600 color-lime">17</span>
+        <span style="font-size: 1.5rem; font-weight: 600; color: #8e44ad;">17</span>
       </div>
     </div>
     <!-- Column 2: Dimension Usage -->
-    <div class="analytics-card flex-1 min-w-260 bg-white rounded-16 shadow p-28 flex-col justify-start">
-      <h4 class="fs-11 font-700 color-green mb-18">Dimension Usage</h4>
-      <div class="mb-14">
-        <span class="font-500">Top Dimensions:</span>
-        <span class="ml-8 color-blue">Product Type</span>,
-        <span class="color-orange">Function</span>,
-        <span class="color-pink">Skin Concern</span>
+    <div class="analytics-card" style="flex: 1 1 300px; background: #fff; border-radius: 16px; box-shadow: 0 2px 12px rgba(34,34,34,0.06); padding: 28px 28px 22px 28px; display: flex; flex-direction: column; justify-content: flex-start; min-width: 260px;">
+      <h4 style="font-size: 1.1rem; font-weight: 700; color: #27ae60; margin-bottom: 18px;">Dimension Usage</h4>
+      <div style="margin-bottom: 14px;">
+        <span style="font-weight: 500;">Top Dimensions:</span>
+        <span style="margin-left: 8px; color: #3498db;">Product Type</span>,
+        <span style="color: #e67e22;">Function</span>,
+        <span style="color: #db3498;">Skin Concern</span>
       </div>
-      <div class="mb-14">
-        <span class="font-500">Underused:</span>
-        <span class="ml-8 color-lime">Persona</span>,
-        <span class="color-lime">Geography</span>
+      <div style="margin-bottom: 14px;">
+        <span style="font-weight: 500;">Underused:</span>
+        <span style="margin-left: 8px; color: #8e44ad;">Persona</span>,
+        <span style="color: #8e44ad;">Geography</span>
       </div>
-      <div class="mb-14">
-        <span class="font-500">Intent Spread:</span>
-        <div class="mt-8">
-          <div class="flex items-center gap-8 mb-4">
-            <span class="w-90 color-blue">Informational</span>
-            <div class="flex-1 bg-blue rounded-8 h-12 pos-rel">
-              <div class="w-52p bg-blue h-100 rounded-8"></div>
+      <div style="margin-bottom: 14px;">
+        <span style="font-weight: 500;">Intent Spread:</span>
+        <div style="margin-top: 8px;">
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+            <span style="width: 90px; color: #3498db;">Informational</span>
+            <div style="flex: 1; background: #eaf3fa; border-radius: 8px; height: 12px; position: relative;">
+              <div style="width: 52%; background: #3498db; height: 100%; border-radius: 8px;"></div>
             </div>
-            <span class="w-36 text-right color-blue font-600">52%</span>
+            <span style="width: 36px; text-align: right; color: #3498db; font-weight: 600;">52%</span>
           </div>
-          <div class="flex items-center gap-8 mb-4">
-            <span class="w-90 color-orange">Commercial</span>
-            <div class="flex-1 bg-orange rounded-8 h-12 pos-rel">
-              <div class="w-35p bg-orange h-100 rounded-8"></div>
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+            <span style="width: 90px; color: #e67e22;">Commercial</span>
+            <div style="flex: 1; background: #fff6ea; border-radius: 8px; height: 12px; position: relative;">
+              <div style="width: 35%; background: #e67e22; height: 100%; border-radius: 8px;"></div>
             </div>
-            <span class="w-36 text-right color-orange font-600">35%</span>
+            <span style="width: 36px; text-align: right; color: #e67e22; font-weight: 600;">35%</span>
           </div>
-          <div class="flex items-center gap-8">
-            <span class="w-90 color-pink">Transactional</span>
-            <div class="flex-1 bg-pink rounded-8 h-12 pos-rel">
-              <div class="w-13p bg-pink h-100 rounded-8"></div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="width: 90px; color: #db3498;">Transactional</span>
+            <div style="flex: 1; background: #fbeaf7; border-radius: 8px; height: 12px; position: relative;">
+              <div style="width: 13%; background: #db3498; height: 100%; border-radius: 8px;"></div>
             </div>
-            <span class="w-36 text-right color-pink font-600">13%</span>
+            <span style="width: 36px; text-align: right; color: #db3498; font-weight: 600;">13%</span>
           </div>
         </div>
       </div>
       <div>
-        <span class="font-500">Persona/Geo Coverage:</span>
-        <span class="ml-8 color-green">Good</span>
+        <span style="font-weight: 500;">Persona/Geo Coverage:</span>
+        <span style="margin-left: 8px; color: #27ae60;">Good</span>
       </div>
     </div>
     <!-- Column 3: Finalization Overview -->
-    <div class="analytics-card flex-1 min-w-260 bg-white rounded-16 shadow p-28 flex-col justify-start">
-      <h4 class="fs-11 font-700 color-orange mb-18">Finalization Overview</h4>
-      <div class="mb-14 flex justify-between items-center">
+    <div class="analytics-card" style="flex: 1 1 300px; background: #fff; border-radius: 16px; box-shadow: 0 2px 12px rgba(34,34,34,0.06); padding: 28px 28px 22px 28px; display: flex; flex-direction: column; justify-content: flex-start; min-width: 260px;">
+      <h4 style="font-size: 1.1rem; font-weight: 700; color: #e67e22; margin-bottom: 18px;">Finalization Overview</h4>
+      <div style="margin-bottom: 14px; display: flex; justify-content: space-between; align-items: center;">
         <span>Finalized</span>
-        <span class="fs-150 font-600 color-green">54%</span>
+        <span style="font-size: 1.5rem; font-weight: 600; color: #27ae60;">54%</span>
       </div>
-      <div class="mb-14 flex justify-between items-center">
+      <div style="margin-bottom: 14px; display: flex; justify-content: space-between; align-items: center;">
         <span>Orphaned</span>
-        <span class="fs-150 font-600 color-orange">31%</span>
+        <span style="font-size: 1.5rem; font-weight: 600; color: #e67e22;">31%</span>
       </div>
-      <div class="mb-14 flex justify-between items-center">
+      <div style="margin-bottom: 14px; display: flex; justify-content: space-between; align-items: center;">
         <span>Finalized Last 7 Days</span>
-        <span class="fs-150 font-600 color-blue">12</span>
+        <span style="font-size: 1.5rem; font-weight: 600; color: #3498db;">12</span>
       </div>
-      <div class="flex justify-between items-center">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
         <span>Avg Freshness Score</span>
-        <span class="fs-150 font-600 color-pink">68%</span>
+        <span style="font-size: 1.5rem; font-weight: 600; color: #db3498;">68%</span>
       </div>
     </div>
   </section>
