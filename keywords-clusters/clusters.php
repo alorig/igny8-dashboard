@@ -120,7 +120,57 @@
           </tr>
         </thead>
         <tbody>
-          <!-- Example rows here -->
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td>Automotive Interior Upgrades</td>
+            <td>car seat covers</td>
+            <td class="right">12,000</td>
+            <td class="right">38</td>
+            <td><span class="badge badge-blue">Page</span></td>
+            <td><span class="badge badge-green">Informational</span></td>
+            <td><span class="badge badge-gray">Marketer</span></td>
+            <td><span class="badge badge-blue">New</span></td>
+            <td>45</td>
+            <td>US</td>
+            <td class="clusters-table__actions">
+              <button class="btn btn-square btn-edit">Edit</button>
+              <button class="btn btn-square btn-archive">Archive</button>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td>Luxury Interiors</td>
+            <td>leather steering wheel cover</td>
+            <td class="right">8,500</td>
+            <td class="right">41</td>
+            <td><span class="badge badge-purple">Blog-Only</span></td>
+            <td><span class="badge badge-green">Commercial</span></td>
+            <td><span class="badge badge-gray">Engineer</span></td>
+            <td><span class="badge badge-orange">In Progress</span></td>
+            <td>32</td>
+            <td>UK</td>
+            <td class="clusters-table__actions">
+              <button class="btn btn-square btn-edit">Edit</button>
+              <button class="btn btn-square btn-archive">Archive</button>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td>Universal Car Mats</td>
+            <td>universal car mats</td>
+            <td class="right">13,500</td>
+            <td class="right">29</td>
+            <td><span class="badge badge-teal">Category</span></td>
+            <td><span class="badge badge-green">Navigational</span></td>
+            <td><span class="badge badge-gray">Marketer</span></td>
+            <td><span class="badge badge-green">Finalized</span></td>
+            <td>28</td>
+            <td>EU</td>
+            <td class="clusters-table__actions">
+              <button class="btn btn-square btn-edit">Edit</button>
+              <button class="btn btn-square btn-archive">Archive</button>
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>
