@@ -25,6 +25,67 @@ get_sidebar();
         </div>
       </section>
       <section>
+        <h2>Global Layout Classes</h2>
+        <div class="layout-demo">
+          <div class="grid grid-4 mb-10">
+            <div class="card">.grid .grid-4 (4 cols)</div>
+            <div class="card">.grid .grid-4</div>
+            <div class="card">.grid .grid-4</div>
+            <div class="card">.grid .grid-4</div>
+          </div>
+          <div class="flex gap-24 mb-10">
+            <div class="card">.flex .gap-24</div>
+            <div class="card">.flex .gap-24</div>
+          </div>
+          <div class="flex justify-between align-center mb-10">
+            <div class="card">.flex .justify-between .align-center (left)</div>
+            <div class="card">.flex .justify-between .align-center (right)</div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>Page Container</h2>
+        <div class="page-main-container mb-10" style="background:#f7f7f7; border:1px dashed #bfc9d1;">
+          <div class="text-small">.page-main-container<br>Use for all main page wrappers. <br>max-width: 100%; margin: 0 auto; padding: 10px 3%;</div>
+        </div>
+      </section>
+      <section>
+        <h2>Spacing & Utility Classes (Extended)</h2>
+        <div class="flex gap-32 mb-10">
+          <div class="card mb-32 p-24 rounded-12 shadow">.mb-32 .p-24 .rounded-12 .shadow</div>
+          <div class="card p-10">.p-10</div>
+          <div class="card m-0">.m-0</div>
+        </div>
+      </section>
+      <section>
+        <h2>Filter Bar & Dropdowns</h2>
+        <div class="igny8-filter-bar mb-10" style="max-width:600px;">
+          <div class="ts-wrapper single" style="min-width:140px;">
+            <select class="dropdown tom-select" placeholder="Industry">
+              <option value="" disabled selected>Industry</option>
+              <option>Finance</option>
+              <option>Healthcare</option>
+              <option>Retail</option>
+            </select>
+          </div>
+          <div class="ts-wrapper single" style="min-width:140px;">
+            <select class="dropdown tom-select" placeholder="Persona">
+              <option value="" disabled selected>Persona</option>
+              <option>Marketer</option>
+              <option>Engineer</option>
+              <option>Manager</option>
+            </select>
+          </div>
+          <div class="search-wrapper">
+            <input type="search" id="search" placeholder="Search...">
+            <button id="search-btn">Search</button>
+          </div>
+        </div>
+        <div class="mb-10">
+          <span class="text-small">Above: .igny8-filter-bar, .ts-wrapper, .dropdown.tom-select, .search-wrapper, #search-btn</span>
+        </div>
+      </section>
+      <section>
         <h2>Colors</h2>
         <div class="color-palette-demo">
           <div class="chip chip-blue">Primary Blue <span>.chip-blue</span></div>
