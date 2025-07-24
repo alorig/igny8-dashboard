@@ -4,55 +4,53 @@
 ?>
     <div class="page-main-container">
       <!-- 1. FILTER BAR -->
-      <div class="card card-gray mb-10">
-        <div class="keywords-filters-panel">
-          <div class="filter-row" style="display: flex; gap: 18px; align-items: flex-end;">
-            <div class="mr-10">
-              <label class="text-small" for="filter-cluster">Cluster</label>
-              <select id="filter-cluster" class="small-select tom-select">
-                <option value="">All Clusters</option>
-                <option>Cluster A</option>
-                <option>Cluster B</option>
-              </select>
-            </div>
-            <div class="mr-10">
-              <label class="text-small" for="filter-type">Content Type</label>
-              <select id="filter-type" class="small-select tom-select">
-                <option value="">All Types</option>
-                <option>Blog</option>
-                <option>Product</option>
-                <option>Rewrite</option>
-              </select>
-            </div>
-            <div class="mr-10">
-              <label class="text-small" for="filter-status">Status</label>
-              <select id="filter-status" class="small-select tom-select">
-                <option value="">All Statuses</option>
-                <option>Scheduled</option>
-                <option>Draft</option>
-                <option>Approved</option>
-                <option>Failed</option>
-              </select>
-            </div>
-            <div class="mr-10">
-              <label class="text-small" for="filter-date-from">Date Range</label>
-              <div style="display: flex; gap: 6px; align-items: center;">
-                <input type="date" id="filter-date-from" class="small-select" />
-                <span class="text-small">–</span>
-                <input type="date" id="filter-date-to" class="small-select" />
-              </div>
-            </div>
-            <div class="mr-10">
-              <label class="text-small" for="filter-user">Scheduled By</label>
-              <select id="filter-user" class="small-select tom-select">
-                <option value="">All Users</option>
-                <option>Admin</option>
-                <option>Editor</option>
-              </select>
+      <section class="keywords-filters-analytics-row" style="width: 100%; margin-bottom: 0;">
+        <div class="igny8-filter-bar" style="width: 100%;">
+          <div class="ts-wrapper">
+            <label class="text-small" for="filter-cluster">Cluster</label>
+            <select id="filter-cluster" class="dropdown tom-select">
+              <option value="">All Clusters</option>
+              <option>Cluster A</option>
+              <option>Cluster B</option>
+            </select>
+          </div>
+          <div class="ts-wrapper">
+            <label class="text-small" for="filter-type">Content Type</label>
+            <select id="filter-type" class="dropdown tom-select">
+              <option value="">All Types</option>
+              <option>Blog</option>
+              <option>Product</option>
+              <option>Rewrite</option>
+            </select>
+          </div>
+          <div class="ts-wrapper">
+            <label class="text-small" for="filter-status">Status</label>
+            <select id="filter-status" class="dropdown tom-select">
+              <option value="">All Statuses</option>
+              <option>Scheduled</option>
+              <option>Draft</option>
+              <option>Approved</option>
+              <option>Failed</option>
+            </select>
+          </div>
+          <div class="ts-wrapper" style="max-width: 220px;">
+            <label class="text-small" for="filter-date-from">Date Range</label>
+            <div style="display: flex; gap: 6px; align-items: center;">
+              <input type="date" id="filter-date-from" class="dropdown" />
+              <span class="text-small">–</span>
+              <input type="date" id="filter-date-to" class="dropdown" />
             </div>
           </div>
+          <div class="ts-wrapper">
+            <label class="text-small" for="filter-user">Scheduled By</label>
+            <select id="filter-user" class="dropdown tom-select">
+              <option value="">All Users</option>
+              <option>Admin</option>
+              <option>Editor</option>
+            </select>
+          </div>
         </div>
-      </div>
+      </section>
       <!-- 2. METRICS CARDS ROW -->
       <div class="metrics-row mb-10" style="display: flex; gap: 24px;">
         <div class="card card-info">
