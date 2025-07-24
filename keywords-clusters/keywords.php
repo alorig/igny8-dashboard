@@ -1,8 +1,8 @@
 <!-- KEYWORDS MANAGEMENT PAGE for Igny8 Admin Dashboard -->
 
 <div class="page-main-container">
-  <section class="keywords-filters-analytics-row" style="width: 100%; margin-bottom: 0;">
-    <div class="igny8-filter-bar" style="width: 100%;">
+  <section class="keywords-filters-analytics-row w-100 m-0">
+    <div class="igny8-filter-bar w-100">
       <div class="ts-wrapper">
         <select id="industry" class="dropdown tom-select">
           <option value="" disabled selected hidden>Industry</option>
@@ -14,11 +14,19 @@
       <div class="ts-wrapper">
         <select id="status" class="dropdown tom-select">
           <option value="" disabled selected hidden>Status</option>
-          <option>New</option>
-          <option>Clustered</option>
-          <option>In-Use</option>
-          <option>Orphaned</option>
+          <option>Active</option>
           <option>Archived</option>
+        </select>
+      </div>
+      <div class="ts-wrapper max-w-180">
+        <label for="volume" class="text-small text-muted mb-10">Volume</label>
+        <input id="volume" type="range" min="0" max="100000">
+      </div>
+      <div class="ts-wrapper">
+        <select id="intent" class="dropdown tom-select">
+          <option value="" disabled selected hidden>Intent</option>
+          <option>Informational</option>
+          <option>Transactional</option>
         </select>
       </div>
       <div class="ts-wrapper">
@@ -37,100 +45,75 @@
           <option>Action</option>
         </select>
       </div>
-      <div class="ts-wrapper">
-        <select id="intent" class="dropdown tom-select">
-          <option value="" disabled selected hidden>Intent</option>
-          <option>Informational</option>
-          <option>Transactional</option>
-          <option>Navigational</option>
-          <option>Commercial</option>
-        </select>
-      </div>
-      <div class="ts-wrapper">
-        <select id="country" class="dropdown tom-select">
-          <option value="" disabled selected hidden>Country</option>
-          <option>US</option>
-          <option>UK</option>
-          <option>EU</option>
-        </select>
-      </div>
-      <div class="ts-wrapper" style="max-width: 180px;">
-        <label for="volume" style="font-size: 0.95em; color: #888; margin-bottom: 2px;">Volume</label>
-        <input id="volume" type="range" min="0" max="50000">
-      </div>
-      <div class="ts-wrapper search-wrapper">
-        <input id="search" type="search" placeholder="Search keywords...">
-        <button id="search-btn" type="button">Search</button>
-      </div>
     </div>
   </section>
 
   <!-- 3-column layout: metrics (2x2), graph, donut, all equal height -->
-  <div style="display: flex; gap: 32px; margin-bottom: 32px; width: 100%; align-items: stretch;">
-    <div class="column-box-height" style="flex: 1 1 0; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 18px 18px; height: 420px; align-items: stretch; justify-items: stretch;">
-      <div class="keywords-metrics__card" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%;">
+  <div class="flex gap-32 mb-32 w-100 align-stretch">
+    <div class="column-box-height flex-col gap-18 h-420">
+      <div class="keywords-metrics__card flex-col align-center justify-center h-100 w-100">
         <div class="keywords-metrics__value">12,450</div>
         <div class="keywords-metrics__label">Total Keywords</div>
       </div>
-      <div class="keywords-metrics__card" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%;">
+      <div class="keywords-metrics__card flex-col align-center justify-center h-100 w-100">
         <div class="keywords-metrics__value">1,200</div>
         <div class="keywords-metrics__label">Orphaned</div>
       </div>
-      <div class="keywords-metrics__card" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%;">
+      <div class="keywords-metrics__card flex-col align-center justify-center h-100 w-100">
         <div class="keywords-metrics__value">87%</div>
         <div class="keywords-metrics__label">Clustered</div>
       </div>
-      <div class="keywords-metrics__card" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%;">
+      <div class="keywords-metrics__card flex-col align-center justify-center h-100 w-100">
         <div class="keywords-metrics__value">450</div>
         <div class="keywords-metrics__label">Avg Volume</div>
       </div>
     </div>
-    <div class="column-box-height" style="flex: 1 1 0; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 420px;">
-      <div class="analytics-graph-card" style="width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-        <span class="analytics-graph-title" style="margin-bottom: 18px;">Keyword Volume Trend</span>
-        <div style="width: 90%; display: flex; flex-direction: column; gap: 18px;">
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <span style="width: 110px; font-size: 0.98em; color: #3498db;">Branded</span>
-            <div style="flex: 1; background: #eaf3fa; border-radius: 8px; height: 16px; position: relative;">
-              <div style="width: 60%; background: #3498db; height: 100%; border-radius: 8px;"></div>
+    <div class="column-box-height flex-col justify-center align-center h-420">
+      <div class="analytics-graph-card w-100 h-100 flex-col justify-center align-center">
+        <span class="analytics-graph-title mb-18">Keyword Volume Trend</span>
+        <div class="w-90 flex-col gap-18">
+          <div class="flex align-center gap-12">
+            <span class="w-110 fs-98 color-blue">Branded</span>
+            <div class="flex-1 bg-blue rounded-8 h-16 pos-rel">
+              <div class="w-60p bg-blue h-100 rounded-8"></div>
             </div>
-            <span style="width: 40px; text-align: right; color: #3498db; font-weight: 600;">60%</span>
+            <span class="w-40 text-right color-blue font-600">60%</span>
           </div>
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <span style="width: 110px; font-size: 0.98em; color: #27ae60;">Informational</span>
-            <div style="flex: 1; background: #eafaf1; border-radius: 8px; height: 16px; position: relative;">
-              <div style="width: 80%; background: #27ae60; height: 100%; border-radius: 8px;"></div>
+          <div class="flex align-center gap-12">
+            <span class="w-110 fs-98 color-green">Informational</span>
+            <div class="flex-1 bg-green rounded-8 h-16 pos-rel">
+              <div class="w-80p bg-green h-100 rounded-8"></div>
             </div>
-            <span style="width: 40px; text-align: right; color: #27ae60; font-weight: 600;">80%</span>
+            <span class="w-40 text-right color-green font-600">80%</span>
           </div>
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <span style="width: 110px; font-size: 0.98em; color: #e67e22;">Commercial</span>
-            <div style="flex: 1; background: #fff6ea; border-radius: 8px; height: 16px; position: relative;">
-              <div style="width: 40%; background: #e67e22; height: 100%; border-radius: 8px;"></div>
+          <div class="flex align-center gap-12">
+            <span class="w-110 fs-98 color-orange">Commercial</span>
+            <div class="flex-1 bg-orange rounded-8 h-16 pos-rel">
+              <div class="w-40p bg-orange h-100 rounded-8"></div>
             </div>
-            <span style="width: 40px; text-align: right; color: #e67e22; font-weight: 600;">40%</span>
+            <span class="w-40 text-right color-orange font-600">40%</span>
           </div>
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <span style="width: 110px; font-size: 0.98em; color: #8e44ad;">Navigational</span>
-            <div style="flex: 1; background: #f3e8fb; border-radius: 8px; height: 16px; position: relative;">
-              <div style="width: 30%; background: #8e44ad; height: 100%; border-radius: 8px;"></div>
+          <div class="flex align-center gap-12">
+            <span class="w-110 fs-98 color-lime">Navigational</span>
+            <div class="flex-1 bg-lime rounded-8 h-16 pos-rel">
+              <div class="w-30p bg-lime h-100 rounded-8"></div>
             </div>
-            <span style="width: 40px; text-align: right; color: #8e44ad; font-weight: 600;">30%</span>
+            <span class="w-40 text-right color-lime font-600">30%</span>
           </div>
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <span style="width: 110px; font-size: 0.98em; color: #db3498;">Transactional</span>
-            <div style="flex: 1; background: #fbeaf7; border-radius: 8px; height: 16px; position: relative;">
-              <div style="width: 20%; background: #db3498; height: 100%; border-radius: 8px;"></div>
+          <div class="flex align-center gap-12">
+            <span class="w-110 fs-98 color-pink">Transactional</span>
+            <div class="flex-1 bg-pink rounded-8 h-16 pos-rel">
+              <div class="w-20p bg-pink h-100 rounded-8"></div>
             </div>
-            <span style="width: 40px; text-align: right; color: #db3498; font-weight: 600;">20%</span>
+            <span class="w-40 text-right color-pink font-600">20%</span>
           </div>
         </div>
       </div>
     </div>
-    <div class="column-box-height" style="flex: 1 1 0; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 420px;">
-      <div class="analytics-donut-card" style="width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-        <span class="analytics-donut-title" style="margin-bottom: 18px;">Status Breakdown</span>
-        <div class="analytics-donut-chart" style="width: 320px; height: 320px; max-width: 80%; max-height: 80%; min-width: 180px; min-height: 180px; background: conic-gradient(#3498db 0% 30%, #27ae60 30% 55%, #e67e22 55% 75%, #db3498 75% 90%, #8e44ad 90% 100%); border-radius: 50%;"></div>
+    <div class="column-box-height flex-col justify-center align-center h-420">
+      <div class="analytics-donut-card w-100 h-100 flex-col justify-center align-center">
+        <span class="analytics-donut-title mb-18">Status Breakdown</span>
+        <div class="analytics-donut-chart w-320 h-320 max-w-80p max-h-80p min-w-180 min-h-180 bg-conic rounded-50"></div>
       </div>
     </div>
   </div>
