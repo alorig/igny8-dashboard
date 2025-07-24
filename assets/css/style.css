@@ -2811,8 +2811,8 @@ ul li:last-child {
 .ts-control, .ts-control input, .ts-dropdown {
     color: #303030;
     font-family: inherit;
-    font-size: 17px;
-    line-height: 18px;
+    font-size: 17px !important;
+    
 }
 
 /* Use background caret, not ::after */
