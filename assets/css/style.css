@@ -2581,3 +2581,51 @@ ul li:last-child {
 
 /* Remove old container classes */
 /* .keywords-main-container, .clusters-main-container, .niches-main-container { ... } */
+
+/* === Filter Bar Compact Layout Fix === */
+.igny8-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(34,34,34,0.04);
+  padding: 16px 24px;
+}
+.igny8-filter-bar .ts-wrapper {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  min-width: 120px;
+  max-width: 160px;
+  flex: 1 1 120px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.igny8-filter-bar select,
+.igny8-filter-bar input[type="range"],
+.igny8-filter-bar input[type="search"] {
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+  background: #f7f7f7;
+  font-size: 1rem;
+  padding: 4px 10px;
+}
+.igny8-filter-bar .search-wrapper {
+  display: flex;
+  align-items: center;
+  min-width: 180px;
+  max-width: 220px;
+  flex: 1 1 180px;
+  margin: 0;
+  padding: 0;
+}
+.igny8-filter-bar #search-btn {
+  margin-left: 0;
+  border-radius: 0 6px 6px 0;
+}
