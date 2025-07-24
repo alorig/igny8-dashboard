@@ -3,18 +3,16 @@
 <div class="page-main-container">
   <section class="igny8-filter-bar">
     <div class="ts-wrapper">
-      <span class="ts-label">Industry</span>
       <select id="industry" class="dropdown tom-select">
-        <option value="" selected hidden></option>
+        <option value="" disabled selected hidden>Industry</option>
         <option>Automotive</option>
         <option>Home</option>
         <option>Fitness</option>
       </select>
     </div>
     <div class="ts-wrapper">
-      <span class="ts-label">Status</span>
       <select id="status" class="dropdown tom-select">
-        <option value="" selected hidden></option>
+        <option value="" disabled selected hidden>Status</option>
         <option>New</option>
         <option>In Progress</option>
         <option>Finalized</option>
@@ -22,9 +20,8 @@
       </select>
     </div>
     <div class="ts-wrapper">
-      <span class="ts-label">Cluster Type</span>
       <select id="cluster-type" class="dropdown tom-select">
-        <option value="" selected hidden></option>
+        <option value="" disabled selected hidden>Cluster Type</option>
         <option>Page</option>
         <option>Blog-Only</option>
         <option>Category</option>
@@ -32,21 +29,19 @@
       </select>
     </div>
     <div class="ts-wrapper">
-      <span class="ts-label">Persona</span>
       <select id="persona" class="dropdown tom-select">
-        <option value="" selected hidden></option>
+        <option value="" disabled selected hidden>Persona</option>
         <option>Marketer</option>
         <option>Engineer</option>
       </select>
     </div>
-    <div class="ts-wrapper">
-      <span class="ts-label">Volume</span>
+    <div class="ts-wrapper" style="max-width: 180px;">
+      <label for="volume" style="font-size: 0.95em; color: #888; margin-bottom: 2px;">Volume</label>
       <input id="volume" type="range" min="0" max="100000">
     </div>
     <div class="ts-wrapper">
-      <span class="ts-label">Intent</span>
       <select id="intent" class="dropdown tom-select">
-        <option value="" selected hidden></option>
+        <option value="" disabled selected hidden>Intent</option>
         <option>Informational</option>
         <option>Transactional</option>
         <option>Navigational</option>
@@ -54,9 +49,8 @@
       </select>
     </div>
     <div class="ts-wrapper">
-      <span class="ts-label">Buyer Stage</span>
       <select id="buyer-stage" class="dropdown tom-select">
-        <option value="" selected hidden></option>
+        <option value="" disabled selected hidden>Buyer Stage</option>
         <option>Awareness</option>
         <option>Consideration</option>
         <option>Decision</option>
@@ -64,9 +58,8 @@
       </select>
     </div>
     <div class="ts-wrapper">
-      <span class="ts-label">Country</span>
       <select id="country" class="dropdown tom-select">
-        <option value="" selected hidden></option>
+        <option value="" disabled selected hidden>Country</option>
         <option>US</option>
         <option>UK</option>
         <option>EU</option>
@@ -147,19 +140,19 @@ dropdowns.forEach(function(select) {
   select.addEventListener('change', function() {
     if (select.value) {
       select.classList.add('has-value');
-      wrapper.querySelector('.ts-label').style.opacity = 0;
+      // wrapper.querySelector('.ts-label').style.opacity = 0; // This line is removed
     } else {
       select.classList.remove('has-value');
-      wrapper.querySelector('.ts-label').style.opacity = 1;
+      // wrapper.querySelector('.ts-label').style.opacity = 1; // This line is removed
     }
   });
   // Initial state
   if (!select.value) {
     select.classList.remove('has-value');
-    wrapper.querySelector('.ts-label').style.opacity = 1;
+    // wrapper.querySelector('.ts-label').style.opacity = 1; // This line is removed
   } else {
     select.classList.add('has-value');
-    wrapper.querySelector('.ts-label').style.opacity = 0;
+    // wrapper.querySelector('.ts-label').style.opacity = 0; // This line is removed
   }
 });
 </script> 

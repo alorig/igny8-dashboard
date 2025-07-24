@@ -2629,3 +2629,29 @@ ul li:last-child {
   margin-left: 0;
   border-radius: 0 6px 6px 0;
 }
+
+/* === Filter Bar Dropdown Consistency Fix === */
+.igny8-filter-bar select {
+  border: 1px solid #bfc9d1;
+  border-radius: 6px;
+  background: #f7f7f7 url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%2399aabb' stroke-width='2'/%3E%3C/svg%3E") no-repeat right 10px center/16px 10px;
+  appearance: none;
+  padding: 4px 32px 4px 10px;
+  color: #222;
+  font-size: 1rem;
+  min-width: 120px;
+  max-width: 160px;
+  height: 36px;
+  box-shadow: none;
+  margin: 0;
+}
+.igny8-filter-bar select:focus {
+  border-color: #3498db;
+  outline: none;
+}
+.igny8-filter-bar option[disabled] {
+  color: #aaa;
+}
+.igny8-filter-bar .ts-label {
+  display: none !important;
+}

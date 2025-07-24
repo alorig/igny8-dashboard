@@ -3,9 +3,8 @@
 <div class="page-main-container">
   <nav class="niche-selector sticky">
     <div class="niche-selector__active">
-      <label for="active-niche" class="niche-selector__label">Active Niche</label>
       <select id="active-niche" class="dropdown tom-select">
-        <option value="" selected hidden></option>
+        <option value="" disabled selected hidden>Active Niche</option>
         <option>Automotive Interior</option>
         <option>Home Automation</option>
         <option>Fitness Equipment</option>
@@ -22,46 +21,41 @@
 
   <div class="igny8-filter-bar">
     <div class="ts-wrapper">
-      <span class="ts-label">Industry</span>
       <select id="industry" class="dropdown tom-select">
-        <option value="" selected hidden></option>
+        <option value="" disabled selected hidden>Industry</option>
         <option>Automotive</option>
         <option>Home</option>
         <option>Fitness</option>
       </select>
     </div>
     <div class="ts-wrapper">
-      <span class="ts-label">Status</span>
       <select id="status" class="dropdown tom-select">
-        <option value="" selected hidden></option>
+        <option value="" disabled selected hidden>Status</option>
         <option>Active</option>
         <option>Archived</option>
       </select>
     </div>
-    <div class="ts-wrapper">
-      <span class="ts-label">Volume</span>
+    <div class="ts-wrapper" style="max-width: 180px;">
+      <label for="volume" style="font-size: 0.95em; color: #888; margin-bottom: 2px;">Volume</label>
       <input id="volume" type="range" min="0" max="50000">
     </div>
     <div class="ts-wrapper">
-      <span class="ts-label">Intent</span>
       <select id="intent" class="dropdown tom-select">
-        <option value="" selected hidden></option>
+        <option value="" disabled selected hidden>Intent</option>
         <option>Informational</option>
         <option>Transactional</option>
       </select>
     </div>
     <div class="ts-wrapper">
-      <span class="ts-label">Persona</span>
       <select id="persona" class="dropdown tom-select">
-        <option value="" selected hidden></option>
+        <option value="" disabled selected hidden>Persona</option>
         <option>Marketer</option>
         <option>Engineer</option>
       </select>
     </div>
     <div class="ts-wrapper">
-      <span class="ts-label">Buyer Stage</span>
       <select id="buyer-stage" class="dropdown tom-select">
-        <option value="" selected hidden></option>
+        <option value="" disabled selected hidden>Buyer Stage</option>
         <option>Awareness</option>
         <option>Consideration</option>
         <option>Decision</option>
