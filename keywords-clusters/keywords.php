@@ -67,20 +67,20 @@
 
   <!-- 3-column layout: metrics (2x2), graph, donut, all equal height -->
   <div style="display: flex; gap: 32px; margin-bottom: 32px; width: 100%; align-items: stretch;">
-    <div class="column-box-height" style="flex: 1 1 0; display: flex; flex-direction: column; gap: 16px; height: 420px;">
-      <div class="keywords-metrics__card" style="height: 90px; display: flex; flex-direction: column; justify-content: center;">
+    <div class="column-box-height" style="flex: 1 1 0; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 18px 18px; height: 420px; align-items: stretch; justify-items: stretch;">
+      <div class="keywords-metrics__card" style="height: 90px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
         <div class="keywords-metrics__value">12,450</div>
         <div class="keywords-metrics__label">Total Keywords</div>
       </div>
-      <div class="keywords-metrics__card" style="height: 90px; display: flex; flex-direction: column; justify-content: center;">
+      <div class="keywords-metrics__card" style="height: 90px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
         <div class="keywords-metrics__value">1,200</div>
         <div class="keywords-metrics__label">Orphaned</div>
       </div>
-      <div class="keywords-metrics__card" style="height: 90px; display: flex; flex-direction: column; justify-content: center;">
+      <div class="keywords-metrics__card" style="height: 90px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
         <div class="keywords-metrics__value">87%</div>
         <div class="keywords-metrics__label">Clustered</div>
       </div>
-      <div class="keywords-metrics__card" style="height: 90px; display: flex; flex-direction: column; justify-content: center;">
+      <div class="keywords-metrics__card" style="height: 90px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
         <div class="keywords-metrics__value">450</div>
         <div class="keywords-metrics__label">Avg Volume</div>
       </div>
@@ -130,7 +130,7 @@
     <div class="column-box-height" style="flex: 1 1 0; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 420px;">
       <div class="analytics-donut-card" style="width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
         <span class="analytics-donut-title" style="margin-bottom: 18px;">Status Breakdown</span>
-        <div class="analytics-donut-chart" style="width: 120px; height: 120px;"></div>
+        <div class="analytics-donut-chart" style="width: 320px; height: 320px; max-width: 80%; max-height: 80%; min-width: 180px; min-height: 180px; background: conic-gradient(#3498db 0% 30%, #27ae60 30% 55%, #e67e22 55% 75%, #db3498 75% 90%, #8e44ad 90% 100%); border-radius: 50%;"></div>
       </div>
     </div>
   </div>
