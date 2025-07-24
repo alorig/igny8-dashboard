@@ -71,6 +71,8 @@ body {
 .wrapper {
     display: flex;
     min-height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
 /* Sidebar Styles */
@@ -84,6 +86,9 @@ body {
     z-index: 1000;
     display: flex;
     flex-direction: column;
+    margin: 0;
+    padding: 0;
+    top: 0;
 }
 
 .sidebar-header {
@@ -2028,8 +2033,14 @@ ul li:last-child {
   }
 } 
 
-/* === Igny8 Top Bar (Refined) === */
+/* === Igny8 Top Bar (Full Width, Above Sidebar) === */
 .igny8-top-bar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  z-index: 1001;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -2038,11 +2049,6 @@ ul li:last-child {
   border-bottom: 1.5px solid var(--border-color);
   margin: 0;
   padding: 0 24px 0 0;
-  position: sticky;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1001;
 }
 .igny8-top-bar-title {
   font-size: 1.25rem;
