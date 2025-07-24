@@ -28,19 +28,19 @@ get_sidebar();
         <h2>Global Layout Classes</h2>
         <div class="mb-10">
           <div class="grid grid-4 mb-10">
-            <div class="card">.grid .grid-4 (1)</div>
-            <div class="card">.grid .grid-4 (2)</div>
-            <div class="card">.grid .grid-4 (3)</div>
-            <div class="card">.grid .grid-4 (4)</div>
+            <div class="card" style="min-height:70px;">.grid .grid-4 (1)</div>
+            <div class="card" style="min-height:70px;">.grid .grid-4 (2)</div>
+            <div class="card" style="min-height:70px;">.grid .grid-4 (3)</div>
+            <div class="card" style="min-height:70px;">.grid .grid-4 (4)</div>
           </div>
-          <div class="flex gap-24 mb-10" style="background:#f7f7f7; padding:12px;">
-            <div class="card">.flex .gap-24 (A)</div>
-            <div class="card">.flex .gap-24 (B)</div>
-            <div class="card">.flex .gap-24 (C)</div>
+          <div class="flex gap-24 mb-10" style="background:#f7f7f7; padding:18px;">
+            <div class="card" style="min-width:140px; min-height:60px;">.flex .gap-24 (A)</div>
+            <div class="card" style="min-width:140px; min-height:60px;">.flex .gap-24 (B)</div>
+            <div class="card" style="min-width:140px; min-height:60px;">.flex .gap-24 (C)</div>
           </div>
-          <div class="flex justify-between align-center mb-10" style="background:#f7f7f7; padding:12px;">
-            <div class="card">Left (.flex .justify-between .align-center)</div>
-            <div class="card">Right</div>
+          <div class="flex justify-between align-center mb-10" style="background:#f7f7f7; padding:18px; min-height:60px;">
+            <div class="card" style="min-width:140px;">Left (.flex .justify-between .align-center)</div>
+            <div class="card" style="min-width:140px;">Right</div>
           </div>
         </div>
         <span class="text-small">Above: .grid .grid-4, .flex .gap-24, .flex .justify-between .align-center</span>
@@ -54,9 +54,9 @@ get_sidebar();
       <section>
         <h2>Spacing & Utility Classes (Extended)</h2>
         <div class="flex gap-32 mb-10">
-          <div class="card mb-32 p-24 rounded-12 shadow">.mb-32 .p-24 .rounded-12 .shadow</div>
-          <div class="card p-10">.p-10</div>
-          <div class="card m-0">.m-0</div>
+          <div class="card mb-32 p-24 rounded-12 shadow" style="min-width:180px; min-height:60px;">.mb-32 .p-24 .rounded-12 .shadow</div>
+          <div class="card p-10" style="min-width:80px; min-height:60px;">.p-10</div>
+          <div class="card m-0" style="min-width:80px; min-height:60px;">.m-0</div>
         </div>
       </section>
       <section>
