@@ -2687,3 +2687,68 @@ ul li:last-child {
 .igny8-filter-bar .ts-label {
   display: none !important;
 }
+
+/* Unified Dropdown Styling */
+.ts-wrapper.single .ts-control {
+  padding: 0.45em 1em;
+  font-size: 0.95rem;
+  background: var(--bg-light);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  height: 42px;
+  display: flex;
+  align-items: center;
+  transition: var(--transition);
+  box-shadow: none;
+}
+
+/* Add a clear dropdown arrow */
+.ts-wrapper.single .ts-control::after {
+  content: "▾";
+  position: absolute;
+  right: 14px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  pointer-events: none;
+}
+
+/* Fix dropdown open padding + height issue */
+.ts-wrapper.single .ts-dropdown {
+  margin-top: 4px;
+  background: var(--bg-white);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+  z-index: 9999;
+  overflow: hidden;
+}
+
+/* Option Styling */
+.ts-dropdown .option {
+  font-size: 0.95rem;
+  padding: 0.6em 1em;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-color);
+  background: var(--bg-white);
+  transition: var(--transition);
+}
+
+.ts-dropdown .option:last-child {
+  border-bottom: none;
+}
+
+.ts-dropdown .option:hover,
+.ts-dropdown .option.active {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* Fix alignment of label + input box */
+.filter-row label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+  padding-left: 0.2rem;
+}
