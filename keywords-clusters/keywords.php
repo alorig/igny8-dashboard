@@ -68,19 +68,19 @@
   <!-- 3-column layout: metrics (2x2), graph, donut, all equal height -->
   <div style="display: flex; gap: 32px; margin-bottom: 32px; width: 100%; align-items: stretch;">
     <div class="column-box-height" style="flex: 1 1 0; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 18px 18px; height: 420px; align-items: stretch; justify-items: stretch;">
-      <div class="keywords-metrics__card" style="height: 90px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+      <div class="keywords-metrics__card" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%;">
         <div class="keywords-metrics__value">12,450</div>
         <div class="keywords-metrics__label">Total Keywords</div>
       </div>
-      <div class="keywords-metrics__card" style="height: 90px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+      <div class="keywords-metrics__card" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%;">
         <div class="keywords-metrics__value">1,200</div>
         <div class="keywords-metrics__label">Orphaned</div>
       </div>
-      <div class="keywords-metrics__card" style="height: 90px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+      <div class="keywords-metrics__card" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%;">
         <div class="keywords-metrics__value">87%</div>
         <div class="keywords-metrics__label">Clustered</div>
       </div>
-      <div class="keywords-metrics__card" style="height: 90px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+      <div class="keywords-metrics__card" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%;">
         <div class="keywords-metrics__value">450</div>
         <div class="keywords-metrics__label">Avg Volume</div>
       </div>
