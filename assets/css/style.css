@@ -2135,12 +2135,13 @@ ul li:last-child {
   }
 }
 
-/* === Igny8 Horizontal Filter Bar (Refined) === */
+/* === FORCE HORIZONTAL FILTER BAR === */
 .igny8-filter-bar {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 1rem !important;
+  flex-wrap: wrap !important;
   background: var(--bg-white);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
@@ -2185,15 +2186,15 @@ ul li:last-child {
 }
 @media (max-width: 900px) {
   .igny8-filter-bar {
-    padding: 0.5rem 0.5rem;
-    gap: 0.7rem;
+    padding: 0.5rem 0.5rem !important;
+    gap: 0.7rem !important;
   }
 }
 @media (max-width: 600px) {
   .igny8-filter-bar {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.5rem;
-    padding: 0.4rem;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.5rem !important;
+    padding: 0.4rem !important;
   }
 } 
