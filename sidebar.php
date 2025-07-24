@@ -18,6 +18,12 @@
         <li><a href="<?php echo home_url('/authority-links/authority-sites/'); ?>"<?php if (strpos($_SERVER['REQUEST_URI'], '/authority-links/authority-sites') !== false) echo ' class="active"'; ?>><span class="dashicons dashicons-admin-multisite"></span>Authority Sites</a></li>
         <li><a href="<?php echo home_url('/authority-links/authority-reports/'); ?>"<?php if (strpos($_SERVER['REQUEST_URI'], '/authority-links/authority-reports') !== false) echo ' class="active"'; ?>><span class="dashicons dashicons-chart-area"></span>Authority Reports</a></li>
     </ul>
+    <?php if (current_user_can('administrator')): ?>
+      <div class="menu-section">ADMIN SECTION</div>
+      <ul class="sidebar-menu">
+        <li><a href="<?php echo home_url('/igny8-theme-elements'); ?>"><span class="dashicons dashicons-admin-customizer"></span>Igny8 Theme Elements</a></li>
+      </ul>
+    <?php endif; ?>
     <div class="sidebar-footer" style="justify-content: flex-end; align-items: flex-end; display: flex; height: 48px; padding: 0 12px;">
         <button id="sidebar-toggle" class="sidebar-toggle" title="Collapse Sidebar" style="margin-left:auto; display: flex; align-items: center; justify-content: center; background: none; border: none; cursor: pointer; font-size: 22px; color: #4DABF7;">
             <span class="dashicons dashicons-arrow-left-alt2"></span>
