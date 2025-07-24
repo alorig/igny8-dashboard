@@ -159,7 +159,7 @@
     </div>
   </section>
 
-  <section class="clusters-metrics-row">
+  <div class="metrics-row">
     <div class="clusters-metrics__card">
       <div class="clusters-metrics__value">340</div>
       <div class="clusters-metrics__label">Total Clusters</div>
@@ -176,7 +176,7 @@
       <div class="clusters-metrics__value">32,000</div>
       <div class="clusters-metrics__label">Avg Search Volume</div>
     </div>
-  </section>
+  </div>
 
   <div class="clusters-actions-row">
     <div>
