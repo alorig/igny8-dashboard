@@ -231,10 +231,10 @@
             <td>leather steering wheel cover</td>
             <td class="right">8,500</td>
             <td class="right">41</td>
-            <td><span class="badge badge-purple">Blog-Only</span></td>
+            <td><span class="badge badge-purple">Blogs</span></td>
             <td><span class="badge badge-green">Commercial</span></td>
             <td><span class="badge badge-gray">Engineer</span></td>
-            <td><span class="badge badge-orange">In Progress</span></td>
+            <td><span class="badge badge-orange">Pending</span></td>
             <td>32</td>
             <td>UK</td>
             <td class="clusters-table__actions">
@@ -253,6 +253,58 @@
             <td><span class="badge badge-gray">Marketer</span></td>
             <td><span class="badge badge-green">Finalized</span></td>
             <td>28</td>
+            <td>EU</td>
+            <td class="clusters-table__actions">
+              <button class="btn btn-square btn-edit">Edit</button>
+              <button class="btn btn-square btn-archive">Archive</button>
+            </td>
+          </tr>
+          <!-- Additional example rows -->
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td>Outdoor Living</td>
+            <td>patio furniture</td>
+            <td class="right">7,200</td>
+            <td class="right">35</td>
+            <td><span class="badge badge-blue">Page</span></td>
+            <td><span class="badge badge-green">Informational</span></td>
+            <td><span class="badge badge-gray">Marketer</span></td>
+            <td><span class="badge badge-blue">New</span></td>
+            <td>38</td>
+            <td>US</td>
+            <td class="clusters-table__actions">
+              <button class="btn btn-square btn-edit">Edit</button>
+              <button class="btn btn-square btn-archive">Archive</button>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td>Smart Home Devices</td>
+            <td>smart thermostat</td>
+            <td class="right">9,800</td>
+            <td class="right">44</td>
+            <td><span class="badge badge-purple">Blogs</span></td>
+            <td><span class="badge badge-green">Commercial</span></td>
+            <td><span class="badge badge-gray">Engineer</span></td>
+            <td><span class="badge badge-orange">Pending</span></td>
+            <td>27</td>
+            <td>UK</td>
+            <td class="clusters-table__actions">
+              <button class="btn btn-square btn-edit">Edit</button>
+              <button class="btn btn-square btn-archive">Archive</button>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td>Fitness Accessories</td>
+            <td>yoga mat</td>
+            <td class="right">5,600</td>
+            <td class="right">22</td>
+            <td><span class="badge badge-teal">Category</span></td>
+            <td><span class="badge badge-green">Navigational</span></td>
+            <td><span class="badge badge-gray">Marketer</span></td>
+            <td><span class="badge badge-green">Finalized</span></td>
+            <td>19</td>
             <td>EU</td>
             <td class="clusters-table__actions">
               <button class="btn btn-square btn-edit">Edit</button>
