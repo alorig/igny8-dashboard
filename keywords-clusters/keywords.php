@@ -65,42 +65,72 @@
     </div>
   </section>
 
-  <!-- 3-column layout: metrics + 2 graphical elements, now below filter bar -->
-  <div style="display: flex; gap: 32px; margin-bottom: 32px; width: 100%;">
-    <div style="flex: 1 1 0; display: flex; flex-direction: column; gap: 16px;">
-      <section class="keywords-metrics-row" style="display: flex; flex-direction: column; gap: 16px;">
-        <div class="keywords-metrics__card">
-          <div class="keywords-metrics__value">12,450</div>
-          <div class="keywords-metrics__label">Total Keywords</div>
-        </div>
-        <div class="keywords-metrics__card">
-          <div class="keywords-metrics__value">1,200</div>
-          <div class="keywords-metrics__label">Orphaned</div>
-        </div>
-        <div class="keywords-metrics__card">
-          <div class="keywords-metrics__value">87%</div>
-          <div class="keywords-metrics__label">Clustered</div>
-        </div>
-        <div class="keywords-metrics__card">
-          <div class="keywords-metrics__value">450</div>
-          <div class="keywords-metrics__label">Avg Volume</div>
-        </div>
-      </section>
+  <!-- 3-column layout: metrics (2x2), graph, donut, all equal height -->
+  <div style="display: flex; gap: 32px; margin-bottom: 32px; width: 100%; align-items: stretch;">
+    <div class="column-box-height" style="flex: 1 1 0; display: flex; flex-direction: column; gap: 16px; height: 420px;">
+      <div class="keywords-metrics__card" style="height: 90px; display: flex; flex-direction: column; justify-content: center;">
+        <div class="keywords-metrics__value">12,450</div>
+        <div class="keywords-metrics__label">Total Keywords</div>
+      </div>
+      <div class="keywords-metrics__card" style="height: 90px; display: flex; flex-direction: column; justify-content: center;">
+        <div class="keywords-metrics__value">1,200</div>
+        <div class="keywords-metrics__label">Orphaned</div>
+      </div>
+      <div class="keywords-metrics__card" style="height: 90px; display: flex; flex-direction: column; justify-content: center;">
+        <div class="keywords-metrics__value">87%</div>
+        <div class="keywords-metrics__label">Clustered</div>
+      </div>
+      <div class="keywords-metrics__card" style="height: 90px; display: flex; flex-direction: column; justify-content: center;">
+        <div class="keywords-metrics__value">450</div>
+        <div class="keywords-metrics__label">Avg Volume</div>
+      </div>
     </div>
-    <div style="flex: 1 1 0;">
-      <div class="analytics-graph-card">
-        <div class="analytics-graph-placeholder">
-          <span class="analytics-graph-title">Keyword Volume Trend</span>
-          <div class="analytics-bar-graph"></div>
+    <div class="column-box-height" style="flex: 1 1 0; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 420px;">
+      <div class="analytics-graph-card" style="width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <span class="analytics-graph-title" style="margin-bottom: 18px;">Keyword Volume Trend</span>
+        <div style="width: 90%; display: flex; flex-direction: column; gap: 18px;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="width: 110px; font-size: 0.98em; color: #3498db;">Branded</span>
+            <div style="flex: 1; background: #eaf3fa; border-radius: 8px; height: 16px; position: relative;">
+              <div style="width: 60%; background: #3498db; height: 100%; border-radius: 8px;"></div>
+            </div>
+            <span style="width: 40px; text-align: right; color: #3498db; font-weight: 600;">60%</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="width: 110px; font-size: 0.98em; color: #27ae60;">Informational</span>
+            <div style="flex: 1; background: #eafaf1; border-radius: 8px; height: 16px; position: relative;">
+              <div style="width: 80%; background: #27ae60; height: 100%; border-radius: 8px;"></div>
+            </div>
+            <span style="width: 40px; text-align: right; color: #27ae60; font-weight: 600;">80%</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="width: 110px; font-size: 0.98em; color: #e67e22;">Commercial</span>
+            <div style="flex: 1; background: #fff6ea; border-radius: 8px; height: 16px; position: relative;">
+              <div style="width: 40%; background: #e67e22; height: 100%; border-radius: 8px;"></div>
+            </div>
+            <span style="width: 40px; text-align: right; color: #e67e22; font-weight: 600;">40%</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="width: 110px; font-size: 0.98em; color: #8e44ad;">Navigational</span>
+            <div style="flex: 1; background: #f3e8fb; border-radius: 8px; height: 16px; position: relative;">
+              <div style="width: 30%; background: #8e44ad; height: 100%; border-radius: 8px;"></div>
+            </div>
+            <span style="width: 40px; text-align: right; color: #8e44ad; font-weight: 600;">30%</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="width: 110px; font-size: 0.98em; color: #db3498;">Transactional</span>
+            <div style="flex: 1; background: #fbeaf7; border-radius: 8px; height: 16px; position: relative;">
+              <div style="width: 20%; background: #db3498; height: 100%; border-radius: 8px;"></div>
+            </div>
+            <span style="width: 40px; text-align: right; color: #db3498; font-weight: 600;">20%</span>
+          </div>
         </div>
       </div>
     </div>
-    <div style="flex: 1 1 0;">
-      <div class="analytics-donut-card">
-        <div class="analytics-donut-placeholder">
-          <span class="analytics-donut-title">Status Breakdown</span>
-          <div class="analytics-donut-chart"></div>
-        </div>
+    <div class="column-box-height" style="flex: 1 1 0; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 420px;">
+      <div class="analytics-donut-card" style="width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <span class="analytics-donut-title" style="margin-bottom: 18px;">Status Breakdown</span>
+        <div class="analytics-donut-chart" style="width: 120px; height: 120px;"></div>
       </div>
     </div>
   </div>
