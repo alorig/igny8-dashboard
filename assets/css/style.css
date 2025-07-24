@@ -3025,3 +3025,105 @@ ul li:last-child {
     justify-content: flex-start;
   }
 }
+
+/* === Utility Classes for Layout Consistency and Inline Style Replacement === */
+.max-w-180 { max-width: 180px !important; }
+.flex { display: flex !important; }
+.flex-col { flex-direction: column !important; }
+.flex-wrap { flex-wrap: wrap !important; }
+.gap-32 { gap: 32px !important; }
+.gap-18 { gap: 18px !important; }
+.mb-32 { margin-bottom: 32px !important; }
+.mb-18 { margin-bottom: 18px !important; }
+.mb-10 { margin-bottom: 10px !important; }
+.w-100 { width: 100% !important; }
+.h-420 { height: 420px !important; }
+.align-stretch { align-items: stretch !important; }
+.align-center { align-items: center !important; }
+.justify-center { justify-content: center !important; }
+.justify-between { justify-content: space-between !important; }
+.items-center { align-items: center !important; }
+.items-stretch { align-items: stretch !important; }
+.min-w-120 { min-width: 120px !important; }
+.min-w-260 { min-width: 260px !important; }
+.min-h-90 { min-height: 90px !important; }
+.border-top-blue { border-top: 4px solid #3498db !important; }
+.border-top-green { border-top: 4px solid #27ae60 !important; }
+.border-top-lime { border-top: 4px solid #2ecc71 !important; }
+.border-top-orange { border-top: 4px solid #e67e22 !important; }
+.font-bold { font-weight: bold !important; }
+.font-700 { font-weight: 700 !important; }
+.font-600 { font-weight: 600 !important; }
+.font-500 { font-weight: 500 !important; }
+.fs-21 { font-size: 2.1em !important; }
+.fs-15 { font-size: 1.5em !important; }
+.fs-13 { font-size: 1.3em !important; }
+.fs-11 { font-size: 1.1em !important; }
+.color-blue { color: #3498db !important; }
+.color-green { color: #27ae60 !important; }
+.color-orange { color: #e67e22 !important; }
+.color-pink { color: #db3498 !important; }
+.color-gray { color: #7f8c8d !important; }
+.color-accent { color: #db3498 !important; }
+.color-white { color: #fff !important; }
+.bg-white { background: #fff !important; }
+.bg-gray { background: #f5f5f5 !important; }
+.bg-blue { background: #eaf3fa !important; }
+.bg-green { background: #eafaf1 !important; }
+.bg-orange { background: #fff6ea !important; }
+.bg-pink { background: #fbeaf7 !important; }
+.bg-accent { background: #fbeaf7 !important; }
+.rounded-12 { border-radius: 12px !important; }
+.rounded-16 { border-radius: 16px !important; }
+.shadow { box-shadow: 0 2px 8px rgba(34,34,34,0.04) !important; }
+.shadow-lg { box-shadow: 0 8px 32px rgba(0,0,0,0.18) !important; }
+.p-24 { padding: 24px !important; }
+.p-28 { padding: 28px !important; }
+.p-32 { padding: 32px !important; }
+.p-0 { padding: 0 !important; }
+.p-10 { padding: 10px !important; }
+.p-20 { padding: 20px !important; }
+.m-0 { margin: 0 !important; }
+.m-10 { margin: 10px !important; }
+.m-20 { margin: 20px !important; }
+.mt-10 { margin-top: 10px !important; }
+.mt-20 { margin-top: 20px !important; }
+.ml-8 { margin-left: 8px !important; }
+.ml-32 { margin-left: 32px !important; }
+.mr-8 { margin-right: 8px !important; }
+.mr-10 { margin-right: 10px !important; }
+.mr-32 { margin-right: 32px !important; }
+.text-center { text-align: center !important; }
+.text-left { text-align: left !important; }
+.text-right { text-align: right !important; }
+.text-small { font-size: 0.9em !important; }
+.text-bold { font-weight: bold !important; }
+.text-muted { color: #888 !important; }
+.fs-125 { font-size: 1.25rem !important; }
+.fs-150 { font-size: 1.5rem !important; }
+.fs-200 { font-size: 2rem !important; }
+.lh-1 { line-height: 1 !important; }
+.lh-16 { line-height: 16px !important; }
+.lh-18 { line-height: 18px !important; }
+.lh-20 { line-height: 20px !important; }
+.lh-24 { line-height: 24px !important; }
+.lh-32 { line-height: 32px !important; }
+.lh-40 { line-height: 40px !important; }
+.lh-48 { line-height: 48px !important; }
+.lh-56 { line-height: 56px !important; }
+.lh-64 { line-height: 64px !important; }
+.lh-72 { line-height: 72px !important; }
+.lh-80 { line-height: 80px !important; }
+.lh-90 { line-height: 90px !important; }
+.lh-100 { line-height: 100px !important; }
+.lh-120 { line-height: 120px !important; }
+.lh-150 { line-height: 150px !important; }
+.lh-200 { line-height: 200px !important; }
+.lh-300 { line-height: 300px !important; }
+.lh-400 { line-height: 400px !important; }
+.lh-500 { line-height: 500px !important; }
+.lh-600 { line-height: 600px !important; }
+.lh-700 { line-height: 700px !important; }
+.lh-800 { line-height: 800px !important; }
+.lh-900 { line-height: 900px !important; }
+.lh-1000 { line-height: 1000px !important; }
