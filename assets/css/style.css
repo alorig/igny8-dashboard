@@ -3025,3 +3025,12 @@ ul li:last-child {
     justify-content: flex-start;
   }
 }
+
+/* === Global Flex & Layout Utility Classes === */
+.flex { display: flex !important; }
+.flex-col { flex-direction: column !important; }
+.gap-24 { gap: 24px !important; }
+.gap-32 { gap: 32px !important; }
+.justify-between { justify-content: space-between !important; }
+.align-center { align-items: center !important; }
+.align-stretch { align-items: stretch !important; }
