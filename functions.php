@@ -432,9 +432,11 @@ function igny8_create_module_pages() {
         [ 'Account Settings', 'settings/account-settings' ],
         [ 'Appearance', 'settings/appearance' ],
         [ 'Access Roles', 'settings/access-roles' ],
+        // Admin Only
+        [ 'Igny8 Theme Elements', 'igny8-theme-elements', 'igny8-theme-elements.php' ],
     ];
     foreach ($modules as $mod) {
-        igny8_create_page($mod[0], $mod[1]);
+        igny8_create_page($mod[0], $mod[1], isset($mod[2]) ? $mod[2] : '');
     }
 }
 add_action('after_switch_theme', 'igny8_create_module_pages');
