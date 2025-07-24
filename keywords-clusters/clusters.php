@@ -2,9 +2,10 @@
 
 <style>
 .clusters-main-container {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 24px;
+  padding: 10px 3%;
+  box-sizing: border-box;
 }
 .igny8-filter-bar {
   display: flex;
