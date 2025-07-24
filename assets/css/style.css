@@ -3038,5 +3038,81 @@ ul li:last-child {
 /* --- METRIC CARD COLOR VARIANTS --- */
 .metric-blue    { border-top: 4px solid #3498db !important; }
 .metric-green   { border-top: 4px solid #27ae60 !important; }
-.metric-lime    { border-top: 4px solid #2ecc71 !important; }
+.metric-pink    { border-top: 4px solid #db3498 !important; }
 .metric-orange  { border-top: 4px solid #e67e22 !important; }
+
+.metric-value {
+  color: var(--primary-color);
+  font-size: 1.2em; /* reduced by 20% from 1.5em */
+  font-weight: 700;
+}
+
+/* --- BADGES --- */
+.badge {
+  display: inline-block;
+  padding: 0.3em 0.9em;
+  border-radius: 1em;
+  font-size: 0.92em;
+  font-weight: 600;
+  margin-right: 0.2em;
+  vertical-align: middle;
+  background: var(--bg-light);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  box-sizing: border-box;
+}
+.badge-blue {
+  background: #e8f4fb;
+  color: #175782;
+  border: 1px solid #3498db;
+}
+.badge-green {
+  background: #eafaf1;
+  color: #1e8449;
+  border: 1px solid #34db77;
+}
+.badge-red {
+  background: #fbeaea;
+  color: #c0392b;
+  border: 1px solid #e74c3c;
+}
+.badge-gray {
+  background: #f5f5f5;
+  color: #7f8c8d;
+  border: 1px solid #bdc3c7;
+}
+.badge-orange {
+  background: #fff6ea;
+  color: #db7734;
+  border: 1px solid #db7734;
+}
+.badge-purple {
+  background: #f3e8fb;
+  color: #7c3aed;
+  border: 1px solid #7c3aed;
+}
+.badge-teal {
+  background: #e6f9f7;
+  color: #14b8a6;
+  border: 1px solid #14b8a6;
+}
+.badge-pink {
+  background: #fbeaf7;
+  color: #db3498;
+  border: 1px solid #db3498;
+}
+.badge-accent {
+  background: #fbeaf7;
+  color: #db3498;
+  border: 1px solid #db3498;
+}
+.badge-warning {
+  background: #fff6ea;
+  color: #db7734;
+  border: 1px solid #db7734;
+}
+.badge-info {
+  background: #eafaf7;
+  color: #34dcbc;
+  border: 1px solid #34dcbc;
+}
