@@ -133,7 +133,57 @@
           </tr>
         </thead>
         <tbody>
-          <!-- Example rows here -->
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td>best car seat covers</td>
+            <td class="right">2,400</td>
+            <td class="right">$1.20</td>
+            <td class="right">0.45</td>
+            <td class="right">32</td>
+            <td><span class="badge badge-blue">Informational</span></td>
+            <td><span class="badge badge-gray">Marketer</span></td>
+            <td><span class="badge badge-blue">New</span></td>
+            <td>Automotive Interior</td>
+            <td>US</td>
+            <td class="keywords-table__actions">
+              <button class="btn btn-square btn-edit">Edit</button>
+              <button class="btn btn-square btn-archive">Archive</button>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td>leather steering wheel cover</td>
+            <td class="right">1,800</td>
+            <td class="right">$0.95</td>
+            <td class="right">0.38</td>
+            <td class="right">28</td>
+            <td><span class="badge badge-green">Commercial</span></td>
+            <td><span class="badge badge-gray">Engineer</span></td>
+            <td><span class="badge badge-green">Clustered</span></td>
+            <td>Luxury Interiors</td>
+            <td>UK</td>
+            <td class="keywords-table__actions">
+              <button class="btn btn-square btn-edit">Edit</button>
+              <button class="btn btn-square btn-archive">Archive</button>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td>universal car mats</td>
+            <td class="right">3,100</td>
+            <td class="right">$0.80</td>
+            <td class="right">0.29</td>
+            <td class="right">22</td>
+            <td><span class="badge badge-blue">Navigational</span></td>
+            <td><span class="badge badge-gray">Marketer</span></td>
+            <td><span class="badge badge-red">Orphaned</span></td>
+            <td>-</td>
+            <td>EU</td>
+            <td class="keywords-table__actions">
+              <button class="btn btn-square btn-edit">Edit</button>
+              <button class="btn btn-square btn-archive">Archive</button>
+            </td>
+          </tr>
         </tbody>
       </table>
       <div class="keywords-pagination">
