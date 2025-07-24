@@ -4,56 +4,54 @@
 ?>
   <div class="page-main-container">
       <!-- 1. FILTER BAR -->
-      <div class="card card-gray mb-10">
-        <div class="keywords-filters-panel">
-          <div class="filter-row" style="display: flex; gap: 18px; align-items: flex-end;">
-            <div class="mr-10">
-              <label class="text-small" for="filter-usecase">Use-Case</label>
-              <select id="filter-usecase" class="small-select tom-select">
-                <option value="">All Use-Cases</option>
-                <option>Blog</option>
-                <option>Rewrite</option>
-                <option>Product Description</option>
-              </select>
-            </div>
-            <div class="mr-10">
-              <label class="text-small" for="filter-persona">Persona</label>
-              <select id="filter-persona" class="small-select tom-select">
-                <option value="">All Personas</option>
-                <option>Marketer</option>
-                <option>Engineer</option>
-              </select>
-            </div>
-            <div class="mr-10">
-              <label class="text-small" for="filter-cluster-type">Cluster Type</label>
-              <select id="filter-cluster-type" class="small-select tom-select">
-                <option value="">All Types</option>
-                <option>Page</option>
-                <option>Blog</option>
-                <option>Category</option>
-              </select>
-            </div>
-            <div class="mr-10">
-              <label class="text-small" for="filter-tone">Tone</label>
-              <select id="filter-tone" class="small-select tom-select">
-                <option value="">All Tones</option>
-                <option>Formal</option>
-                <option>Conversational</option>
-                <option>Playful</option>
-              </select>
-            </div>
-            <div class="mr-10">
-              <label class="text-small" for="filter-tags">Tags</label>
-              <select id="filter-tags" class="small-select tom-select">
-                <option value="">All Tags</option>
-                <option>SEO</option>
-                <option>Product</option>
-                <option>How-To</option>
-              </select>
-            </div>
+      <section class="keywords-filters-analytics-row" style="width: 100%; margin-bottom: 0;">
+        <div class="igny8-filter-bar" style="width: 100%;">
+          <div class="ts-wrapper">
+            <label class="text-small" for="filter-usecase">Use-Case</label>
+            <select id="filter-usecase" class="dropdown tom-select">
+              <option value="">All Use-Cases</option>
+              <option>Blog</option>
+              <option>Rewrite</option>
+              <option>Product Description</option>
+            </select>
+          </div>
+          <div class="ts-wrapper">
+            <label class="text-small" for="filter-persona">Persona</label>
+            <select id="filter-persona" class="dropdown tom-select">
+              <option value="">All Personas</option>
+              <option>Marketer</option>
+              <option>Engineer</option>
+            </select>
+          </div>
+          <div class="ts-wrapper">
+            <label class="text-small" for="filter-cluster-type">Cluster Type</label>
+            <select id="filter-cluster-type" class="dropdown tom-select">
+              <option value="">All Types</option>
+              <option>Page</option>
+              <option>Blog</option>
+              <option>Category</option>
+            </select>
+          </div>
+          <div class="ts-wrapper">
+            <label class="text-small" for="filter-tone">Tone</label>
+            <select id="filter-tone" class="dropdown tom-select">
+              <option value="">All Tones</option>
+              <option>Formal</option>
+              <option>Conversational</option>
+              <option>Playful</option>
+            </select>
+          </div>
+          <div class="ts-wrapper">
+            <label class="text-small" for="filter-tags">Tags</label>
+            <select id="filter-tags" class="dropdown tom-select">
+              <option value="">All Tags</option>
+              <option>SEO</option>
+              <option>Product</option>
+              <option>How-To</option>
+            </select>
           </div>
         </div>
-      </div>
+      </section>
       <!-- 2. QUICK STATS METRICS -->
       <div class="metrics-row mb-10" style="display: flex; gap: 24px;">
         <div class="card card-info">
