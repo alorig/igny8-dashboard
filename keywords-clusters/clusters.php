@@ -160,21 +160,21 @@
   </section>
 
   <section class="clusters-metrics-row">
-    <div class="clusters-metrics__card">
-      <div class="clusters-metrics__value">340</div>
-      <div class="clusters-metrics__label">Total Clusters</div>
+    <div class="metric-card metric-blue">
+      <div class="metric-value">340</div>
+      <div class="metric-label">Total Clusters</div>
     </div>
-    <div class="clusters-metrics__card">
-      <div class="clusters-metrics__value">28</div>
-      <div class="clusters-metrics__label">Orphaned Clusters</div>
+    <div class="metric-card metric-green">
+      <div class="metric-value">28</div>
+      <div class="metric-label">Orphaned Clusters</div>
     </div>
-    <div class="clusters-metrics__card">
-      <div class="clusters-metrics__value">70%</div>
-      <div class="clusters-metrics__label">Finalized</div>
+    <div class="metric-card metric-lime">
+      <div class="metric-value">70%</div>
+      <div class="metric-label">Finalized</div>
     </div>
-    <div class="clusters-metrics__card">
-      <div class="clusters-metrics__value">32,000</div>
-      <div class="clusters-metrics__label">Avg Search Volume</div>
+    <div class="metric-card metric-orange">
+      <div class="metric-value">32,000</div>
+      <div class="metric-label">Avg Search Volume</div>
     </div>
   </section>
 

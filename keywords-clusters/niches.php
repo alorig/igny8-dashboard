@@ -65,21 +65,21 @@
   </div>
 
   <section class="niche-metrics">
-    <div class="niche-metrics__card">
-      <div class="niche-metrics__value">12,450</div>
-      <div class="niche-metrics__label">Total Keywords</div>
+    <div class="metric-card metric-blue">
+      <div class="metric-value">12,450</div>
+      <div class="metric-label">Total Keywords</div>
     </div>
-    <div class="niche-metrics__card">
-      <div class="niche-metrics__value">340</div>
-      <div class="niche-metrics__label">Total Clusters</div>
+    <div class="metric-card metric-green">
+      <div class="metric-value">340</div>
+      <div class="metric-label">Total Clusters</div>
     </div>
-    <div class="niche-metrics__card">
-      <div class="niche-metrics__value">87%</div>
-      <div class="niche-metrics__label">% Clustered</div>
+    <div class="metric-card metric-lime">
+      <div class="metric-value">87%</div>
+      <div class="metric-label">% Clustered</div>
     </div>
-    <div class="niche-metrics__card">
-      <div class="niche-metrics__value">1,200</div>
-      <div class="niche-metrics__label">Orphaned Keywords (13%)</div>
+    <div class="metric-card metric-orange">
+      <div class="metric-value">1,200</div>
+      <div class="metric-label">Orphaned Keywords (13%)</div>
     </div>
   </section>
 

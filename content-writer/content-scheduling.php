@@ -53,21 +53,21 @@
       </section>
       <!-- 2. METRICS CARDS ROW -->
       <div class="metrics-row mb-10" style="display: flex; gap: 24px;">
-        <div class="card card-info">
-          <div class="text-small text-bold mb-10">Total Scheduled</div>
-          <div class="h3">128</div>
+        <div class="metric-card metric-blue">
+          <div class="metric-label">Total Scheduled</div>
+          <div class="metric-value">128</div>
         </div>
-        <div class="card card-warning">
-          <div class="text-small text-bold mb-10">Drafts Pending</div>
-          <div class="h3">14 <span class="badge badge-warning">Pending</span></div>
+        <div class="metric-card metric-green">
+          <div class="metric-label">Drafts Pending</div>
+          <div class="metric-value">14 <span class="badge badge-warning">Pending</span></div>
         </div>
-        <div class="card card-success">
-          <div class="text-small text-bold mb-10">Approved / Final</div>
-          <div class="h3">97 <span class="badge badge-success">Approved</span></div>
+        <div class="metric-card metric-lime">
+          <div class="metric-label">Approved / Final</div>
+          <div class="metric-value">97 <span class="badge badge-success">Approved</span></div>
         </div>
-        <div class="card card-danger">
-          <div class="text-small text-bold mb-10">Failed / Skipped</div>
-          <div class="h3">3 <span class="badge badge-danger">Failed</span></div>
+        <div class="metric-card metric-orange">
+          <div class="metric-label">Failed / Skipped</div>
+          <div class="metric-value">3 <span class="badge badge-danger">Failed</span></div>
         </div>
       </div>
       <!-- 3. CONTENT QUEUE TABLE -->

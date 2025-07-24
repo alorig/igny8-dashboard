@@ -3034,3 +3034,9 @@ ul li:last-child {
 .justify-between { justify-content: space-between !important; }
 .align-center { align-items: center !important; }
 .align-stretch { align-items: stretch !important; }
+
+/* --- METRIC CARD COLOR VARIANTS --- */
+.metric-blue    { border-top: 4px solid #3498db !important; }
+.metric-green   { border-top: 4px solid #27ae60 !important; }
+.metric-lime    { border-top: 4px solid #2ecc71 !important; }
+.metric-orange  { border-top: 4px solid #e67e22 !important; }

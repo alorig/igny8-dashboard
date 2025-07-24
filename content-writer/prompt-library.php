@@ -54,17 +54,17 @@
       </section>
       <!-- 2. QUICK STATS METRICS -->
       <div class="metrics-row mb-10" style="display: flex; gap: 24px;">
-        <div class="card card-info">
-          <div class="text-small text-bold mb-10">Total Prompts</div>
-          <div class="h4">42</div>
+        <div class="metric-card metric-blue">
+          <div class="metric-label">Total Prompts</div>
+          <div class="metric-value">42</div>
         </div>
-        <div class="card card-success">
-          <div class="text-small text-bold mb-10">Custom Prompts</div>
-          <div class="h4">18</div>
+        <div class="metric-card metric-green">
+          <div class="metric-label">Custom Prompts</div>
+          <div class="metric-value">18</div>
         </div>
-        <div class="card card-warning">
-          <div class="text-small text-bold mb-10">System Templates</div>
-          <div class="h4">24</div>
+        <div class="metric-card metric-lime">
+          <div class="metric-label">System Templates</div>
+          <div class="metric-value">24</div>
         </div>
       </div>
       <!-- 4. NEW PROMPT BUTTON (Top Right) -->
