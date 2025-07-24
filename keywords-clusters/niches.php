@@ -64,7 +64,7 @@
     </div>
   </div>
 
-  <div class="metrics-row">
+  <section class="niche-metrics">
     <div class="niche-metrics__card">
       <div class="niche-metrics__value">12,450</div>
       <div class="niche-metrics__label">Total Keywords</div>
@@ -81,7 +81,7 @@
       <div class="niche-metrics__value">1,200</div>
       <div class="niche-metrics__label">Orphaned Keywords (13%)</div>
     </div>
-  </div>
+  </section>
 
   <div class="niche-breakdown-panels">
     <section class="niche-opportunity-panel">
