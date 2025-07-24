@@ -26,22 +26,24 @@ get_sidebar();
       </section>
       <section>
         <h2>Global Layout Classes</h2>
-        <div class="layout-demo">
+        <div class="mb-10">
           <div class="grid grid-4 mb-10">
-            <div class="card">.grid .grid-4 (4 cols)</div>
-            <div class="card">.grid .grid-4</div>
-            <div class="card">.grid .grid-4</div>
-            <div class="card">.grid .grid-4</div>
+            <div class="card">.grid .grid-4 (1)</div>
+            <div class="card">.grid .grid-4 (2)</div>
+            <div class="card">.grid .grid-4 (3)</div>
+            <div class="card">.grid .grid-4 (4)</div>
           </div>
-          <div class="flex gap-24 mb-10">
-            <div class="card">.flex .gap-24</div>
-            <div class="card">.flex .gap-24</div>
+          <div class="flex gap-24 mb-10" style="background:#f7f7f7; padding:12px;">
+            <div class="card">.flex .gap-24 (A)</div>
+            <div class="card">.flex .gap-24 (B)</div>
+            <div class="card">.flex .gap-24 (C)</div>
           </div>
-          <div class="flex justify-between align-center mb-10">
-            <div class="card">.flex .justify-between .align-center (left)</div>
-            <div class="card">.flex .justify-between .align-center (right)</div>
+          <div class="flex justify-between align-center mb-10" style="background:#f7f7f7; padding:12px;">
+            <div class="card">Left (.flex .justify-between .align-center)</div>
+            <div class="card">Right</div>
           </div>
         </div>
+        <span class="text-small">Above: .grid .grid-4, .flex .gap-24, .flex .justify-between .align-center</span>
       </section>
       <section>
         <h2>Page Container</h2>
