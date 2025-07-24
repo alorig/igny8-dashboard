@@ -1,7 +1,7 @@
 <!-- KEYWORDS MANAGEMENT PAGE for Igny8 Admin Dashboard -->
 
 <div class="page-main-container">
-  <section class="keywords-filters-analytics-row" style="width: 100%;">
+  <section class="keywords-filters-analytics-row" style="width: 100%; margin-bottom: 0;">
     <div class="igny8-filter-bar" style="width: 100%;">
       <div class="ts-wrapper">
         <select id="industry" class="dropdown tom-select">
@@ -63,28 +63,9 @@
         <button id="search-btn" type="button">Search</button>
       </div>
     </div>
-    <aside class="keywords-analytics-panel">
-      <!-- Analytics Visuals: Bar/Line Graph and Donut/Pie Chart -->
-      <div class="analytics-visuals">
-        <!-- Bar/Line Graph Placeholder -->
-        <div class="analytics-graph-card">
-          <div class="analytics-graph-placeholder">
-            <span class="analytics-graph-title">Keyword Volume Trend</span>
-            <div class="analytics-bar-graph"></div>
-          </div>
-        </div>
-        <!-- Donut/Pie Chart Placeholder -->
-        <div class="analytics-donut-card">
-          <div class="analytics-donut-placeholder">
-            <span class="analytics-donut-title">Status Breakdown</span>
-            <div class="analytics-donut-chart"></div>
-          </div>
-        </div>
-      </div>
-    </aside>
   </section>
 
-  <!-- 3-column layout: metrics + 2 graphical elements -->
+  <!-- 3-column layout: metrics + 2 graphical elements, now below filter bar -->
   <div style="display: flex; gap: 32px; margin-bottom: 32px; width: 100%;">
     <div style="flex: 1 1 0; display: flex; flex-direction: column; gap: 16px;">
       <section class="keywords-metrics-row" style="display: flex; flex-direction: column; gap: 16px;">
