@@ -1,185 +1,287 @@
 <!-- CLUSTERS MANAGEMENT PAGE for Igny8 Admin Dashboard -->
 
-<!-- 1️⃣ Horizontal Filter Bar (Top) -->
-<section class="igny8-filter-bar">
-  <div class="ts-wrapper">
-    <span class="ts-label">Industry</span>
-    <select id="industry" class="dropdown tom-select">
-      <option>Automotive</option>
-      <option>Home</option>
-      <option>Fitness</option>
-    </select>
-  </div>
-  <div class="ts-wrapper">
-    <span class="ts-label">Status</span>
-    <select id="status" class="dropdown tom-select">
-      <option>New</option>
-      <option>In Progress</option>
-      <option>Finalized</option>
-      <option>Archived</option>
-    </select>
-  </div>
-  <div class="ts-wrapper">
-    <span class="ts-label">Cluster Type</span>
-    <select id="cluster-type" class="dropdown tom-select">
-      <option>Page</option>
-      <option>Blog-Only</option>
-      <option>Category</option>
-      <option>Other</option>
-    </select>
-  </div>
-  <div class="ts-wrapper">
-    <span class="ts-label">Persona</span>
-    <select id="persona" class="dropdown tom-select">
-      <option>Marketer</option>
-      <option>Engineer</option>
-    </select>
-  </div>
-  <div class="ts-wrapper">
-    <span class="ts-label">Volume</span>
-    <input id="volume" type="range" min="0" max="100000">
-  </div>
-  <div class="ts-wrapper">
-    <span class="ts-label">Intent</span>
-    <select id="intent" class="dropdown tom-select">
-      <option>Informational</option>
-      <option>Transactional</option>
-      <option>Navigational</option>
-      <option>Commercial</option>
-    </select>
-  </div>
-  <div class="ts-wrapper">
-    <span class="ts-label">Buyer Stage</span>
-    <select id="buyer-stage" class="dropdown tom-select">
-      <option>Awareness</option>
-      <option>Consideration</option>
-      <option>Decision</option>
-      <option>Action</option>
-    </select>
-  </div>
-  <div class="ts-wrapper">
-    <span class="ts-label">Country</span>
-    <select id="country" class="dropdown tom-select">
-      <option>US</option>
-      <option>UK</option>
-      <option>EU</option>
-    </select>
-  </div>
-  <div class="ts-wrapper">
-    <span class="ts-label">Search</span>
-    <input id="search" type="search" placeholder="Search clusters...">
-  </div>
-</section>
+<style>
+.clusters-main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+.igny8-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: flex-end;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(34,34,34,0.04);
+  padding: 24px;
+  min-width: 0;
+  margin-bottom: 32px;
+}
+.ts-wrapper {
+  position: relative;
+  min-width: 140px;
+  flex: 1 1 140px;
+  max-width: 180px;
+}
+.ts-label {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  font-size: 0.95rem;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+.dropdown.tom-select {
+  width: 100%;
+  height: 36px;
+  padding: 0 32px 0 16px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  background: #f7f7f7;
+  font-size: 1rem;
+  appearance: none;
+  z-index: 1;
+}
+.ts-wrapper.active {
+  z-index: 10;
+}
+.ts-wrapper .dropdown-value {
+  color: #222;
+  font-weight: 500;
+  padding-left: 16px;
+}
+.ts-wrapper .dropdown-value:not(:empty) + .ts-label {
+  opacity: 0;
+}
+.ts-wrapper input[type=range] {
+  width: 100%;
+  margin-top: 0;
+  vertical-align: middle;
+}
+.ts-wrapper.search-wrapper {
+  display: flex;
+  align-items: center;
+  min-width: 220px;
+  max-width: 260px;
+}
+#search {
+  flex: 1;
+  height: 36px;
+  border-radius: 8px 0 0 8px;
+  border: 1px solid #e0e0e0;
+  padding: 0 12px;
+  font-size: 1rem;
+  background: #f7f7f7;
+}
+#search-btn {
+  height: 36px;
+  border-radius: 0 8px 8px 0;
+  border: none;
+  background: #4DABF7;
+  color: #fff;
+  font-weight: 600;
+  padding: 0 18px;
+  margin-left: -1px;
+  cursor: pointer;
+}
+.clusters-metrics-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 32px;
+}
+.clusters-metrics__card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(34,34,34,0.04);
+  padding: 24px 0;
+  text-align: center;
+  min-height: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.clusters-actions-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  gap: 16px;
+}
+.clusters-actions-row .btn {
+  min-width: 140px;
+}
+.clusters-main-content {
+  width: 100%;
+}
+.clusters-table-wrap {
+  width: 100%;
+}
+</style>
 
-<!-- 3️⃣ Metrics Summary (Inline Cards) -->
-<section class="clusters-metrics-row">
-  <div class="clusters-metrics__card">
-    <div class="clusters-metrics__value">340</div>
-    <div class="clusters-metrics__label">Total Clusters</div>
-  </div>
-  <div class="clusters-metrics__card">
-    <div class="clusters-metrics__value">28</div>
-    <div class="clusters-metrics__label">Orphaned Clusters</div>
-  </div>
-  <div class="clusters-metrics__card">
-    <div class="clusters-metrics__value">70%</div>
-    <div class="clusters-metrics__label">Finalized</div>
-  </div>
-  <div class="clusters-metrics__card">
-    <div class="clusters-metrics__value">32,000</div>
-    <div class="clusters-metrics__label">Avg Search Volume</div>
-  </div>
-</section>
+<div class="clusters-main-container">
+  <section class="igny8-filter-bar">
+    <div class="ts-wrapper">
+      <span class="ts-label">Industry</span>
+      <select id="industry" class="dropdown tom-select">
+        <option value="" selected hidden></option>
+        <option>Automotive</option>
+        <option>Home</option>
+        <option>Fitness</option>
+      </select>
+    </div>
+    <div class="ts-wrapper">
+      <span class="ts-label">Status</span>
+      <select id="status" class="dropdown tom-select">
+        <option value="" selected hidden></option>
+        <option>New</option>
+        <option>In Progress</option>
+        <option>Finalized</option>
+        <option>Archived</option>
+      </select>
+    </div>
+    <div class="ts-wrapper">
+      <span class="ts-label">Cluster Type</span>
+      <select id="cluster-type" class="dropdown tom-select">
+        <option value="" selected hidden></option>
+        <option>Page</option>
+        <option>Blog-Only</option>
+        <option>Category</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div class="ts-wrapper">
+      <span class="ts-label">Persona</span>
+      <select id="persona" class="dropdown tom-select">
+        <option value="" selected hidden></option>
+        <option>Marketer</option>
+        <option>Engineer</option>
+      </select>
+    </div>
+    <div class="ts-wrapper">
+      <span class="ts-label">Volume</span>
+      <input id="volume" type="range" min="0" max="100000">
+    </div>
+    <div class="ts-wrapper">
+      <span class="ts-label">Intent</span>
+      <select id="intent" class="dropdown tom-select">
+        <option value="" selected hidden></option>
+        <option>Informational</option>
+        <option>Transactional</option>
+        <option>Navigational</option>
+        <option>Commercial</option>
+      </select>
+    </div>
+    <div class="ts-wrapper">
+      <span class="ts-label">Buyer Stage</span>
+      <select id="buyer-stage" class="dropdown tom-select">
+        <option value="" selected hidden></option>
+        <option>Awareness</option>
+        <option>Consideration</option>
+        <option>Decision</option>
+        <option>Action</option>
+      </select>
+    </div>
+    <div class="ts-wrapper">
+      <span class="ts-label">Country</span>
+      <select id="country" class="dropdown tom-select">
+        <option value="" selected hidden></option>
+        <option>US</option>
+        <option>UK</option>
+        <option>EU</option>
+      </select>
+    </div>
+    <div class="ts-wrapper search-wrapper">
+      <input id="search" type="search" placeholder="Search clusters...">
+      <button id="search-btn" type="button">Search</button>
+    </div>
+  </section>
 
-<!-- 4️⃣ Action Buttons (Right-Aligned) -->
-<div class="clusters-actions-row">
-  <button class="btn btn-primary clusters-actions__add">Add New Cluster</button>
-  <button class="btn btn-black clusters-actions__import">Import Clusters</button>
-  <button class="btn btn-outline clusters-actions__export">Export Clusters</button>
+  <section class="clusters-metrics-row">
+    <div class="clusters-metrics__card">
+      <div class="clusters-metrics__value">340</div>
+      <div class="clusters-metrics__label">Total Clusters</div>
+    </div>
+    <div class="clusters-metrics__card">
+      <div class="clusters-metrics__value">28</div>
+      <div class="clusters-metrics__label">Orphaned Clusters</div>
+    </div>
+    <div class="clusters-metrics__card">
+      <div class="clusters-metrics__value">70%</div>
+      <div class="clusters-metrics__label">Finalized</div>
+    </div>
+    <div class="clusters-metrics__card">
+      <div class="clusters-metrics__value">32,000</div>
+      <div class="clusters-metrics__label">Avg Search Volume</div>
+    </div>
+  </section>
+
+  <div class="clusters-actions-row">
+    <div>
+      <button class="btn btn-primary clusters-actions__add">Add New Cluster</button>
+      <button class="btn btn-black clusters-actions__import">Import Clusters</button>
+    </div>
+    <div>
+      <button class="btn btn-outline clusters-actions__export">Export Clusters</button>
+    </div>
+  </div>
+
+  <div class="clusters-main-content">
+    <div class="clusters-table-wrap">
+      <table class="clusters-table modern-table">
+        <thead>
+          <tr>
+            <th><input type="checkbox" class="clusters-table__select-all" /></th>
+            <th>Cluster Name</th>
+            <th>Root Keyword</th>
+            <th class="right">Volume</th>
+            <th class="right">Difficulty</th>
+            <th>Type</th>
+            <th>Intent</th>
+            <th>Persona</th>
+            <th>Status</th>
+            <th>Keywords</th>
+            <th>Country</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Example rows here -->
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
-
-<!-- 5️⃣ Bulk Actions Row (Above Table) -->
-<div class="clusters-bulk-actions-row">
-  <button class="btn btn-primary">Assign Root Keyword</button>
-  <button class="btn btn-secondary">Change Status</button>
-  <button class="btn btn-secondary">Archive</button>
-  <button class="btn btn-outline">Export Selected</button>
-</div>
-
-<!-- 6️⃣ Main Clusters Table -->
-<main class="clusters-table-wrap">
-  <table class="clusters-table modern-table">
-    <thead>
-      <tr>
-        <th><input type="checkbox" class="clusters-table__select-all" /></th>
-        <th>Cluster Name</th>
-        <th>Root Keyword</th>
-        <th class="right">Volume</th>
-        <th class="right">Difficulty</th>
-        <th>Type</th>
-        <th>Intent</th>
-        <th>Persona</th>
-        <th>Status</th>
-        <th>Keywords</th>
-        <th>Country</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- Example Row 1 -->
-      <tr>
-        <td><input type="checkbox" /></td>
-        <td>Automotive Interior Upgrades</td>
-        <td>car seat covers</td>
-        <td class="right">12,000</td>
-        <td class="right">38</td>
-        <td><span class="badge badge-blue">Page</span></td>
-        <td><span class="badge badge-green">Informational</span></td>
-        <td><span class="badge badge-gray">Marketer</span></td>
-        <td><span class="badge badge-blue">New</span></td>
-        <td>45</td>
-        <td>US</td>
-        <td class="clusters-table__actions">
-          <button class="btn btn-square btn-edit">Edit</button>
-          <button class="btn btn-square btn-archive">Archive</button>
-        </td>
-      </tr>
-      <!-- Example Row 2 -->
-      <tr>
-        <td><input type="checkbox" /></td>
-        <td>Luxury Interiors</td>
-        <td>leather steering wheel cover</td>
-        <td class="right">8,500</td>
-        <td class="right">41</td>
-        <td><span class="badge badge-purple">Blog-Only</span></td>
-        <td><span class="badge badge-green">Commercial</span></td>
-        <td><span class="badge badge-gray">Engineer</span></td>
-        <td><span class="badge badge-orange">In Progress</span></td>
-        <td>32</td>
-        <td>UK</td>
-        <td class="clusters-table__actions">
-          <button class="btn btn-square btn-edit">Edit</button>
-          <button class="btn btn-square btn-archive">Archive</button>
-        </td>
-      </tr>
-      <!-- Example Row 3 -->
-      <tr>
-        <td><input type="checkbox" /></td>
-        <td>Universal Car Mats</td>
-        <td>universal car mats</td>
-        <td class="right">13,500</td>
-        <td class="right">29</td>
-        <td><span class="badge badge-teal">Category</span></td>
-        <td><span class="badge badge-green">Navigational</span></td>
-        <td><span class="badge badge-gray">Marketer</span></td>
-        <td><span class="badge badge-green">Finalized</span></td>
-        <td>28</td>
-        <td>EU</td>
-        <td class="clusters-table__actions">
-          <button class="btn btn-square btn-edit">Edit</button>
-          <button class="btn btn-square btn-archive">Archive</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</main> 
+<script>
+// Dropdown label/value behavior
+const dropdowns = document.querySelectorAll('.dropdown.tom-select');
+dropdowns.forEach(function(select) {
+  const wrapper = select.closest('.ts-wrapper');
+  select.addEventListener('focus', function() {
+    wrapper.classList.add('active');
+  });
+  select.addEventListener('blur', function() {
+    wrapper.classList.remove('active');
+  });
+  select.addEventListener('change', function() {
+    if (select.value) {
+      select.classList.add('has-value');
+      wrapper.querySelector('.ts-label').style.opacity = 0;
+    } else {
+      select.classList.remove('has-value');
+      wrapper.querySelector('.ts-label').style.opacity = 1;
+    }
+  });
+  // Initial state
+  if (!select.value) {
+    select.classList.remove('has-value');
+    wrapper.querySelector('.ts-label').style.opacity = 1;
+  } else {
+    select.classList.add('has-value');
+    wrapper.querySelector('.ts-label').style.opacity = 0;
+  }
+});
+</script> 
