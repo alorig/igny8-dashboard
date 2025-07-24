@@ -71,6 +71,94 @@
     </div>
   </section>
 
+  <section class="cluster-analytics-overview" style="display: flex; gap: 32px; margin-bottom: 32px; width: 100%; align-items: stretch; flex-wrap: wrap;">
+    <!-- Column 1: Cluster Composition -->
+    <div class="analytics-card" style="flex: 1 1 300px; background: #fff; border-radius: 16px; box-shadow: 0 2px 12px rgba(34,34,34,0.06); padding: 28px 28px 22px 28px; display: flex; flex-direction: column; justify-content: flex-start; min-width: 260px;">
+      <h4 style="font-size: 1.1rem; font-weight: 700; color: #3498db; margin-bottom: 18px;">Cluster Composition</h4>
+      <div style="margin-bottom: 14px; display: flex; justify-content: space-between; align-items: center;">
+        <span>Total Clusters</span>
+        <span style="font-size: 2rem; font-weight: 700; color: #3498db;">134</span>
+      </div>
+      <div style="margin-bottom: 14px; display: flex; justify-content: space-between; align-items: center;">
+        <span>Avg Keywords / Cluster</span>
+        <span style="font-size: 1.5rem; font-weight: 600; color: #27ae60;">18</span>
+      </div>
+      <div style="margin-bottom: 14px; display: flex; justify-content: space-between; align-items: center;">
+        <span>Orphaned Clusters</span>
+        <span style="font-size: 1.5rem; font-weight: 600; color: #e67e22;">42</span>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span>Multi-Page Clusters</span>
+        <span style="font-size: 1.5rem; font-weight: 600; color: #8e44ad;">17</span>
+      </div>
+    </div>
+    <!-- Column 2: Dimension Usage -->
+    <div class="analytics-card" style="flex: 1 1 300px; background: #fff; border-radius: 16px; box-shadow: 0 2px 12px rgba(34,34,34,0.06); padding: 28px 28px 22px 28px; display: flex; flex-direction: column; justify-content: flex-start; min-width: 260px;">
+      <h4 style="font-size: 1.1rem; font-weight: 700; color: #27ae60; margin-bottom: 18px;">Dimension Usage</h4>
+      <div style="margin-bottom: 14px;">
+        <span style="font-weight: 500;">Top Dimensions:</span>
+        <span style="margin-left: 8px; color: #3498db;">Product Type</span>,
+        <span style="color: #e67e22;">Function</span>,
+        <span style="color: #db3498;">Skin Concern</span>
+      </div>
+      <div style="margin-bottom: 14px;">
+        <span style="font-weight: 500;">Underused:</span>
+        <span style="margin-left: 8px; color: #8e44ad;">Persona</span>,
+        <span style="color: #8e44ad;">Geography</span>
+      </div>
+      <div style="margin-bottom: 14px;">
+        <span style="font-weight: 500;">Intent Spread:</span>
+        <div style="margin-top: 8px;">
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+            <span style="width: 90px; color: #3498db;">Informational</span>
+            <div style="flex: 1; background: #eaf3fa; border-radius: 8px; height: 12px; position: relative;">
+              <div style="width: 52%; background: #3498db; height: 100%; border-radius: 8px;"></div>
+            </div>
+            <span style="width: 36px; text-align: right; color: #3498db; font-weight: 600;">52%</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+            <span style="width: 90px; color: #e67e22;">Commercial</span>
+            <div style="flex: 1; background: #fff6ea; border-radius: 8px; height: 12px; position: relative;">
+              <div style="width: 35%; background: #e67e22; height: 100%; border-radius: 8px;"></div>
+            </div>
+            <span style="width: 36px; text-align: right; color: #e67e22; font-weight: 600;">35%</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="width: 90px; color: #db3498;">Transactional</span>
+            <div style="flex: 1; background: #fbeaf7; border-radius: 8px; height: 12px; position: relative;">
+              <div style="width: 13%; background: #db3498; height: 100%; border-radius: 8px;"></div>
+            </div>
+            <span style="width: 36px; text-align: right; color: #db3498; font-weight: 600;">13%</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <span style="font-weight: 500;">Persona/Geo Coverage:</span>
+        <span style="margin-left: 8px; color: #27ae60;">Good</span>
+      </div>
+    </div>
+    <!-- Column 3: Finalization Overview -->
+    <div class="analytics-card" style="flex: 1 1 300px; background: #fff; border-radius: 16px; box-shadow: 0 2px 12px rgba(34,34,34,0.06); padding: 28px 28px 22px 28px; display: flex; flex-direction: column; justify-content: flex-start; min-width: 260px;">
+      <h4 style="font-size: 1.1rem; font-weight: 700; color: #e67e22; margin-bottom: 18px;">Finalization Overview</h4>
+      <div style="margin-bottom: 14px; display: flex; justify-content: space-between; align-items: center;">
+        <span>Finalized</span>
+        <span style="font-size: 1.5rem; font-weight: 600; color: #27ae60;">54%</span>
+      </div>
+      <div style="margin-bottom: 14px; display: flex; justify-content: space-between; align-items: center;">
+        <span>Orphaned</span>
+        <span style="font-size: 1.5rem; font-weight: 600; color: #e67e22;">31%</span>
+      </div>
+      <div style="margin-bottom: 14px; display: flex; justify-content: space-between; align-items: center;">
+        <span>Finalized Last 7 Days</span>
+        <span style="font-size: 1.5rem; font-weight: 600; color: #3498db;">12</span>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span>Avg Freshness Score</span>
+        <span style="font-size: 1.5rem; font-weight: 600; color: #db3498;">68%</span>
+      </div>
+    </div>
+  </section>
+
   <section class="clusters-metrics-row">
     <div class="clusters-metrics__card">
       <div class="clusters-metrics__value">340</div>
