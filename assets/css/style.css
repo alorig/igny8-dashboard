@@ -2806,3 +2806,35 @@ ul li:last-child {
 .ts-wrapper .ts-label {
   display: none !important;
 }
+
+/* === User's Manual Tom Select & Filter Bar Fixes === */
+.ts-control, .ts-control input, .ts-dropdown {
+    color: #303030;
+    font-family: inherit;
+    font-size: 17px;
+    line-height: 18px;
+}
+
+/* Use background caret, not ::after */
+.ts-wrapper.single .ts-control {
+    background: var(--theme-bg) url("data:image/svg+xml,%3Csvg width='20' height='12' viewBox='0 0 20 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 2L10 10L18 2' stroke='%233498db' stroke-width='4'/%3E%3C/svg%3E") no-repeat right 8px center/20px 8px;
+    padding: 0px 10px !important;
+}
+
+.igny8-filter-bar .ts-wrapper {
+    min-width: 100px;
+    max-width: 140px;
+    flex: 1 1 20px;
+}
+
+.igny8-filter-bar {
+    gap: 7px;
+    padding: 10px;
+    background: transparent;
+    margin-bottom: 30px;
+}
+
+.igny8-filter-bar .search-wrapper {
+    max-width: 220px;
+    flex: 1 1 20px;
+}
