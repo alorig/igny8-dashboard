@@ -2,7 +2,7 @@
 
 <!-- 1️⃣ Horizontal Filter Bar + Analytics Visuals (Right) -->
 <section class="keywords-filters-analytics-row">
-  <div class="igny8-filter-bar">
+  <div class="igny8-filter-bar" style="width: 100%; box-sizing: border-box;">
     <div class="ts-wrapper">
       <span class="ts-label">Industry</span>
       <select id="industry" class="dropdown tom-select">
