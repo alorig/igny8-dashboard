@@ -168,7 +168,7 @@
       <div class="metric-value">28</div>
       <div class="metric-label">Orphaned Clusters</div>
     </div>
-    <div class="metric-card metric-lime">
+    <div class="metric-card metric-pink">
       <div class="metric-value">70%</div>
       <div class="metric-label">Finalized</div>
     </div>

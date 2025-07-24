@@ -76,7 +76,7 @@
         <div class="metric-value">1,200</div>
         <div class="metric-label">Orphaned</div>
       </div>
-      <div class="metric-card metric-lime">
+      <div class="metric-card metric-pink">
         <div class="metric-value">87%</div>
         <div class="metric-label">Clustered</div>
       </div>

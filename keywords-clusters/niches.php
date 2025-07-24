@@ -73,7 +73,7 @@
       <div class="metric-value">340</div>
       <div class="metric-label">Total Clusters</div>
     </div>
-    <div class="metric-card metric-lime">
+    <div class="metric-card metric-pink">
       <div class="metric-value">87%</div>
       <div class="metric-label">% Clustered</div>
     </div>
