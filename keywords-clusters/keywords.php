@@ -65,41 +65,39 @@
     </div>
   </section>
 
-  <!-- 3-column layout: metrics + 2 graphical elements, now below filter bar -->
-  <div style="display: flex; gap: 32px; margin-bottom: 32px; width: 100%;">
-    <div style="flex: 1 1 0; display: flex; flex-direction: column; gap: 16px;">
-      <section class="keywords-metrics-row" style="display: flex; flex-direction: column; gap: 16px;">
-        <div class="keywords-metrics__card">
-          <div class="keywords-metrics__value">12,450</div>
-          <div class="keywords-metrics__label">Total Keywords</div>
-        </div>
-        <div class="keywords-metrics__card">
-          <div class="keywords-metrics__value">1,200</div>
-          <div class="keywords-metrics__label">Orphaned</div>
-        </div>
-        <div class="keywords-metrics__card">
-          <div class="keywords-metrics__value">87%</div>
-          <div class="keywords-metrics__label">Clustered</div>
-        </div>
-        <div class="keywords-metrics__card">
-          <div class="keywords-metrics__value">450</div>
-          <div class="keywords-metrics__label">Avg Volume</div>
-        </div>
-      </section>
+  <!-- 3-column layout: metrics (2x2), graph, donut, all equal height -->
+  <div style="display: flex; gap: 32px; margin-bottom: 32px; width: 100%; align-items: stretch;">
+    <div style="flex: 1 1 0; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 16px; min-height: 220px;">
+      <div class="keywords-metrics__card" style="height: 100%; display: flex; flex-direction: column; justify-content: center;">
+        <div class="keywords-metrics__value">12,450</div>
+        <div class="keywords-metrics__label">Total Keywords</div>
+      </div>
+      <div class="keywords-metrics__card" style="height: 100%; display: flex; flex-direction: column; justify-content: center;">
+        <div class="keywords-metrics__value">1,200</div>
+        <div class="keywords-metrics__label">Orphaned</div>
+      </div>
+      <div class="keywords-metrics__card" style="height: 100%; display: flex; flex-direction: column; justify-content: center;">
+        <div class="keywords-metrics__value">87%</div>
+        <div class="keywords-metrics__label">Clustered</div>
+      </div>
+      <div class="keywords-metrics__card" style="height: 100%; display: flex; flex-direction: column; justify-content: center;">
+        <div class="keywords-metrics__value">450</div>
+        <div class="keywords-metrics__label">Avg Volume</div>
+      </div>
     </div>
-    <div style="flex: 1 1 0;">
-      <div class="analytics-graph-card">
-        <div class="analytics-graph-placeholder">
+    <div style="flex: 1 1 0; display: flex; align-items: stretch;">
+      <div class="analytics-graph-card" style="height: 100%; min-height: 220px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <div class="analytics-graph-placeholder" style="height: 120px; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
           <span class="analytics-graph-title">Keyword Volume Trend</span>
-          <div class="analytics-bar-graph"></div>
+          <div class="analytics-bar-graph" style="width: 90%; height: 80px;"></div>
         </div>
       </div>
     </div>
-    <div style="flex: 1 1 0;">
-      <div class="analytics-donut-card">
-        <div class="analytics-donut-placeholder">
+    <div style="flex: 1 1 0; display: flex; align-items: stretch;">
+      <div class="analytics-donut-card" style="height: 100%; min-height: 220px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <div class="analytics-donut-placeholder" style="height: 120px; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
           <span class="analytics-donut-title">Status Breakdown</span>
-          <div class="analytics-donut-chart"></div>
+          <div class="analytics-donut-chart" style="width: 80px; height: 80px;"></div>
         </div>
       </div>
     </div>
