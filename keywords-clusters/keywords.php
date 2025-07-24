@@ -67,22 +67,22 @@
 
   <!-- 3-column layout: metrics (2x2), graph, donut, all equal height -->
   <div style="display: flex; gap: 32px; margin-bottom: 32px; width: 100%; align-items: stretch;">
-    <div class="column-box-height" style="flex: 1 1 0; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 18px 18px; height: 420px; align-items: stretch; justify-items: stretch;">
-      <div class="keywords-metrics__card" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%;">
-        <div class="keywords-metrics__value">12,450</div>
-        <div class="keywords-metrics__label">Total Keywords</div>
+    <div class="metrics-row" style="flex: 1 1 0; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 18px 18px; height: 420px; align-items: stretch; justify-items: stretch;">
+      <div class="metric-card" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%;">
+        <div class="metric-value">12,450</div>
+        <div class="metric-label">Total Keywords</div>
       </div>
-      <div class="keywords-metrics__card" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%;">
-        <div class="keywords-metrics__value">1,200</div>
-        <div class="keywords-metrics__label">Orphaned</div>
+      <div class="metric-card" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%;">
+        <div class="metric-value">1,200</div>
+        <div class="metric-label">Orphaned</div>
       </div>
-      <div class="keywords-metrics__card" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%;">
-        <div class="keywords-metrics__value">87%</div>
-        <div class="keywords-metrics__label">Clustered</div>
+      <div class="metric-card" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%;">
+        <div class="metric-value">87%</div>
+        <div class="metric-label">Clustered</div>
       </div>
-      <div class="keywords-metrics__card" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%;">
-        <div class="keywords-metrics__value">450</div>
-        <div class="keywords-metrics__label">Avg Volume</div>
+      <div class="metric-card" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%;">
+        <div class="metric-value">450</div>
+        <div class="metric-label">Avg Volume</div>
       </div>
     </div>
     <div class="column-box-height" style="flex: 1 1 0; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 420px;">
@@ -135,19 +135,19 @@
     </div>
   </div>
 
-  <div class="keywords-actions-row">
+  <div class="actions-row">
     <div>
-      <button class="btn btn-primary keywords-actions__add">Add New Keyword</button>
-      <button class="btn btn-black keywords-actions__import">Import Keywords</button>
+      <button class="btn btn-primary btn-add">Add New Keyword</button>
+      <button class="btn btn-black btn-import">Import Keywords</button>
     </div>
     <div>
-      <button class="btn btn-outline keywords-actions__export">Export Keywords</button>
+      <button class="btn btn-outline btn-export">Export Keywords</button>
     </div>
   </div>
 
   <div class="keywords-main-content" style="width: 100%;">
-    <div class="keywords-table-wrap" style="width: 100%;">
-      <table class="keywords-table modern-table">
+    <div class="table-wrap" style="width: 100%;">
+      <table class="data-table modern-table">
         <thead>
           <tr>
             <th><input type="checkbox" class="keywords-table__select-all" /></th>
@@ -177,7 +177,7 @@
             <td><span class="badge badge-blue">New</span></td>
             <td>Automotive Interior</td>
             <td>US</td>
-            <td class="keywords-table__actions">
+            <td class="table-actions">
               <button class="btn btn-square btn-edit">Edit</button>
               <button class="btn btn-square btn-archive">Archive</button>
             </td>
@@ -194,7 +194,7 @@
             <td><span class="badge badge-green">Clustered</span></td>
             <td>Luxury Interiors</td>
             <td>UK</td>
-            <td class="keywords-table__actions">
+            <td class="table-actions">
               <button class="btn btn-square btn-edit">Edit</button>
               <button class="btn btn-square btn-archive">Archive</button>
             </td>
@@ -211,7 +211,7 @@
             <td><span class="badge badge-red">Orphaned</span></td>
             <td>-</td>
             <td>EU</td>
-            <td class="keywords-table__actions">
+            <td class="table-actions">
               <button class="btn btn-square btn-edit">Edit</button>
               <button class="btn btn-square btn-archive">Archive</button>
             </td>
@@ -228,7 +228,7 @@
             <td><span class="badge badge-green">Clustered</span></td>
             <td>Universal Car Mats</td>
             <td>US</td>
-            <td class="keywords-table__actions">
+            <td class="table-actions">
               <button class="btn btn-square btn-edit">Edit</button>
               <button class="btn btn-square btn-archive">Archive</button>
             </td>
@@ -245,7 +245,7 @@
             <td><span class="badge badge-blue">New</span></td>
             <td>Automotive Interior</td>
             <td>UK</td>
-            <td class="keywords-table__actions">
+            <td class="table-actions">
               <button class="btn btn-square btn-edit">Edit</button>
               <button class="btn btn-square btn-archive">Archive</button>
             </td>
@@ -262,7 +262,7 @@
             <td><span class="badge badge-green">Clustered</span></td>
             <td>Luxury Interiors</td>
             <td>EU</td>
-            <td class="keywords-table__actions">
+            <td class="table-actions">
               <button class="btn btn-square btn-edit">Edit</button>
               <button class="btn btn-square btn-archive">Archive</button>
             </td>
@@ -279,7 +279,7 @@
             <td><span class="badge badge-red">Orphaned</span></td>
             <td>-</td>
             <td>US</td>
-            <td class="keywords-table__actions">
+            <td class="table-actions">
               <button class="btn btn-square btn-edit">Edit</button>
               <button class="btn btn-square btn-archive">Archive</button>
             </td>

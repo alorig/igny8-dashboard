@@ -3034,3 +3034,10 @@ ul li:last-child {
 .justify-between { justify-content: space-between !important; }
 .align-center { align-items: center !important; }
 .align-stretch { align-items: stretch !important; }
+
+/* === Global Metrics Row === */
+.metrics-row {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 32px;
+}

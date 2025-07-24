@@ -9,7 +9,7 @@
 ?>
 <div class="module-content">
   <!-- Section 1: Top KPI Metrics Row -->
-  <div class="reports-metrics-row">
+  <div class="metrics-row">
     <div class="metric-card metric-blue">
       <div class="metric-value">12,450</div>
       <div class="metric-label">Total Keywords</div>

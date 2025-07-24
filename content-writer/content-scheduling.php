@@ -56,7 +56,7 @@
         </div>
       </div>
       <!-- 2. METRICS CARDS ROW -->
-      <div class="metrics-row mb-10" style="display: flex; gap: 24px;">
+      <div class="metrics-row">
         <div class="card card-info">
           <div class="text-small text-bold mb-10">Total Scheduled</div>
           <div class="h3">128</div>
