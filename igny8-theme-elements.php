@@ -93,6 +93,82 @@ get_sidebar();
           </table>
         </div>
       </section>
+      <section>
+        <h2>Metrics Cards (with Top Border)</h2>
+        <div class="keywords-metrics-row">
+          <div class="keywords-metrics__card" style="border-top: 4px solid #3498db;">
+            <div class="keywords-metrics__value">12,450</div>
+            <div class="keywords-metrics__label">Total Keywords</div>
+          </div>
+          <div class="keywords-metrics__card" style="border-top: 4px solid #27ae60;">
+            <div class="keywords-metrics__value">340</div>
+            <div class="keywords-metrics__label">Total Clusters</div>
+          </div>
+          <div class="keywords-metrics__card" style="border-top: 4px solid #2ecc71;">
+            <div class="keywords-metrics__value">87%</div>
+            <div class="keywords-metrics__label">Clustered %</div>
+          </div>
+          <div class="keywords-metrics__card" style="border-top: 4px solid #e67e22;">
+            <div class="keywords-metrics__value">1,200 <span class="metric-sub">(13%)</span></div>
+            <div class="keywords-metrics__label">Orphaned Keywords</div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>Progress Bars & Graphical Objects</h2>
+        <div class="reports-analytics-grid">
+          <div class="analytics-card">
+            <h4 class="analytics-title">Cluster Performance Overview</h4>
+            <div class="progress-group">
+              <div class="progress-label">Finalized</div>
+              <div class="progress-bar progress-green"><div class="progress-fill" style="width:60%"></div></div>
+              <div class="progress-percent">60%</div>
+            </div>
+            <div class="progress-group">
+              <div class="progress-label">Pending</div>
+              <div class="progress-bar progress-orange"><div class="progress-fill" style="width:30%"></div></div>
+              <div class="progress-percent">30%</div>
+            </div>
+            <div class="progress-group">
+              <div class="progress-label">New</div>
+              <div class="progress-bar progress-blue"><div class="progress-fill" style="width:10%"></div></div>
+              <div class="progress-percent">10%</div>
+            </div>
+            <div class="analytics-meta-row">
+              <span>Avg Keywords / Cluster: <b>18.4</b></span>
+              <span>Multi-Page Clusters: <b>17</b></span>
+            </div>
+          </div>
+          <div class="analytics-card">
+            <h4 class="analytics-title">Keyword Opportunity Snapshot</h4>
+            <div class="progress-group">
+              <div class="progress-label">Informational</div>
+              <div class="progress-bar progress-blue"><div class="progress-fill" style="width:52%"></div></div>
+              <div class="progress-percent">52%</div>
+            </div>
+            <div class="progress-group">
+              <div class="progress-label">Commercial</div>
+              <div class="progress-bar progress-orange"><div class="progress-fill" style="width:35%"></div></div>
+              <div class="progress-percent">35%</div>
+            </div>
+            <div class="progress-group">
+              <div class="progress-label">Transactional</div>
+              <div class="progress-bar progress-pink"><div class="progress-fill" style="width:13%"></div></div>
+              <div class="progress-percent">13%</div>
+            </div>
+            <div class="analytics-chips-row">
+              <span class="chip chip-blue">Persona: Marketer</span>
+              <span class="chip chip-blue">Intent: Informational</span>
+              <span class="chip chip-green">Geo: US</span>
+              <span class="chip chip-pink">Intent: Transactional</span>
+              <span class="chip chip-gray">Persona: Engineer</span>
+            </div>
+            <div class="analytics-meta-row">
+              <span>High-Volume Unclustered Keywords: <b>43</b></span>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   </div>
 </div>
