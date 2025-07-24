@@ -2198,3 +2198,42 @@ ul li:last-child {
     padding: 0.4rem !important;
   }
 } 
+
+/* === SIDEBAR BELOW TOP BAR FIX === */
+.sidebar {
+  position: fixed !important;
+  top: 50px !important; /* height of .igny8-top-bar */
+  left: 0 !important;
+  width: 250px !important;
+  background: var(--sidebar-bg) !important;
+  color: white !important;
+  height: calc(100vh - 50px) !important;
+  overflow-y: auto !important;
+  z-index: 1000 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.main-content {
+  margin-left: 250px !important;
+  margin-top: 0 !important;
+  padding: 40px !important;
+  background: var(--bg-light) !important;
+  min-height: 100vh !important;
+  width: 100% !important;
+}
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100% !important;
+    left: 0 !important;
+    top: 50px !important;
+    height: auto !important;
+    position: fixed !important;
+  }
+  .main-content {
+    margin-left: 0 !important;
+    padding: 20px !important;
+    width: 100% !important;
+  }
+} 
