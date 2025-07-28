@@ -589,6 +589,8 @@ h3 {
 .text-large { font-size: 1.2em !important; }
 .text-bold { font-weight: bold !important; }
 .text-center { text-align: center !important; }
+.text-left { text-align: left !important; }
+.text-right { text-align: right !important; }
 
 /* Appearance Settings */
 .appearance-settings {

@@ -227,7 +227,7 @@ $countries = array_unique(array_keys($country_counts));
         <thead>
           <tr>
             <th><input type="checkbox" /></th>
-            <th>Keyword</th>
+            <th class="text-left">Keyword</th>
             <th class="right">Volume</th>
             <th class="right">CPC</th>
             <th class="right">CPS</th>
@@ -276,7 +276,7 @@ $countries = array_unique(array_keys($country_counts));
               ?>
               <tr data-status="<?php echo esc_attr($status); ?>" data-intent="<?php echo esc_attr($intent); ?>" data-country="<?php echo esc_attr($country); ?>">
                 <td><input type="checkbox" /></td>
-                <td><?php echo esc_html($keyword_text ?: $keyword->post_title); ?></td>
+                <td class="text-left"><?php echo esc_html($keyword_text ?: $keyword->post_title); ?></td>
                 <td class="right"><?php echo $search_volume ? number_format($search_volume) : '--'; ?></td>
                 <td class="right"><?php echo $cpc ? '$' . number_format($cpc, 2) : '--'; ?></td>
                 <td class="right"><?php echo $cps ? number_format($cps, 2) : '--'; ?></td>
