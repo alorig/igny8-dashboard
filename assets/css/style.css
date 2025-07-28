@@ -198,8 +198,8 @@ body {
 
 /* Sidebar Icons */
 .sidebar-menu .dashicons {
-    font-size: 19px;
-    margin-right: 11px;
+    font-size: 17px;
+    margin-right: 7px;
     color: var(--primary-light);
     vertical-align: middle;
     text-decoration: none !important;
@@ -208,7 +208,7 @@ body {
 /* Menu Section Headers */
 .menu-section {
     font-weight: 700;
-    font-size: 15px;
+    font-size: 14px;
     letter-spacing: 1px;
     margin: 20px 0 10px 0;
     padding: 8px 20px 4px 20px;
@@ -2064,9 +2064,15 @@ ul li:last-child {
   justify-content: space-between;
   height: 50px;
   background: var(--sidebar-bg);
-  border-bottom: 1.5px solid var(--border-color);
   margin: 0;
   padding: 0 24px 0 0;
+  display: flex;
+  align-items: center;
+ justify-content: space-between;
+    padding: 0 24px;
+    height: 56px;
+    background: #2c3e50;
+
 }
 .igny8-top-bar-title {
   font-size: 1.25rem;
