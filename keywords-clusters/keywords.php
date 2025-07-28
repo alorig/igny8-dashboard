@@ -129,32 +129,32 @@ $countries = array_unique(array_keys($country_counts));
       </div>
   </section>
 
-  <!-- Metrics and Analytics Row -->
+  <!-- Metrics Row -->
   <div class="metrics-row">
-    <!-- Metrics Grid -->
-    <div class="metrics-row">
-      <div class="metric-card metric-blue">
-        <div class="metric-value"><?php echo number_format($total_keywords); ?></div>
-        <div class="metric-label">Total Keywords</div>
-      </div>
-      <div class="metric-card metric-green">
-        <div class="metric-value"><?php echo number_format($orphaned_count); ?></div>
-        <div class="metric-label">Orphaned</div>
-      </div>
-      <div class="metric-card metric-pink">
-        <div class="metric-value"><?php echo $clustered_percentage; ?>%</div>
-        <div class="metric-label">Clustered</div>
-      </div>
-      <div class="metric-card metric-orange">
-        <div class="metric-value"><?php echo number_format($avg_volume); ?></div>
-        <div class="metric-label">Avg Volume</div>
-      </div>
+    <div class="metric-card metric-blue">
+      <div class="metric-value"><?php echo number_format($total_keywords); ?></div>
+      <div class="metric-label">Total Keywords</div>
     </div>
-    
+    <div class="metric-card metric-green">
+      <div class="metric-value"><?php echo number_format($orphaned_count); ?></div>
+      <div class="metric-label">Orphaned</div>
+    </div>
+    <div class="metric-card metric-pink">
+      <div class="metric-value"><?php echo $clustered_percentage; ?>%</div>
+      <div class="metric-label">Clustered</div>
+    </div>
+    <div class="metric-card metric-orange">
+      <div class="metric-value"><?php echo number_format($avg_volume); ?></div>
+      <div class="metric-label">Avg Volume</div>
+    </div>
+  </div>
+
+  <!-- Analytics Grid -->
+  <div class="grid grid-2">
     <!-- Keyword Volume Trend Chart -->
     <div class="card">
       <span class="card-title">Keyword Volume Trend</span>
-      <div>
+      <div class="progress-group">
         <?php 
         $intent_colors = array(
           'Branded' => '#3498db',
@@ -170,11 +170,11 @@ $countries = array_unique(array_keys($country_counts));
           $bg_color = $color . '20';
         ?>
         <div class="progress-row">
-          <span style="color: <?php echo $color; ?>;"><?php echo esc_html($intent_name); ?></span>
+          <span class="progress-label" style="color: <?php echo $color; ?>;"><?php echo esc_html($intent_name); ?></span>
           <div class="progress-bar" style="background: <?php echo $bg_color; ?>;">
             <div class="progress-fill" style="width: <?php echo $percentage; ?>%; background: <?php echo $color; ?>;"></div>
           </div>
-          <span style="color: <?php echo $color; ?>;"><?php echo $percentage; ?>%</span>
+          <span class="progress-percent" style="color: <?php echo $color; ?>;"><?php echo $percentage; ?>%</span>
         </div>
         <?php endforeach; ?>
       </div>
@@ -205,10 +205,10 @@ $countries = array_unique(array_keys($country_counts));
   </div>
 
   <!-- Action Buttons -->
-  <div class="flex-between actions-bar">
+  <div class="flex-between">
     <div class="flex gap-24">
       <button class="btn btn-primary">Add New Keyword</button>
-      <button class="btn btn-black">Import Keywords</button>
+      <button class="btn btn-secondary">Import Keywords</button>
     </div>
     <div>
       <button class="btn btn-outline">Export Keywords</button>
@@ -299,46 +299,15 @@ $countries = array_unique(array_keys($country_counts));
     </div>
     
     <!-- Pagination -->
-    <div>
-      <button class="btn btn-tertiary">&laquo; Prev</button>
-      <span class="pagination-info">1</span>
-      <span class="pagination-info">2</span>
-      <span class="pagination-info active">3</span>
-      <button class="btn btn-tertiary">Next &raquo;</button>
+    <div class="flex-between">
+      <div></div>
+      <div class="flex gap-24">
+        <button class="btn btn-tertiary">&laquo; Prev</button>
+        <span class="pagination-info">1</span>
+        <span class="pagination-info">2</span>
+        <span class="pagination-info active">3</span>
+        <button class="btn btn-tertiary">Next &raquo;</button>
+      </div>
     </div>
   </div>
-</div>
-<script>
-// Dropdown label/value behavior
-const dropdowns = document.querySelectorAll('.dropdown.tom-select');
-dropdowns.forEach(function(select) {
-  const wrapper = select.closest('.ts-wrapper');
-  select.addEventListener('focus', function() {
-    wrapper.classList.add('active');
-  });
-  select.addEventListener('blur', function() {
-    wrapper.classList.remove('active');
-  });
-  select.addEventListener('change', function() {
-    if (select.value) {
-      select.classList.add('has-value');
-      // Remove any floating label logic if it was present
-      // The label is now inside the select, so no need for floating label logic here
-    } else {
-      select.classList.remove('has-value');
-      // Remove any floating label logic if it was present
-      // The label is now inside the select, so no need for floating label logic here
-    }
-  });
-  // Initial state
-  if (!select.value) {
-    select.classList.remove('has-value');
-    // Remove any floating label logic if it was present
-    // The label is now inside the select, so no need for floating label logic here
-  } else {
-    select.classList.add('has-value');
-    // Remove any floating label logic if it was present
-    // The label is now inside the select, so no need for floating label logic here
-  }
-});
-</script> 
+</div> 
