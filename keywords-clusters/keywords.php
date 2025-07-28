@@ -154,23 +154,18 @@ $countries = array_unique(array_keys($country_counts));
     <!-- Keyword Volume Trend Chart -->
     <div class="analytics-card">
       <h4 class="analytics-title">Keyword Volume Trend</h4>
-      <?php 
-      $intent_colors = array(
-        'Branded' => '#3498db',
-        'Informational' => '#27ae60', 
-        'Commercial' => '#e67e22',
-        'Navigational' => '#8e44ad',
-        'Transactional' => '#db3498'
-      );
-      
-      foreach ($intent_counts as $intent_name => $count):
+      <?php foreach ($intent_counts as $intent_name => $count): 
         $percentage = $total_keywords > 0 ? round(($count / $total_keywords) * 100) : 0;
-        $color = isset($intent_colors[$intent_name]) ? $intent_colors[$intent_name] : '#3498db';
-        $bg_color = $color . '20';
+        // Use existing global CSS classes based on intent type
+        $progress_class = 'progress-blue'; // default
+        if ($intent_name === 'Commercial') $progress_class = 'progress-green';
+        elseif ($intent_name === 'Informational') $progress_class = 'progress-blue';
+        elseif ($intent_name === 'Transactional') $progress_class = 'progress-pink';
+        elseif ($intent_name === 'Navigational') $progress_class = 'progress-orange';
       ?>
       <div class="progress-group">
         <div class="progress-label"><?php echo esc_html($intent_name); ?></div>
-        <div class="progress-bar progress-<?php echo $intent_name === 'Commercial' ? 'green' : ($intent_name === 'Informational' ? 'blue' : 'pink'); ?>"><div class="progress-fill" style="width: <?php echo $percentage; ?>%"></div></div>
+        <div class="progress-bar <?php echo $progress_class; ?>"><div class="progress-fill" style="width: <?php echo $percentage; ?>%"></div></div>
         <div class="progress-percent"><?php echo $percentage; ?>%</div>
       </div>
       <?php endforeach; ?>
@@ -179,23 +174,19 @@ $countries = array_unique(array_keys($country_counts));
     <!-- Status Breakdown Chart -->
     <div class="analytics-card">
       <h4 class="analytics-title">Status Breakdown</h4>
-      <?php 
-      $status_colors = array(
-        'New' => '#3498db',
-        'Clustered' => '#27ae60', 
-        'Orphaned' => '#e67e22',
-        'In-Use' => '#db3498',
-        'Archived' => '#8e44ad'
-      );
-      
-      foreach ($status_counts as $status_name => $count):
+      <?php foreach ($status_counts as $status_name => $count): 
         $percentage = $total_keywords > 0 ? round(($count / $total_keywords) * 100) : 0;
-        $color = isset($status_colors[$status_name]) ? $status_colors[$status_name] : '#3498db';
-        $bg_color = $color . '20';
+        // Use existing global CSS classes based on status type
+        $progress_class = 'progress-blue'; // default
+        if ($status_name === 'Clustered') $progress_class = 'progress-green';
+        elseif ($status_name === 'New') $progress_class = 'progress-blue';
+        elseif ($status_name === 'Orphaned') $progress_class = 'progress-orange';
+        elseif ($status_name === 'In-Use') $progress_class = 'progress-pink';
+        elseif ($status_name === 'Archived') $progress_class = 'progress-orange';
       ?>
       <div class="progress-group">
         <div class="progress-label"><?php echo esc_html($status_name); ?></div>
-        <div class="progress-bar progress-<?php echo $status_name === 'Clustered' ? 'green' : ($status_name === 'New' ? 'blue' : 'orange'); ?>"><div class="progress-fill" style="width: <?php echo $percentage; ?>%"></div></div>
+        <div class="progress-bar <?php echo $progress_class; ?>"><div class="progress-fill" style="width: <?php echo $percentage; ?>%"></div></div>
         <div class="progress-percent"><?php echo $percentage; ?>%</div>
       </div>
       <?php endforeach; ?>
