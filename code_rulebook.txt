@@ -19,11 +19,13 @@
 - Use `style="display: flex; gap: 32px; margin-bottom: 32px;"`
 - Add inline styles for layout, spacing, or colors
 - Use `style="text-align: center; padding: 40px; color: #888;"`
+- Use `em`, `rem`, `pt`, `cm`, `mm` units - ONLY use `px` or `%`
 
 ✅ ALWAYS DO:
 - Use existing global classes from style.css
 - If no class exists, add it to style.css as a global class
 - Use utility classes like `text-center`, `p-20`, `m-0`
+- Use ONLY `px` or `%` for measurements
 
 ### 3. DUPLICATE CSS RULES
 ❌ NEVER DO:
@@ -187,6 +189,7 @@ Before submitting any code:
 - `assets/js/niches.js`
 - `is_page()` for enqueue conditions
 - Classes that don't exist in style.css
+- `em`, `rem`, `pt`, `cm`, `mm` units - ONLY `px` or `%`
 
 ## ✅ APPROVED PATTERNS
 

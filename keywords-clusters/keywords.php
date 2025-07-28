@@ -258,21 +258,21 @@ $countries = array_unique(array_keys($country_counts));
                 <td class="right"><?php echo $cpc ? '$' . number_format($cpc, 2) : '--'; ?></td>
                 <td class="right"><?php echo $cps ? number_format($cps, 2) : '--'; ?></td>
                 <td class="right"><?php echo $original_kd ?: ($difficulty_our_scale ?: '--'); ?></td>
-                <td>
+                <td class="flex align-center">
                   <?php if (!empty($intents)): ?>
-                    <div class="badge-group" style="font-size: 0.75em;">
+                    <div class="badge-group">
                       <?php foreach ($intents as $intent_term): ?>
                         <?php
-                        $intent_badge_class = 'badge-blue';
-                        if ($intent_term->name === 'Commercial') $intent_badge_class = 'badge-green';
-                        elseif ($intent_term->name === 'Navigational') $intent_badge_class = 'badge-purple';
-                        elseif ($intent_term->name === 'Transactional') $intent_badge_class = 'badge-pink';
+                        $intent_badge_class = 'badge-small-blue';
+                        if ($intent_term->name === 'Commercial') $intent_badge_class = 'badge-small-green';
+                        elseif ($intent_term->name === 'Navigational') $intent_badge_class = 'badge-small-purple';
+                        elseif ($intent_term->name === 'Transactional') $intent_badge_class = 'badge-small-pink';
                         ?>
-                        <span class="badge <?php echo $intent_badge_class; ?>" style="font-size: 0.7em; padding: 2px 6px; margin: 1px;"><?php echo esc_html($intent_term->name); ?></span>
+                        <span class="badge badge-small <?php echo $intent_badge_class; ?>"><?php echo esc_html($intent_term->name); ?></span>
                       <?php endforeach; ?>
                     </div>
                   <?php else: ?>
-                    <span class="badge badge-gray" style="font-size: 0.7em; padding: 2px 6px;">Informational</span>
+                    <span class="badge badge-small badge-small-gray">Informational</span>
                   <?php endif; ?>
                 </td>
                 <td><span class="badge <?php echo $status_badge_class; ?>"><?php echo esc_html($status); ?></span></td>
