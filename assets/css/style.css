@@ -136,7 +136,7 @@ body {
 .sidebar-menu {
     list-style: none;
     padding: 0;
-    margin: 5px 0 0 0;
+    margin: 0;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -162,11 +162,11 @@ body {
 
 /* Sidebar Menu Links */
 .sidebar-menu a {
-    padding: 5px 20px;
-    font-size: 17px;
+    padding: 12px 20px;
+    font-size: 16px;
     color: #ecf0f1;
     border-radius: 6px;
-    transition: background 0.18s, color 0.18s, font-size 0.18s;
+    transition: background 0.18s, color 0.18s;
     display: flex;
     align-items: center;
     gap: 11px;
@@ -175,9 +175,8 @@ body {
 
 .sidebar-menu a:hover,
 .sidebar-menu a.active {
-    background: var(--primary-color);
+    background: rgba(255,255,255,0.1);
     color: #fff;
-    font-size: 18px;
 }
 
 .sidebar-menu li:not(.menu-section) a {
@@ -189,12 +188,12 @@ body {
 
 .sidebar-menu li:not(.menu-section) a:hover {
     opacity: 1;
-    background: var(--sidebar-hover);
-    color: var(--primary-light);
+    background: rgba(255,255,255,0.1);
+    color: #fff;
 }
 
 .sidebar-menu li:not(.menu-section) {
-    margin-bottom: 3px;
+    margin-bottom: 2px;
 }
 
 /* Sidebar Icons */
@@ -212,10 +211,10 @@ body {
     font-size: 15px;
     font-weight: 700;
     letter-spacing: 1px;
-    margin: 5px 0 5px 0;
+    margin: 20px 0 10px 0;
     padding: 8px 20px 4px 20px;
     text-transform: uppercase;
-    background: none;
+    background: transparent;
     border-left: 3px solid var(--primary-color);
 }
 
