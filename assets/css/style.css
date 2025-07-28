@@ -1037,7 +1037,7 @@ ul li:last-child {
 .keyword-card {
     animation: fadeIn 0.5s ease-out;
 } 
-
+/*
 .menu-section {
   font-weight: bold;
   margin-top: 20px;
@@ -1070,10 +1070,10 @@ ul li:last-child {
   color: var(--primary-color);
 } 
 
- 
+ */
 
 /* === Niche Management Page Styles === */
-
+/*
 .niche-selector.sticky {
   position: sticky;
   top: 0;
@@ -1138,7 +1138,7 @@ ul li:last-child {
   cursor: pointer;
   transition: background 0.2s;
 }
-
+*/
 /* Use palette colors for chips, progress bars, and accents */
 .chip {
   background: #eaf3fa;
