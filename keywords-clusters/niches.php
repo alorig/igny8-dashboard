@@ -254,7 +254,7 @@ $top_personas = array_slice($persona_counts, 0, 2, true);
 
     <!-- Data Table -->
     <div class="card">
-        <table class="data-table">
+        <table class="modern-table">
             <thead>
                 <tr>
                     <th>Niche Name</th>
