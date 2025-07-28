@@ -183,24 +183,30 @@ $countries = array_unique(array_keys($country_counts));
     <!-- Status Breakdown Chart -->
     <div class="card">
       <span class="card-title">Status Breakdown</span>
-      <div class="analytics-donut-chart" style="background: conic-gradient(
+      <div class="progress-group">
         <?php 
-        $status_colors = array('#3498db', '#27ae60', '#e67e22', '#db3498', '#8e44ad');
-        $current_percentage = 0;
-        $color_index = 0;
-        $gradient_parts = array();
+        $status_colors = array(
+          'New' => '#3498db',
+          'Clustered' => '#27ae60', 
+          'Orphaned' => '#e67e22',
+          'In-Use' => '#db3498',
+          'Archived' => '#8e44ad'
+        );
         
         foreach ($status_counts as $status_name => $count):
           $percentage = $total_keywords > 0 ? round(($count / $total_keywords) * 100) : 0;
-          $color = $status_colors[$color_index % count($status_colors)];
-          $gradient_parts[] = $color . ' ' . $current_percentage . '% ' . ($current_percentage + $percentage) . '%';
-          $current_percentage += $percentage;
-          $color_index++;
-        endforeach;
-        
-        echo implode(', ', $gradient_parts);
+          $color = isset($status_colors[$status_name]) ? $status_colors[$status_name] : '#3498db';
+          $bg_color = $color . '20';
         ?>
-      );"></div>
+        <div class="progress-row">
+          <span class="progress-label" style="color: <?php echo $color; ?>;"><?php echo esc_html($status_name); ?></span>
+          <div class="progress-bar" style="background: <?php echo $bg_color; ?>;">
+            <div class="progress-fill" style="width: <?php echo $percentage; ?>%; background: <?php echo $color; ?>;"></div>
+          </div>
+          <span class="progress-percent" style="color: <?php echo $color; ?>;"><?php echo $percentage; ?>%</span>
+        </div>
+        <?php endforeach; ?>
+      </div>
     </div>
   </div>
 
@@ -217,8 +223,7 @@ $countries = array_unique(array_keys($country_counts));
 
   <!-- Keywords Table -->
   <div class="card">
-    <div class="data-table">
-      <table class="modern-table">
+    <table class="modern-table">
         <thead>
           <tr>
             <th><input type="checkbox" /></th>
@@ -296,7 +301,6 @@ $countries = array_unique(array_keys($country_counts));
           <?php endif; ?>
         </tbody>
       </table>
-    </div>
     
     <!-- Pagination -->
     <div class="flex-between">
