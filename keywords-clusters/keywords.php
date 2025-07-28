@@ -258,7 +258,7 @@ $countries = array_unique(array_keys($country_counts));
                 <td class="right"><?php echo $cpc ? '$' . number_format($cpc, 2) : '--'; ?></td>
                 <td class="right"><?php echo $cps ? number_format($cps, 2) : '--'; ?></td>
                 <td class="right"><?php echo $original_kd ?: ($difficulty_our_scale ?: '--'); ?></td>
-                <td class="flex align-center">
+                <td>
                   <?php if (!empty($intents)): ?>
                     <div class="badge-group">
                       <?php foreach ($intents as $intent_term): ?>
