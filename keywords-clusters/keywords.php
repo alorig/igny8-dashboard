@@ -1,156 +1,227 @@
-<!-- KEYWORDS MANAGEMENT PAGE for Igny8 Admin Dashboard -->
+<?php
+// Keywords Management Page for Igny8 Admin Dashboard
+// Fetch real data with safety checks
+
+// Get all keywords with safety checks
+$keywords_query = new WP_Query(array(
+    'post_type' => 'keyword',
+    'posts_per_page' => -1,
+    'post_status' => 'publish'
+));
+
+$keywords = $keywords_query->posts;
+$total_keywords = $keywords_query->found_posts;
+
+// Calculate metrics with safety checks
+$orphaned_count = 0;
+$clustered_count = 0;
+$total_volume = 0;
+$volume_count = 0;
+
+$intent_counts = array();
+$status_counts = array();
+$country_counts = array();
+
+foreach ($keywords as $keyword) {
+    // Get status with safety check
+    $status_terms = wp_get_post_terms($keyword->ID, 'keyword-status');
+    $status = !is_wp_error($status_terms) && !empty($status_terms) ? $status_terms[0]->name : 'New';
+    
+    if ($status === 'Orphaned') {
+        $orphaned_count++;
+    } elseif ($status === 'Clustered') {
+        $clustered_count++;
+    }
+    
+    // Count statuses
+    $status_counts[$status] = isset($status_counts[$status]) ? $status_counts[$status] + 1 : 1;
+    
+    // Get intent with safety check
+    $intent_terms = wp_get_post_terms($keyword->ID, 'intent');
+    $intent = !is_wp_error($intent_terms) && !empty($intent_terms) ? $intent_terms[0]->name : 'Informational';
+    $intent_counts[$intent] = isset($intent_counts[$intent]) ? $intent_counts[$intent] + 1 : 1;
+    
+    // Get ACF fields with safety checks
+    $search_volume = get_field('search_volume', $keyword->ID);
+    if ($search_volume && is_numeric($search_volume)) {
+        $total_volume += $search_volume;
+        $volume_count++;
+    }
+    
+    $country = get_field('country', $keyword->ID);
+    if ($country) {
+        $country_counts[$country] = isset($country_counts[$country]) ? $country_counts[$country] + 1 : 1;
+    }
+}
+
+// Calculate averages with safety checks
+$avg_volume = $volume_count > 0 ? round($total_volume / $volume_count) : 0;
+$clustered_percentage = $total_keywords > 0 ? round(($clustered_count / $total_keywords) * 100) : 0;
+
+// Get taxonomy terms for dropdowns
+$status_terms = get_terms(array('taxonomy' => 'keyword-status', 'hide_empty' => false));
+$intent_terms = get_terms(array('taxonomy' => 'intent', 'hide_empty' => false));
+$countries = array_unique(array_keys($country_counts));
+?>
 
 <div class="page-main-container">
-  <section class="keywords-filters-analytics-row" style="width: 100%; margin-bottom: 0;">
-    <div class="igny8-filter-bar" style="width: 100%;">
-      <div class="ts-wrapper">
-        <select id="industry" class="dropdown tom-select">
-          <option value="" disabled selected hidden>Industry</option>
-          <option>Automotive</option>
-          <option>Home</option>
-          <option>Fitness</option>
-        </select>
-      </div>
-      <div class="ts-wrapper">
-        <select id="status" class="dropdown tom-select">
-          <option value="" disabled selected hidden>Status</option>
-          <option>New</option>
-          <option>Clustered</option>
-          <option>In-Use</option>
-          <option>Orphaned</option>
-          <option>Archived</option>
-        </select>
-      </div>
-      <div class="ts-wrapper">
-        <select id="persona" class="dropdown tom-select">
-          <option value="" disabled selected hidden>Persona</option>
-          <option>Marketer</option>
-          <option>Engineer</option>
-        </select>
-      </div>
-      <div class="ts-wrapper">
-        <select id="buyer-stage" class="dropdown tom-select">
-          <option value="" disabled selected hidden>Buyer Stage</option>
-          <option>Awareness</option>
-          <option>Consideration</option>
-          <option>Decision</option>
-          <option>Action</option>
-        </select>
-      </div>
-      <div class="ts-wrapper">
-        <select id="intent" class="dropdown tom-select">
-          <option value="" disabled selected hidden>Intent</option>
-          <option>Informational</option>
-          <option>Transactional</option>
-          <option>Navigational</option>
-          <option>Commercial</option>
-        </select>
-      </div>
-      <div class="ts-wrapper">
-        <select id="country" class="dropdown tom-select">
-          <option value="" disabled selected hidden>Country</option>
-          <option>US</option>
-          <option>UK</option>
-          <option>EU</option>
-        </select>
-      </div>
-      <div class="ts-wrapper" style="max-width: 180px;">
-        <label for="volume" style="font-size: 0.95em; color: #888; margin-bottom: 2px;">Volume</label>
+  <!-- Filter Bar -->
+  <section class="igny8-filter-bar">
+    <div class="ts-wrapper">
+      <select id="industry" class="igny8-dropdown tom-select">
+        <option value="" disabled selected hidden>Industry</option>
+        <option value="automotive">Automotive</option>
+        <option value="home">Home</option>
+        <option value="fitness">Fitness</option>
+      </select>
+    </div>
+    <div class="ts-wrapper">
+      <select id="status" class="igny8-dropdown tom-select">
+        <option value="" disabled selected hidden>Status</option>
+        <?php if (!is_wp_error($status_terms)): ?>
+          <?php foreach ($status_terms as $term): ?>
+            <option value="<?php echo esc_attr($term->slug); ?>"><?php echo esc_html($term->name); ?></option>
+          <?php endforeach; ?>
+        <?php endif; ?>
+      </select>
+    </div>
+    <div class="ts-wrapper">
+      <select id="persona" class="igny8-dropdown tom-select">
+        <option value="" disabled selected hidden>Persona</option>
+        <option value="marketer">Marketer</option>
+        <option value="engineer">Engineer</option>
+      </select>
+    </div>
+    <div class="ts-wrapper">
+      <select id="buyer-stage" class="igny8-dropdown tom-select">
+        <option value="" disabled selected hidden>Buyer Stage</option>
+        <option value="awareness">Awareness</option>
+        <option value="consideration">Consideration</option>
+        <option value="decision">Decision</option>
+        <option value="action">Action</option>
+      </select>
+    </div>
+    <div class="ts-wrapper">
+      <select id="intent" class="igny8-dropdown tom-select">
+        <option value="" disabled selected hidden>Intent</option>
+        <?php if (!is_wp_error($intent_terms)): ?>
+          <?php foreach ($intent_terms as $term): ?>
+            <option value="<?php echo esc_attr($term->slug); ?>"><?php echo esc_html($term->name); ?></option>
+          <?php endforeach; ?>
+        <?php endif; ?>
+      </select>
+    </div>
+    <div class="ts-wrapper">
+      <select id="country" class="igny8-dropdown tom-select">
+        <option value="" disabled selected hidden>Country</option>
+        <?php foreach ($countries as $country): ?>
+          <option value="<?php echo esc_attr($country); ?>"><?php echo esc_html($country); ?></option>
+        <?php endforeach; ?>
+      </select>
+    </div>
+          <div class="ts-wrapper">
+        <label for="volume">Volume</label>
         <input id="volume" type="range" min="0" max="50000">
       </div>
       <div class="ts-wrapper search-wrapper">
         <input id="search" type="search" placeholder="Search keywords...">
         <button id="search-btn" type="button">Search</button>
       </div>
-    </div>
   </section>
 
-  <!-- 3-column layout: metrics (2x2), graph, donut, all equal height -->
-  <div style="display: flex; gap: 32px; margin-bottom: 32px; width: 100%; align-items: stretch;">
-    <div class="column-box-height" style="flex: 1 1 0; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 18px 18px; height: 420px; align-items: stretch; justify-items: stretch;">
+  <!-- Metrics and Analytics Row -->
+  <div class="metrics-row">
+    <!-- Metrics Grid -->
+    <div class="metrics-row">
       <div class="metric-card metric-blue">
-        <div class="metric-value">12,450</div>
+        <div class="metric-value"><?php echo number_format($total_keywords); ?></div>
         <div class="metric-label">Total Keywords</div>
       </div>
       <div class="metric-card metric-green">
-        <div class="metric-value">1,200</div>
+        <div class="metric-value"><?php echo number_format($orphaned_count); ?></div>
         <div class="metric-label">Orphaned</div>
       </div>
       <div class="metric-card metric-pink">
-        <div class="metric-value">87%</div>
+        <div class="metric-value"><?php echo $clustered_percentage; ?>%</div>
         <div class="metric-label">Clustered</div>
       </div>
       <div class="metric-card metric-orange">
-        <div class="metric-value">450</div>
+        <div class="metric-value"><?php echo number_format($avg_volume); ?></div>
         <div class="metric-label">Avg Volume</div>
       </div>
     </div>
-    <div class="column-box-height" style="flex: 1 1 0; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 420px;">
-      <div class="analytics-graph-card" style="width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-        <span class="analytics-graph-title" style="margin-bottom: 18px;">Keyword Volume Trend</span>
-        <div style="width: 90%; display: flex; flex-direction: column; gap: 18px;">
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <span style="width: 110px; font-size: 0.98em; color: #3498db;">Branded</span>
-            <div style="flex: 1; background: #eaf3fa; border-radius: 8px; height: 16px; position: relative;">
-              <div style="width: 60%; background: #3498db; height: 100%; border-radius: 8px;"></div>
-            </div>
-            <span style="width: 40px; text-align: right; color: #3498db; font-weight: 600;">60%</span>
+    
+    <!-- Keyword Volume Trend Chart -->
+    <div class="card">
+      <span class="card-title">Keyword Volume Trend</span>
+      <div>
+        <?php 
+        $intent_colors = array(
+          'Branded' => '#3498db',
+          'Informational' => '#27ae60', 
+          'Commercial' => '#e67e22',
+          'Navigational' => '#8e44ad',
+          'Transactional' => '#db3498'
+        );
+        
+        foreach ($intent_counts as $intent_name => $count):
+          $percentage = $total_keywords > 0 ? round(($count / $total_keywords) * 100) : 0;
+          $color = isset($intent_colors[$intent_name]) ? $intent_colors[$intent_name] : '#3498db';
+          $bg_color = $color . '20';
+        ?>
+        <div class="progress-row">
+          <span style="color: <?php echo $color; ?>;"><?php echo esc_html($intent_name); ?></span>
+          <div class="progress-bar" style="background: <?php echo $bg_color; ?>;">
+            <div class="progress-fill" style="width: <?php echo $percentage; ?>%; background: <?php echo $color; ?>;"></div>
           </div>
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <span style="width: 110px; font-size: 0.98em; color: #27ae60;">Informational</span>
-            <div style="flex: 1; background: #eafaf1; border-radius: 8px; height: 16px; position: relative;">
-              <div style="width: 80%; background: #27ae60; height: 100%; border-radius: 8px;"></div>
-            </div>
-            <span style="width: 40px; text-align: right; color: #27ae60; font-weight: 600;">80%</span>
-          </div>
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <span style="width: 110px; font-size: 0.98em; color: #e67e22;">Commercial</span>
-            <div style="flex: 1; background: #fff6ea; border-radius: 8px; height: 16px; position: relative;">
-              <div style="width: 40%; background: #e67e22; height: 100%; border-radius: 8px;"></div>
-            </div>
-            <span style="width: 40px; text-align: right; color: #e67e22; font-weight: 600;">40%</span>
-          </div>
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <span style="width: 110px; font-size: 0.98em; color: #8e44ad;">Navigational</span>
-            <div style="flex: 1; background: #f3e8fb; border-radius: 8px; height: 16px; position: relative;">
-              <div style="width: 30%; background: #8e44ad; height: 100%; border-radius: 8px;"></div>
-            </div>
-            <span style="width: 40px; text-align: right; color: #8e44ad; font-weight: 600;">30%</span>
-          </div>
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <span style="width: 110px; font-size: 0.98em; color: #db3498;">Transactional</span>
-            <div style="flex: 1; background: #fbeaf7; border-radius: 8px; height: 16px; position: relative;">
-              <div style="width: 20%; background: #db3498; height: 100%; border-radius: 8px;"></div>
-            </div>
-            <span style="width: 40px; text-align: right; color: #db3498; font-weight: 600;">20%</span>
-          </div>
+          <span style="color: <?php echo $color; ?>;"><?php echo $percentage; ?>%</span>
         </div>
+        <?php endforeach; ?>
       </div>
     </div>
-    <div class="column-box-height" style="flex: 1 1 0; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 420px;">
-      <div class="analytics-donut-card" style="width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-        <span class="analytics-donut-title" style="margin-bottom: 18px;">Status Breakdown</span>
-        <div class="analytics-donut-chart" style="width: 320px; height: 320px; max-width: 80%; max-height: 80%; min-width: 180px; min-height: 180px; background: conic-gradient(#3498db 0% 30%, #27ae60 30% 55%, #e67e22 55% 75%, #db3498 75% 90%, #8e44ad 90% 100%); border-radius: 50%;"></div>
-      </div>
+    
+    <!-- Status Breakdown Chart -->
+    <div class="card">
+      <span class="card-title">Status Breakdown</span>
+      <div class="analytics-donut-chart" style="background: conic-gradient(
+        <?php 
+        $status_colors = array('#3498db', '#27ae60', '#e67e22', '#db3498', '#8e44ad');
+        $current_percentage = 0;
+        $color_index = 0;
+        $gradient_parts = array();
+        
+        foreach ($status_counts as $status_name => $count):
+          $percentage = $total_keywords > 0 ? round(($count / $total_keywords) * 100) : 0;
+          $color = $status_colors[$color_index % count($status_colors)];
+          $gradient_parts[] = $color . ' ' . $current_percentage . '% ' . ($current_percentage + $percentage) . '%';
+          $current_percentage += $percentage;
+          $color_index++;
+        endforeach;
+        
+        echo implode(', ', $gradient_parts);
+        ?>
+      );"></div>
     </div>
   </div>
 
-  <div class="keywords-actions-row">
-    <div>
-      <button class="btn btn-primary keywords-actions__add">Add New Keyword</button>
-      <button class="btn btn-black keywords-actions__import">Import Keywords</button>
+  <!-- Action Buttons -->
+  <div class="flex-between actions-bar">
+    <div class="flex gap-24">
+      <button class="btn btn-primary">Add New Keyword</button>
+      <button class="btn btn-black">Import Keywords</button>
     </div>
     <div>
-      <button class="btn btn-outline keywords-actions__export">Export Keywords</button>
+      <button class="btn btn-outline">Export Keywords</button>
     </div>
   </div>
 
-  <div class="keywords-main-content" style="width: 100%;">
-    <div class="keywords-table-wrap" style="width: 100%;">
-      <table class="keywords-table modern-table">
+  <!-- Keywords Table -->
+  <div class="card">
+    <div class="data-table">
+      <table class="modern-table">
         <thead>
           <tr>
-            <th><input type="checkbox" class="keywords-table__select-all" /></th>
+            <th><input type="checkbox" /></th>
             <th>Keyword</th>
             <th class="right">Volume</th>
             <th class="right">CPC</th>
@@ -165,134 +236,75 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td><input type="checkbox" /></td>
-            <td>best car seat covers</td>
-            <td class="right">2,400</td>
-            <td class="right">$1.20</td>
-            <td class="right">0.45</td>
-            <td class="right">32</td>
-            <td><span class="badge badge-blue">Informational</span></td>
-            <td><span class="badge badge-gray">Marketer</span></td>
-            <td><span class="badge badge-blue">New</span></td>
-            <td>Automotive Interior</td>
-            <td>US</td>
-            <td class="keywords-table__actions">
-              <button class="btn btn-square btn-edit">Edit</button>
-              <button class="btn btn-square btn-archive">Archive</button>
-            </td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" /></td>
-            <td>leather steering wheel cover</td>
-            <td class="right">1,800</td>
-            <td class="right">$0.95</td>
-            <td class="right">0.38</td>
-            <td class="right">28</td>
-            <td><span class="badge badge-green">Commercial</span></td>
-            <td><span class="badge badge-gray">Engineer</span></td>
-            <td><span class="badge badge-green">Clustered</span></td>
-            <td>Luxury Interiors</td>
-            <td>UK</td>
-            <td class="keywords-table__actions">
-              <button class="btn btn-square btn-edit">Edit</button>
-              <button class="btn btn-square btn-archive">Archive</button>
-            </td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" /></td>
-            <td>universal car mats</td>
-            <td class="right">3,100</td>
-            <td class="right">$0.80</td>
-            <td class="right">0.29</td>
-            <td class="right">22</td>
-            <td><span class="badge badge-blue">Navigational</span></td>
-            <td><span class="badge badge-gray">Marketer</span></td>
-            <td><span class="badge badge-red">Orphaned</span></td>
-            <td>-</td>
-            <td>EU</td>
-            <td class="keywords-table__actions">
-              <button class="btn btn-square btn-edit">Edit</button>
-              <button class="btn btn-square btn-archive">Archive</button>
-            </td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" /></td>
-            <td>car floor mats</td>
-            <td class="right">1,200</td>
-            <td class="right">$0.70</td>
-            <td class="right">0.22</td>
-            <td class="right">18</td>
-            <td><span class="badge badge-green">Commercial</span></td>
-            <td><span class="badge badge-gray">Marketer</span></td>
-            <td><span class="badge badge-green">Clustered</span></td>
-            <td>Universal Car Mats</td>
-            <td>US</td>
-            <td class="keywords-table__actions">
-              <button class="btn btn-square btn-edit">Edit</button>
-              <button class="btn btn-square btn-archive">Archive</button>
-            </td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" /></td>
-            <td>custom seat covers</td>
-            <td class="right">2,800</td>
-            <td class="right">$1.10</td>
-            <td class="right">0.41</td>
-            <td class="right">27</td>
-            <td><span class="badge badge-blue">Informational</span></td>
-            <td><span class="badge badge-gray">Engineer</span></td>
-            <td><span class="badge badge-blue">New</span></td>
-            <td>Automotive Interior</td>
-            <td>UK</td>
-            <td class="keywords-table__actions">
-              <button class="btn btn-square btn-edit">Edit</button>
-              <button class="btn btn-square btn-archive">Archive</button>
-            </td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" /></td>
-            <td>leather car mats</td>
-            <td class="right">2,100</td>
-            <td class="right">$0.90</td>
-            <td class="right">0.33</td>
-            <td class="right">25</td>
-            <td><span class="badge badge-green">Commercial</span></td>
-            <td><span class="badge badge-gray">Marketer</span></td>
-            <td><span class="badge badge-green">Clustered</span></td>
-            <td>Luxury Interiors</td>
-            <td>EU</td>
-            <td class="keywords-table__actions">
-              <button class="btn btn-square btn-edit">Edit</button>
-              <button class="btn btn-square btn-archive">Archive</button>
-            </td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" /></td>
-            <td>universal trunk liner</td>
-            <td class="right">1,600</td>
-            <td class="right">$0.60</td>
-            <td class="right">0.19</td>
-            <td class="right">15</td>
-            <td><span class="badge badge-blue">Informational</span></td>
-            <td><span class="badge badge-gray">Engineer</span></td>
-            <td><span class="badge badge-red">Orphaned</span></td>
-            <td>-</td>
-            <td>US</td>
-            <td class="keywords-table__actions">
-              <button class="btn btn-square btn-edit">Edit</button>
-              <button class="btn btn-square btn-archive">Archive</button>
-            </td>
-          </tr>
+          <?php if (!empty($keywords)): ?>
+            <?php foreach ($keywords as $keyword): ?>
+              <?php
+              // Get ACF fields with safety checks
+              $keyword_text = get_field('keyword', $keyword->ID);
+              $search_volume = get_field('search_volume', $keyword->ID);
+              $cpc = get_field('cpc', $keyword->ID);
+              $cps = get_field('cps', $keyword->ID);
+              $original_kd = get_field('original_kd', $keyword->ID);
+              $difficulty_our_scale = get_field('difficulty_our_scale', $keyword->ID);
+              $country = get_field('country', $keyword->ID);
+              
+              // Get taxonomies with safety checks
+              $status_terms = wp_get_post_terms($keyword->ID, 'keyword-status');
+              $status = !is_wp_error($status_terms) && !empty($status_terms) ? $status_terms[0]->name : 'New';
+              
+              $intent_terms = wp_get_post_terms($keyword->ID, 'intent');
+              $intent = !is_wp_error($intent_terms) && !empty($intent_terms) ? $intent_terms[0]->name : 'Informational';
+              
+              // Get cluster association (placeholder for now)
+              $cluster_assoc = '-';
+              
+              // Determine badge colors
+              $status_badge_class = 'badge-blue';
+              if ($status === 'Clustered') $status_badge_class = 'badge-green';
+              elseif ($status === 'Orphaned') $status_badge_class = 'badge-red';
+              elseif ($status === 'In-Use') $status_badge_class = 'badge-orange';
+              
+              $intent_badge_class = 'badge-blue';
+              if ($intent === 'Commercial') $intent_badge_class = 'badge-green';
+              elseif ($intent === 'Navigational') $intent_badge_class = 'badge-purple';
+              elseif ($intent === 'Transactional') $intent_badge_class = 'badge-pink';
+              ?>
+              <tr data-status="<?php echo esc_attr($status); ?>" data-intent="<?php echo esc_attr($intent); ?>" data-country="<?php echo esc_attr($country); ?>">
+                <td><input type="checkbox" /></td>
+                <td><?php echo esc_html($keyword_text ?: $keyword->post_title); ?></td>
+                <td class="right"><?php echo $search_volume ? number_format($search_volume) : '--'; ?></td>
+                <td class="right"><?php echo $cpc ? '$' . number_format($cpc, 2) : '--'; ?></td>
+                <td class="right"><?php echo $cps ? number_format($cps, 2) : '--'; ?></td>
+                <td class="right"><?php echo $difficulty_our_scale ?: ($original_kd ?: '--'); ?></td>
+                <td><span class="badge <?php echo $intent_badge_class; ?>"><?php echo esc_html($intent); ?></span></td>
+                <td><span class="badge badge-gray">Marketer</span></td>
+                <td><span class="badge <?php echo $status_badge_class; ?>"><?php echo esc_html($status); ?></span></td>
+                <td><?php echo esc_html($cluster_assoc); ?></td>
+                <td><?php echo esc_html($country ?: '--'); ?></td>
+                <td>
+                  <button class="btn btn-small btn-primary btn-edit">Edit</button>
+                  <button class="btn btn-small btn-outline btn-archive">Archive</button>
+                </td>
+              </tr>
+            <?php endforeach; ?>
+          <?php else: ?>
+            <tr>
+              <td colspan="12" style="text-align: center; padding: 40px; color: #888;">
+                No keywords found. Add some keywords to get started.
+              </td>
+            </tr>
+          <?php endif; ?>
         </tbody>
       </table>
-      <div class="keywords-pagination">
-        <button class="btn btn-tertiary">&laquo; Prev</button>
-        <span class="pagination-info">1</span>
-        <span class="pagination-info">2</span>
-        <span class="pagination-info active">3</span>
-        <button class="btn btn-tertiary">Next &raquo;</button>
-      </div>
+    </div>
+    
+    <!-- Pagination -->
+    <div>
+      <button class="btn btn-tertiary">&laquo; Prev</button>
+      <span class="pagination-info">1</span>
+      <span class="pagination-info">2</span>
+      <span class="pagination-info active">3</span>
+      <button class="btn btn-tertiary">Next &raquo;</button>
     </div>
   </div>
 </div>

@@ -490,6 +490,41 @@ function igny8_register_niche_post_type() {
 }
 add_action('init', 'igny8_register_niche_post_type');
 
+// Register Custom Post Type: Keyword
+function igny8_register_keyword_post_type() {
+    $labels = array(
+        'name'               => 'Keywords',
+        'singular_name'      => 'Keyword',
+        'menu_name'          => 'Keywords',
+        'add_new'            => 'Add New',
+        'add_new_item'       => 'Add New Keyword',
+        'edit_item'          => 'Edit Keyword',
+        'new_item'           => 'New Keyword',
+        'view_item'          => 'View Keyword',
+        'search_items'       => 'Search Keywords',
+        'not_found'          => 'No keywords found',
+        'not_found_in_trash' => 'No keywords found in trash'
+    );
+    
+    $args = array(
+        'labels'              => $labels,
+        'public'              => true,
+        'publicly_queryable'  => true,
+        'show_ui'             => true,
+        'show_in_menu'        => true,
+        'query_var'           => true,
+        'rewrite'             => array('slug' => 'keyword'),
+        'capability_type'     => 'post',
+        'has_archive'         => true,
+        'hierarchical'        => false,
+        'menu_position'       => 21,
+        'menu_icon'           => 'dashicons-tag',
+        'supports'            => array('title', 'editor', 'thumbnail', 'excerpt', 'custom-fields')
+    );
+    register_post_type('keyword', $args);
+}
+add_action('init', 'igny8_register_keyword_post_type');
+
 // Register Taxonomy: Niche Status
 function igny8_register_niche_status_taxonomy() {
     $labels = array(
@@ -548,6 +583,64 @@ function igny8_register_sector_taxonomy() {
 }
 add_action('init', 'igny8_register_sector_taxonomy');
 
+// Register Taxonomy: Keyword Status
+function igny8_register_keyword_status_taxonomy() {
+    $labels = array(
+        'name'              => 'Keyword Statuses',
+        'singular_name'     => 'Keyword Status',
+        'search_items'      => 'Search Statuses',
+        'all_items'         => 'All Statuses',
+        'parent_item'       => 'Parent Status',
+        'parent_item_colon' => 'Parent Status:',
+        'edit_item'         => 'Edit Status',
+        'update_item'       => 'Update Status',
+        'add_new_item'      => 'Add New Status',
+        'new_item_name'     => 'New Status Name',
+        'menu_name'         => 'Statuses'
+    );
+
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array('slug' => 'keyword-status'),
+    );
+
+    register_taxonomy('keyword-status', array('keyword'), $args);
+}
+add_action('init', 'igny8_register_keyword_status_taxonomy');
+
+// Register Taxonomy: Intent
+function igny8_register_intent_taxonomy() {
+    $labels = array(
+        'name'              => 'Intents',
+        'singular_name'     => 'Intent',
+        'search_items'      => 'Search Intents',
+        'all_items'         => 'All Intents',
+        'parent_item'       => 'Parent Intent',
+        'parent_item_colon' => 'Parent Intent:',
+        'edit_item'         => 'Edit Intent',
+        'update_item'       => 'Update Intent',
+        'add_new_item'      => 'Add New Intent',
+        'new_item_name'     => 'New Intent Name',
+        'menu_name'         => 'Intents'
+    );
+
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array('slug' => 'intent'),
+    );
+
+    register_taxonomy('intent', array('keyword'), $args);
+}
+add_action('init', 'igny8_register_intent_taxonomy');
+
 // Add default terms for taxonomies
 function igny8_add_default_taxonomy_terms() {
     // Add default niche statuses
@@ -573,6 +666,37 @@ function igny8_add_default_taxonomy_terms() {
     }
     if (!term_exists('technology', 'sector')) {
         wp_insert_term('Technology', 'sector', array('slug' => 'technology'));
+    }
+
+    // Add default keyword statuses
+    if (!term_exists('new', 'keyword-status')) {
+        wp_insert_term('New', 'keyword-status', array('slug' => 'new'));
+    }
+    if (!term_exists('clustered', 'keyword-status')) {
+        wp_insert_term('Clustered', 'keyword-status', array('slug' => 'clustered'));
+    }
+    if (!term_exists('in-use', 'keyword-status')) {
+        wp_insert_term('In-Use', 'keyword-status', array('slug' => 'in-use'));
+    }
+    if (!term_exists('orphaned', 'keyword-status')) {
+        wp_insert_term('Orphaned', 'keyword-status', array('slug' => 'orphaned'));
+    }
+    if (!term_exists('archived', 'keyword-status')) {
+        wp_insert_term('Archived', 'keyword-status', array('slug' => 'archived'));
+    }
+
+    // Add default intents
+    if (!term_exists('informational', 'intent')) {
+        wp_insert_term('Informational', 'intent', array('slug' => 'informational'));
+    }
+    if (!term_exists('transactional', 'intent')) {
+        wp_insert_term('Transactional', 'intent', array('slug' => 'transactional'));
+    }
+    if (!term_exists('navigational', 'intent')) {
+        wp_insert_term('Navigational', 'intent', array('slug' => 'navigational'));
+    }
+    if (!term_exists('commercial', 'intent')) {
+        wp_insert_term('Commercial', 'intent', array('slug' => 'commercial'));
     }
 }
 add_action('init', 'igny8_add_default_taxonomy_terms');
