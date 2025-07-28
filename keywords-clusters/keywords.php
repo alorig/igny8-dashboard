@@ -150,10 +150,10 @@ $countries = array_unique(array_keys($country_counts));
   </div>
 
   <!-- Analytics Grid -->
-  <div class="grid grid-2">
+  <div class="reports-analytics-grid">
     <!-- Keyword Volume Trend Chart -->
-    <div class="card">
-      <span class="card-title">Keyword Volume Trend</span>
+    <div class="analytics-card">
+      <h4 class="analytics-title">Keyword Volume Trend</h4>
       <div class="progress-group">
         <?php 
         $intent_colors = array(
@@ -171,7 +171,7 @@ $countries = array_unique(array_keys($country_counts));
         ?>
         <div class="progress-group">
           <div class="progress-label"><?php echo esc_html($intent_name); ?></div>
-          <div class="progress-bar progress-<?php echo strtolower($intent_name); ?>"><div class="progress-fill" style="width: <?php echo $percentage; ?>%"></div></div>
+          <div class="progress-bar progress-<?php echo $intent_name === 'Commercial' ? 'green' : ($intent_name === 'Informational' ? 'blue' : 'pink'); ?>"><div class="progress-fill" style="width: <?php echo $percentage; ?>%"></div></div>
           <div class="progress-percent"><?php echo $percentage; ?>%</div>
         </div>
         <?php endforeach; ?>
@@ -179,8 +179,8 @@ $countries = array_unique(array_keys($country_counts));
     </div>
     
     <!-- Status Breakdown Chart -->
-    <div class="card">
-      <span class="card-title">Status Breakdown</span>
+    <div class="analytics-card">
+      <h4 class="analytics-title">Status Breakdown</h4>
       <div class="progress-group">
         <?php 
         $status_colors = array(
@@ -198,7 +198,7 @@ $countries = array_unique(array_keys($country_counts));
         ?>
         <div class="progress-group">
           <div class="progress-label"><?php echo esc_html($status_name); ?></div>
-          <div class="progress-bar progress-<?php echo strtolower($status_name); ?>"><div class="progress-fill" style="width: <?php echo $percentage; ?>%"></div></div>
+          <div class="progress-bar progress-<?php echo $status_name === 'Clustered' ? 'green' : ($status_name === 'New' ? 'blue' : 'orange'); ?>"><div class="progress-fill" style="width: <?php echo $percentage; ?>%"></div></div>
           <div class="progress-percent"><?php echo $percentage; ?>%</div>
         </div>
         <?php endforeach; ?>
