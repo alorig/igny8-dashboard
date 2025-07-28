@@ -84,7 +84,7 @@ body {
 }
 
 /* ========================================
-   SIDEBAR STYLES - CONSOLIDATED SECTION
+   SIDEBAR STYLES - CLEANED & CONSOLIDATED
    ======================================== */
 
 /* Main Sidebar Container */
@@ -92,15 +92,16 @@ body {
     width: 250px;
     background: var(--sidebar-bg);
     color: white;
-    position: fixed;
-    height: 100vh;
-    overflow-y: auto;
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    padding: 0;
-    top: 0;
+    position: fixed !important;
+    top: 50px !important;
+    left: 0 !important;
+    height: calc(100vh - 50px) !important;
+    overflow-y: auto !important;
+    z-index: 1000 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    margin: 0 !important;
+    padding: 0 !important;
     box-shadow: 2px 0 12px rgba(44,62,80,0.08);
 }
 
@@ -118,7 +119,7 @@ body {
 
 .sidebar-header h2 {
     color: var(--sidebar-header);
-    font-size: 1.5em;
+    font-size: 24px;
     margin: 0;
     font-weight: 600;
 }
@@ -153,14 +154,8 @@ body {
 
 /* Remove any pseudo-elements that might create dots */
 .sidebar li:before,
-.sidebar li:after {
-    display: none !important;
-    content: none !important;
-}
-
-/* Override for sidebar - must come after the general rule */
-.sidebar ul li:before,
-.sidebar li:before {
+.sidebar li:after,
+.sidebar ul li:before {
     display: none !important;
     content: none !important;
 }
@@ -168,24 +163,25 @@ body {
 /* Sidebar Menu Links */
 .sidebar-menu a {
     padding: 5px 20px;
-    font-size: 1.05em;
+    font-size: 17px;
     color: #ecf0f1;
     border-radius: 6px;
     transition: background 0.18s, color 0.18s, font-size 0.18s;
     display: flex;
     align-items: center;
-    gap: 0.7em;
+    gap: 11px;
+    text-decoration: none !important;
 }
 
 .sidebar-menu a:hover,
 .sidebar-menu a.active {
     background: var(--primary-color);
     color: #fff;
-    font-size: 1.12em;
+    font-size: 18px;
 }
 
 .sidebar-menu li:not(.menu-section) a {
-    font-size: 0.98em;
+    font-size: 16px;
     font-weight: 500;
     margin-left: 8px;
     opacity: 0.92;
@@ -198,40 +194,29 @@ body {
 }
 
 .sidebar-menu li:not(.menu-section) {
-    margin-bottom: 0.2em;
+    margin-bottom: 3px;
 }
 
 /* Sidebar Icons */
 .sidebar-menu .dashicons {
-    font-size: 1.2em;
-    margin-right: 0.7em;
+    font-size: 19px;
+    margin-right: 11px;
     color: var(--primary-light);
     vertical-align: middle;
+    text-decoration: none !important;
 }
 
 /* Menu Section Headers */
 .menu-section {
-    color: var(--primary-light);
-    font-size: 1.08em;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    margin: 1.2em 0 0.3em 0;
-    padding: 8px 20px 4px 20px;
-    text-transform: uppercase;
-    background: transparent;
-    border-left: 3px solid var(--primary-color);
-}
-
-.sidebar-menu .menu-section {
     color: #bfc9d1;
-    border-left: 3px solid var(--primary-color);
-    background: none;
     font-size: 15px;
     font-weight: 700;
-    letter-spacing: 0.04em;
-    margin: 5px 0 0.3em 0;
+    letter-spacing: 1px;
+    margin: 5px 0 5px 0;
     padding: 8px 20px 4px 20px;
     text-transform: uppercase;
+    background: none;
+    border-left: 3px solid var(--primary-color);
 }
 
 /* Settings Menu & Submenu */
@@ -292,7 +277,7 @@ body.page-id-9 .settings-menu .settings-toggle:after {
 
 .submenu a {
     padding: 12px 24px 12px 60px;
-    font-size: 0.9em;
+    font-size: 14px;
     color: #bdc3c7;
 }
 
@@ -352,29 +337,8 @@ body.page-id-9 .settings-menu .settings-toggle:after {
 }
 
 /* Settings Menu Display Overrides */
-.settings-menu .submenu {
-    display: none;
-}
-
 .settings-menu .submenu[style*="display: block"] {
     display: block !important;
-}
-
-/* Sidebar with Top Bar Integration */
-.sidebar {
-    position: fixed !important;
-    top: 50px !important; /* height of .igny8-top-bar */
-    left: 0 !important;
-    width: 250px !important;
-    background: var(--sidebar-bg) !important;
-    color: white !important;
-    height: calc(100vh - 50px) !important;
-    overflow-y: auto !important;
-    z-index: 1000 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    margin: 0 !important;
-    padding: 0 !important;
 }
 
 /* Main Content Adjustment for Sidebar */
