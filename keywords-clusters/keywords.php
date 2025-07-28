@@ -279,8 +279,10 @@ $countries = array_unique(array_keys($country_counts));
                 <td><?php echo esc_html($cluster_assoc); ?></td>
                 <td><?php echo esc_html($country ?: '--'); ?></td>
                 <td>
-                  <button class="btn btn-small btn-primary btn-edit">Edit</button>
-                  <button class="btn btn-small btn-outline btn-archive">Archive</button>
+                  <div class="flex gap-24">
+                    <button class="btn btn-small btn-primary btn-edit">Edit</button>
+                    <button class="btn btn-small btn-outline btn-archive">Archive</button>
+                  </div>
                 </td>
               </tr>
             <?php endforeach; ?>
