@@ -94,9 +94,7 @@ $top_personas = array_slice($persona_counts, 0, 2, true);
 ?>
 
 <div class="page-main-container">
-    <div class="page-header">
-        <h2>Niches Overview</h2>
-    </div>
+    
 
     <!-- Main Niche Selector -->
     <div class="card">
