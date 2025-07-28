@@ -109,7 +109,7 @@ $top_personas = array_slice($persona_counts, 0, 2, true);
                     echo "<option value='{$niche->ID}' {$selected}>{$name}</option>";
                 endforeach; ?>
             </select>
-            <span class="badge badge-blue">Clusters: <?php echo $total_clusters ?: 340; ?> | Keywords: <?php echo number_format($total_keywords ?: 12451); ?></span>
+            <span class="badge badge-blue">Clusters: <?php echo $total_clusters ?: 340; ?> | Keywords: <?php echo number_format($total_keywords ?: 12452); ?></span>
         </div>
     </div>
 
