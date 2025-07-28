@@ -216,7 +216,6 @@ $countries = array_unique(array_keys($country_counts));
             <th class="right">CPS</th>
             <th class="right">KD</th>
             <th>Intent</th>
-            <th>Persona</th>
             <th>Status</th>
             <th>Cluster Assoc.</th>
             <th>Country</th>
@@ -241,7 +240,7 @@ $countries = array_unique(array_keys($country_counts));
               $status = !is_wp_error($status_terms) && !empty($status_terms) ? $status_terms[0]->name : 'New';
               
               $intent_terms = wp_get_post_terms($keyword->ID, 'intent');
-              $intent = !is_wp_error($intent_terms) && !empty($intent_terms) ? $intent_terms[0]->name : 'Informational';
+              $intents = !is_wp_error($intent_terms) && !empty($intent_terms) ? $intent_terms : [];
               
               // Get cluster association (placeholder for now)
               $cluster_assoc = '-';
@@ -251,11 +250,6 @@ $countries = array_unique(array_keys($country_counts));
               if ($status === 'Clustered') $status_badge_class = 'badge-green';
               elseif ($status === 'Orphaned') $status_badge_class = 'badge-red';
               elseif ($status === 'In-Use') $status_badge_class = 'badge-orange';
-              
-              $intent_badge_class = 'badge-blue';
-              if ($intent === 'Commercial') $intent_badge_class = 'badge-green';
-              elseif ($intent === 'Navigational') $intent_badge_class = 'badge-purple';
-              elseif ($intent === 'Transactional') $intent_badge_class = 'badge-pink';
               ?>
               <tr data-status="<?php echo esc_attr($status); ?>" data-intent="<?php echo esc_attr($intent); ?>" data-country="<?php echo esc_attr($country); ?>">
                 <td><input type="checkbox" /></td>
@@ -264,8 +258,23 @@ $countries = array_unique(array_keys($country_counts));
                 <td class="right"><?php echo $cpc ? '$' . number_format($cpc, 2) : '--'; ?></td>
                 <td class="right"><?php echo $cps ? number_format($cps, 2) : '--'; ?></td>
                 <td class="right"><?php echo $original_kd ?: ($difficulty_our_scale ?: '--'); ?></td>
-                <td><span class="badge <?php echo $intent_badge_class; ?>"><?php echo esc_html($intent); ?></span></td>
-                <td><span class="badge badge-gray">Marketer</span></td>
+                <td>
+                  <?php if (!empty($intents)): ?>
+                    <div class="badge-group" style="font-size: 0.75em;">
+                      <?php foreach ($intents as $intent_term): ?>
+                        <?php
+                        $intent_badge_class = 'badge-blue';
+                        if ($intent_term->name === 'Commercial') $intent_badge_class = 'badge-green';
+                        elseif ($intent_term->name === 'Navigational') $intent_badge_class = 'badge-purple';
+                        elseif ($intent_term->name === 'Transactional') $intent_badge_class = 'badge-pink';
+                        ?>
+                        <span class="badge <?php echo $intent_badge_class; ?>" style="font-size: 0.7em; padding: 2px 6px; margin: 1px;"><?php echo esc_html($intent_term->name); ?></span>
+                      <?php endforeach; ?>
+                    </div>
+                  <?php else: ?>
+                    <span class="badge badge-gray" style="font-size: 0.7em; padding: 2px 6px;">Informational</span>
+                  <?php endif; ?>
+                </td>
                 <td><span class="badge <?php echo $status_badge_class; ?>"><?php echo esc_html($status); ?></span></td>
                 <td><?php echo esc_html($cluster_assoc); ?></td>
                 <td><?php echo esc_html($country ?: '--'); ?></td>
@@ -277,7 +286,7 @@ $countries = array_unique(array_keys($country_counts));
             <?php endforeach; ?>
           <?php else: ?>
             <tr>
-              <td colspan="12" style="text-align: center; padding: 40px; color: #888;">
+              <td colspan="11" style="text-align: center; padding: 40px; color: #888;">
                 No keywords found. Add some keywords to get started.
               </td>
             </tr>
