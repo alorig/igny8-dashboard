@@ -169,7 +169,7 @@ $countries = array_unique(array_keys($country_counts));
           $color = isset($intent_colors[$intent_name]) ? $intent_colors[$intent_name] : '#3498db';
           $bg_color = $color . '20';
         ?>
-        <div class="progress-row">
+        <div class="progress-group">
           <span class="progress-label" style="color: <?php echo $color; ?>;"><?php echo esc_html($intent_name); ?></span>
           <div class="progress-bar" style="background: <?php echo $bg_color; ?>;">
             <div class="progress-fill" style="width: <?php echo $percentage; ?>%; background: <?php echo $color; ?>;"></div>
@@ -198,7 +198,7 @@ $countries = array_unique(array_keys($country_counts));
           $color = isset($status_colors[$status_name]) ? $status_colors[$status_name] : '#3498db';
           $bg_color = $color . '20';
         ?>
-        <div class="progress-row">
+        <div class="progress-group">
           <span class="progress-label" style="color: <?php echo $color; ?>;"><?php echo esc_html($status_name); ?></span>
           <div class="progress-bar" style="background: <?php echo $bg_color; ?>;">
             <div class="progress-fill" style="width: <?php echo $percentage; ?>%; background: <?php echo $color; ?>;"></div>
