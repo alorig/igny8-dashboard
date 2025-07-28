@@ -445,4 +445,134 @@ function igny8_enqueue_tomselect_init() {
     wp_enqueue_script('tom-select-init', get_template_directory_uri() . '/assets/js/tom-select-init.js', array(), null, true);
 }
 add_action('wp_enqueue_scripts', 'igny8_enqueue_tomselect_init');
+
+// Enqueue dropdown filtering script
+function igny8_enqueue_dropdown_js() {
+    wp_enqueue_script('dropdown-js', get_template_directory_uri() . '/assets/js/dropdown.js', array('jquery'), null, true);
+}
+add_action('wp_enqueue_scripts', 'igny8_enqueue_dropdown_js');
+
+// Register Custom Post Type: Niche
+function igny8_register_niche_post_type() {
+    $labels = array(
+        'name'               => 'Niches',
+        'singular_name'      => 'Niche',
+        'menu_name'          => 'Niches',
+        'add_new'            => 'Add New Niche',
+        'add_new_item'       => 'Add New Niche',
+        'edit_item'          => 'Edit Niche',
+        'new_item'           => 'New Niche',
+        'view_item'          => 'View Niche',
+        'search_items'       => 'Search Niches',
+        'not_found'          => 'No niches found',
+        'not_found_in_trash' => 'No niches found in trash'
+    );
+
+    $args = array(
+        'labels'              => $labels,
+        'public'              => true,
+        'publicly_queryable'  => true,
+        'show_ui'             => true,
+        'show_in_menu'        => true,
+        'query_var'           => true,
+        'rewrite'             => array('slug' => 'niche'),
+        'capability_type'     => 'post',
+        'has_archive'         => true,
+        'hierarchical'        => false,
+        'menu_position'       => 20,
+        'menu_icon'           => 'dashicons-filter',
+        'supports'            => array('title', 'editor', 'thumbnail', 'excerpt', 'custom-fields')
+    );
+
+    register_post_type('niche', $args);
+}
+add_action('init', 'igny8_register_niche_post_type');
+
+// Register Taxonomy: Niche Status
+function igny8_register_niche_status_taxonomy() {
+    $labels = array(
+        'name'              => 'Niche Statuses',
+        'singular_name'     => 'Niche Status',
+        'search_items'      => 'Search Statuses',
+        'all_items'         => 'All Statuses',
+        'parent_item'       => 'Parent Status',
+        'parent_item_colon' => 'Parent Status:',
+        'edit_item'         => 'Edit Status',
+        'update_item'       => 'Update Status',
+        'add_new_item'      => 'Add New Status',
+        'new_item_name'     => 'New Status Name',
+        'menu_name'         => 'Statuses'
+    );
+
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array('slug' => 'niche-status'),
+    );
+
+    register_taxonomy('niche-status', array('niche'), $args);
+}
+add_action('init', 'igny8_register_niche_status_taxonomy');
+
+// Register Taxonomy: Sector
+function igny8_register_sector_taxonomy() {
+    $labels = array(
+        'name'              => 'Sectors',
+        'singular_name'     => 'Sector',
+        'search_items'      => 'Search Sectors',
+        'all_items'         => 'All Sectors',
+        'parent_item'       => 'Parent Sector',
+        'parent_item_colon' => 'Parent Sector:',
+        'edit_item'         => 'Edit Sector',
+        'update_item'       => 'Update Sector',
+        'add_new_item'      => 'Add New Sector',
+        'new_item_name'     => 'New Sector Name',
+        'menu_name'         => 'Sectors'
+    );
+
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array('slug' => 'sector'),
+    );
+
+    register_taxonomy('sector', array('niche'), $args);
+}
+add_action('init', 'igny8_register_sector_taxonomy');
+
+// Add default terms for taxonomies
+function igny8_add_default_taxonomy_terms() {
+    // Add default niche statuses
+    if (!term_exists('active', 'niche-status')) {
+        wp_insert_term('Active', 'niche-status', array('slug' => 'active'));
+    }
+    if (!term_exists('inactive', 'niche-status')) {
+        wp_insert_term('Inactive', 'niche-status', array('slug' => 'inactive'));
+    }
+    if (!term_exists('final', 'niche-status')) {
+        wp_insert_term('Final', 'niche-status', array('slug' => 'final'));
+    }
+
+    // Add default sectors
+    if (!term_exists('beauty', 'sector')) {
+        wp_insert_term('Beauty', 'sector', array('slug' => 'beauty'));
+    }
+    if (!term_exists('health', 'sector')) {
+        wp_insert_term('Health', 'sector', array('slug' => 'health'));
+    }
+    if (!term_exists('fitness', 'sector')) {
+        wp_insert_term('Fitness', 'sector', array('slug' => 'fitness'));
+    }
+    if (!term_exists('technology', 'sector')) {
+        wp_insert_term('Technology', 'sector', array('slug' => 'technology'));
+    }
+}
+add_action('init', 'igny8_add_default_taxonomy_terms');
+
 ?> 
