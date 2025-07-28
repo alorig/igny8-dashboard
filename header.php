@@ -16,7 +16,7 @@
     global $post;
     $page_title = isset($post) ? get_the_title($post) : get_bloginfo('name');
     ?>
-    <div class="igny8-top-bar" style="display: flex; align-items: center; justify-content: space-between; padding: 0 24px; height: 56px; background: #222;">
+    <div class="igny8-top-bar">
         <!-- Top-left branding -->
         <div class="igny8-branding" style="display: flex; align-items: center; font-size: 1.7rem; font-weight: 700;">
             <span style="color: #fff;">Igny</span><span style="color: #4DABF7;">8</span>
