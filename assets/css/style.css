@@ -207,15 +207,14 @@ body {
 
 /* Menu Section Headers */
 .menu-section {
-    color: #bfc9d1;
-    font-size: 15px;
     font-weight: 700;
+    font-size: 15px;
     letter-spacing: 1px;
     margin: 20px 0 10px 0;
     padding: 8px 20px 4px 20px;
     text-transform: uppercase;
-    background: transparent;
     border-left: 3px solid var(--primary-color);
+    background: transparent;
 }
 
 /* Settings Menu & Submenu */
