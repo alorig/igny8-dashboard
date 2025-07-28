@@ -1,4 +1,4 @@
-// igny8-dropdown.js
+// igny8-dropdown.js - Shared JavaScript for all pages
 
 document.addEventListener("DOMContentLoaded", function () {
   // Initialize all dropdowns with Tom Select
@@ -38,8 +38,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Trigger filtering based on dropdown type
     if (dropdownId === 'status-filter' || dropdown.classList.contains('status-filter')) {
       filterByStatus(value);
-    } else if (dropdownId === 'sector-filter' || dropdown.classList.contains('sector-filter')) {
-      filterBySector(value);
     } else if (dropdownId === 'industry-filter' || dropdown.classList.contains('industry-filter')) {
       filterByIndustry(value);
     } else if (dropdownId === 'intent-filter' || dropdown.classList.contains('intent-filter')) {
@@ -48,17 +46,19 @@ document.addEventListener("DOMContentLoaded", function () {
       filterByPersona(value);
     } else if (dropdownId === 'buyer-stage-filter' || dropdown.classList.contains('buyer-stage-filter')) {
       filterByBuyerStage(value);
+    } else if (dropdownId === 'active-niche') {
+      handleNicheSelection(value);
     }
     
     // Update metrics after any filter change
     updateMetrics();
   }
 
-  // Filter functions
+  // Filter functions - reusable for any page with tables
   function filterByStatus(status) {
     const tableRows = document.querySelectorAll('.data-table tbody tr');
     tableRows.forEach(row => {
-      const statusCell = row.querySelector('td:nth-child(3)'); // Status column
+      const statusCell = row.querySelector('td:nth-child(3) .badge');
       if (statusCell) {
         const rowStatus = statusCell.textContent.trim().toLowerCase();
         const showRow = !status || rowStatus.includes(status.toLowerCase());
@@ -67,95 +67,151 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  function filterBySector(sector) {
+  function filterByIndustry(industry) {
     const tableRows = document.querySelectorAll('.data-table tbody tr');
     tableRows.forEach(row => {
-      const sectorCell = row.querySelector('td:nth-child(4)'); // Sector column
+      const sectorCell = row.querySelector('td:nth-child(4)');
       if (sectorCell) {
         const rowSector = sectorCell.textContent.trim().toLowerCase();
-        const showRow = !sector || rowSector.includes(sector.toLowerCase());
+        const showRow = !industry || rowSector.includes(industry.toLowerCase());
         row.style.display = showRow ? '' : 'none';
       }
     });
   }
 
-  function filterByIndustry(industry) {
-    // Similar filtering logic for industry
-    console.log("Filtering by industry:", industry);
-  }
-
   function filterByIntent(intent) {
-    // Similar filtering logic for intent
-    console.log("Filtering by intent:", intent);
+    const tableRows = document.querySelectorAll('.data-table tbody tr');
+    tableRows.forEach(row => {
+      const intentCell = row.querySelector('td:nth-child(6) .badge');
+      if (intentCell) {
+        const rowIntent = intentCell.textContent.trim().toLowerCase();
+        const showRow = !intent || rowIntent.includes(intent.toLowerCase());
+        row.style.display = showRow ? '' : 'none';
+      }
+    });
   }
 
   function filterByPersona(persona) {
-    // Similar filtering logic for persona
-    console.log("Filtering by persona:", persona);
+    const tableRows = document.querySelectorAll('.data-table tbody tr');
+    tableRows.forEach(row => {
+      const personaCell = row.querySelector('td:nth-child(7)');
+      if (personaCell) {
+        const rowPersona = personaCell.textContent.trim().toLowerCase();
+        const showRow = !persona || rowPersona.includes(persona.toLowerCase());
+        row.style.display = showRow ? '' : 'none';
+      }
+    });
   }
 
   function filterByBuyerStage(stage) {
-    // Similar filtering logic for buyer stage
+    // This would be implemented when buyer stage data is available
     console.log("Filtering by buyer stage:", stage);
   }
 
-  // Update metrics based on filtered results
+  function handleNicheSelection(nicheId) {
+    if (nicheId) {
+      // Update the badge with real data for selected niche
+      updateNicheBadge(nicheId);
+      
+      // Filter table to show only this niche
+      const tableRows = document.querySelectorAll('.data-table tbody tr');
+      tableRows.forEach(row => {
+        // This would need data attributes or other way to identify niche
+        row.style.display = ''; // Show all for now
+      });
+    }
+  }
+
+  function updateNicheBadge(nicheId) {
+    // This would fetch real data for the selected niche
+    console.log("Selected niche ID:", nicheId);
+    // Update badge with real cluster and keyword counts
+  }
+
+  // Update metrics based on filtered results - reusable for any page
   function updateMetrics() {
     const visibleRows = Array.from(document.querySelectorAll('.data-table tbody tr')).filter(row => row.style.display !== 'none');
     
-    // Update Total Niches metric
-    const totalNichesMetric = document.querySelector('.metric-card:nth-child(1) p');
-    if (totalNichesMetric) {
-      totalNichesMetric.textContent = visibleRows.length;
+    // Update Total Keywords metric
+    const totalKeywordsMetric = document.querySelector('.metric-blue .metric-value');
+    if (totalKeywordsMetric) {
+      let totalKeywords = 0;
+      visibleRows.forEach(row => {
+        const keywordCell = row.querySelector('td:nth-child(5)');
+        if (keywordCell) {
+          const keywordCount = parseInt(keywordCell.textContent) || 0;
+          totalKeywords += keywordCount;
+        }
+      });
+      totalKeywordsMetric.textContent = totalKeywords.toLocaleString();
     }
     
-    // Update Active Niches metric
-    const activeNiches = visibleRows.filter(row => {
-      const statusCell = row.querySelector('td:nth-child(3)');
-      return statusCell && statusCell.textContent.toLowerCase().includes('active');
-    }).length;
+    // Update Total Clusters metric
+    const totalClustersMetric = document.querySelector('.metric-green .metric-value');
+    if (totalClustersMetric) {
+      totalClustersMetric.textContent = visibleRows.length;
+    }
     
-    const activeNichesMetric = document.querySelector('.metric-card:nth-child(2) p');
-    if (activeNichesMetric) {
-      activeNichesMetric.textContent = activeNiches;
+    // Update % Clustered metric
+    const clusteredMetric = document.querySelector('.metric-pink .metric-value');
+    if (clusteredMetric) {
+      const clusteredPercentage = visibleRows.length > 0 ? Math.round((visibleRows.length / visibleRows.length) * 100) : 0;
+      clusteredMetric.textContent = clusteredPercentage + '%';
+    }
+    
+    // Update Orphaned Keywords metric
+    const orphanedMetric = document.querySelector('.metric-orange .metric-value');
+    if (orphanedMetric) {
+      const orphanedCount = Math.max(0, 1200 - (visibleRows.length * 50)); // Example calculation
+      const orphanedPercentage = 100 - (parseInt(clusteredMetric.textContent) || 87);
+      orphanedMetric.textContent = orphanedCount.toLocaleString() + ' (' + orphanedPercentage + '%)';
     }
 
-    // Update other metrics as needed
+    // Update progress bars
     updateProgressBars(visibleRows);
   }
 
-  // Update progress bars (for cluster status section)
+  // Update progress bars (for cluster status section) - reusable
   function updateProgressBars(visibleRows) {
     const totalRows = visibleRows.length;
     if (totalRows === 0) return;
 
     const finalized = visibleRows.filter(row => {
-      const statusCell = row.querySelector('td:nth-child(3)');
+      const statusCell = row.querySelector('td:nth-child(3) .badge');
       return statusCell && statusCell.textContent.toLowerCase().includes('final');
     }).length;
 
-    const inProgress = visibleRows.filter(row => {
-      const statusCell = row.querySelector('td:nth-child(3)');
-      return statusCell && statusCell.textContent.toLowerCase().includes('progress');
+    const active = visibleRows.filter(row => {
+      const statusCell = row.querySelector('td:nth-child(3) .badge');
+      return statusCell && statusCell.textContent.toLowerCase().includes('active');
     }).length;
 
-    const newClusters = totalRows - finalized - inProgress;
+    const inactive = totalRows - finalized - active;
 
     // Update progress bars
     updateProgressBar('finalized', finalized, totalRows);
-    updateProgressBar('in-progress', inProgress, totalRows);
-    updateProgressBar('new', newClusters, totalRows);
+    updateProgressBar('in-progress', active, totalRows);
+    updateProgressBar('new', inactive, totalRows);
   }
 
   function updateProgressBar(className, count, total) {
-    const progressBar = document.querySelector(`.niche-progress__${className} .niche-progress__fill`);
-    const percentElement = document.querySelector(`.niche-progress__${className} .niche-progress__percent`);
+    const progressBar = document.querySelector(`.progress-row:nth-child(${getProgressRowIndex(className)}) .progress-fill`);
+    const percentElement = document.querySelector(`.progress-row:nth-child(${getProgressRowIndex(className)}) .progress-percent`);
     
     if (progressBar && percentElement) {
       const percentage = total > 0 ? Math.round((count / total) * 100) : 0;
       progressBar.style.width = percentage + '%';
       percentElement.textContent = percentage + '%';
     }
+  }
+
+  function getProgressRowIndex(className) {
+    const indices = {
+      'finalized': 1,
+      'in-progress': 2,
+      'new': 3
+    };
+    return indices[className] || 1;
   }
 
   // Visual feedback for active filters
@@ -169,6 +225,34 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  // Action button handlers - reusable for any page
+  document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('btn-edit')) {
+      // Handle edit button click
+      console.log('Edit button clicked');
+    } else if (e.target.classList.contains('btn-view')) {
+      // Handle view button click
+      console.log('View button clicked');
+    }
+  });
+
   // Initialize filtering on page load
   updateMetrics();
+  
+  // Add search functionality - reusable for any page
+  const searchInput = document.getElementById('search');
+  if (searchInput) {
+    searchInput.addEventListener('input', function(e) {
+      const searchTerm = e.target.value.toLowerCase();
+      const tableRows = document.querySelectorAll('.data-table tbody tr');
+      
+      tableRows.forEach(row => {
+        const text = row.textContent.toLowerCase();
+        const showRow = text.includes(searchTerm);
+        row.style.display = showRow ? '' : 'none';
+      });
+      
+      updateMetrics();
+    });
+  }
 }); 

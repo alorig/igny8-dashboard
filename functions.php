@@ -452,6 +452,8 @@ function igny8_enqueue_dropdown_js() {
 }
 add_action('wp_enqueue_scripts', 'igny8_enqueue_dropdown_js');
 
+
+
 // Register Custom Post Type: Niche
 function igny8_register_niche_post_type() {
     $labels = array(
