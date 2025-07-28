@@ -226,23 +226,21 @@ $top_personas = array_slice($persona_counts, 0, 2, true);
     <section class="analytics-card">
         <h4 class="analytics-title">Cluster Status</h4>
         <div class="progress-group">
-            <div class="progress-group">
-                <div class="progress-label">Finalized</div>
-                <div class="progress-bar progress-green"><div class="progress-fill" style="width: <?php echo $finalized_percentage; ?>%"></div></div>
-                <div class="progress-percent"><?php echo $finalized_percentage; ?>%</div>
-            </div>
-            
-            <div class="progress-group">
-                <div class="progress-label">In Progress</div>
-                <div class="progress-bar progress-orange"><div class="progress-fill" style="width: <?php echo $active_percentage; ?>%"></div></div>
-                <div class="progress-percent"><?php echo $active_percentage; ?>%</div>
-            </div>
-            
-            <div class="progress-group">
-                <div class="progress-label">New</div>
-                <div class="progress-bar progress-blue"><div class="progress-fill" style="width: <?php echo $inactive_percentage; ?>%"></div></div>
-                <div class="progress-percent"><?php echo $inactive_percentage; ?>%</div>
-            </div>
+            <div class="progress-label">Finalized</div>
+            <div class="progress-bar progress-green"><div class="progress-fill" style="width: <?php echo $finalized_percentage; ?>%"></div></div>
+            <div class="progress-percent"><?php echo $finalized_percentage; ?>%</div>
+        </div>
+        
+        <div class="progress-group">
+            <div class="progress-label">In Progress</div>
+            <div class="progress-bar progress-orange"><div class="progress-fill" style="width: <?php echo $active_percentage; ?>%"></div></div>
+            <div class="progress-percent"><?php echo $active_percentage; ?>%</div>
+        </div>
+        
+        <div class="progress-group">
+            <div class="progress-label">New</div>
+            <div class="progress-bar progress-blue"><div class="progress-fill" style="width: <?php echo $inactive_percentage; ?>%"></div></div>
+            <div class="progress-percent"><?php echo $inactive_percentage; ?>%</div>
         </div>
     </section>
 
